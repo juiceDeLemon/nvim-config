@@ -55,7 +55,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
@@ -67,13 +67,10 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -110,24 +107,15 @@ cmp.setup({
             vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
             -- the words
             vim_item.menu = ({
+                nvim_lsp = "[Lsp]",
                 luasnip = "[Snips]",
+                nvim_lua = "[Vim]",
                 buffer = "[Buf]",
                 path = "[Path]",
             })[entry.source.name]
             return vim_item
         end
     },
-    -- formatting = {
-    --     fields = { "kind", "abbr", "menu" },
-    --     format = function(entry, vim_item)
-    --         local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-    --         local strings = vim.split(kind.kind, "%s", { trimempty = true })
-    --         kind.kind = " " .. strings[1] .. " "
-    --         kind.menu = "    (" .. strings[2] .. ")"
-
-    --         return kind
-    --     end,
-    -- },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = "luasnip" },
