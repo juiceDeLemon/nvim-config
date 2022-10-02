@@ -1,0 +1,53 @@
+{
+  "include with #": {
+    "prefix": "include",
+    "body": [
+      "#include $0"
+    ]
+  },
+  "string": {
+    "prefix": "str",
+    "body": [
+      "std::string$0"
+    ]
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": [
+      "for (size_t ${1|i,j|}{}; ${1|i,j|} < ${2:/* count */}; ${1|i,j|}${3|++, += |}$4) {",
+      "  $0",
+      "}"
+    ]
+  },
+  "main function": {
+    "prefix": "main",
+    "body": [
+      "int main(int argc, char const *argv[]) {",
+      "  $0",
+      "",
+      " . return 0;",
+      "}",
+      ""
+    ]
+  },
+  "return 0": {
+    "prefix": "r0",
+    "body": [
+      "$0",
+      "",
+      "return 0;"
+    ]
+  },
+  "new line escape seq": {
+    "prefix": "nl",
+    "body": [
+      " << \"\\n\";"
+    ]
+  },
+  "template t": {
+    "prefix": "template",
+    "body": [
+      "template <typename T>"
+    ]
+  }
+}
