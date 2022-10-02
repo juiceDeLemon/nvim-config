@@ -28,6 +28,9 @@ local highlights = {
     Search = {bg = colours.comment, fg = colours.bg}, -- results
     -- change split separator colour
     VertSplit = {fg = colours.text},
+    -- change cursorline and cursorcolumn highlight
+    CursorColumn = {bg = "#2D313B"},
+    CursorLine = {bg = "#2D313B"},
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)

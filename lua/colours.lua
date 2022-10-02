@@ -7,6 +7,7 @@
 
 local M = {
     bg = "#282C34",
+    dark_bg = "#21252b",
     red = "#E06C75",
     green = "#98C379",
     yellow = "#E5C07B",
@@ -14,7 +15,7 @@ local M = {
     purple = "#C678DD",
     teal = "#56B6C2",
     text = "#ABB2BF",
-    dark_text = "#",
+    dark_text = "#21252b",
     comment = "#7F848E",
     hl = "#3A3F49",
     dark_hl = "#2B3543",
