@@ -7,20 +7,15 @@
 
 return {
     settings = {
-        -- pylsp = {
-        --     plugins = {
-        --         flake8 = {
-        --             enable = true,
+        -- pyright = {
+        --     settings = {
+        --         python = {
+        --             pythonPath = "/usr/local/bin/python3"
         --         },
-        --     },
+        --     }
         -- },
-        pyright = {
-            settings = {
-                python = {
-                    pythonPath = "/usr/local/bin/python3"
-                },
-            }
-            -- pythonVersion = "3.10",
+        python = {
+            pythonPath = "/usr/local/bin/python3",
         },
     },
 }
