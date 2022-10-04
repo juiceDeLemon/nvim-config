@@ -22,9 +22,9 @@ onedark.setup({
 -- custom highlights must be put after setup function
 -- this overrides colourscheme default
 -- otherwise the setup function will override the custom settings
-local highlights = {
+local highlights = { -- TODO: hi link https://neovim.io/doc/user/api.html
     -- change search highlight background colour
-    IncSearch = {bg = colours.comment, fg = colours.bg}, -- searching
+    IncSearch = {bg = colours.yellow, fg = colours.dark_text}, -- searching
     Search = {bg = colours.comment, fg = colours.bg}, -- results
     -- change split separator colour
     VertSplit = {fg = colours.text},
@@ -34,6 +34,8 @@ local highlights = {
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)
+    CmpItemAbbrMatch = {fg = colours.red, bold = true},
+    CmpItemMenu = {fg = colours.teal, italic = true}, -- [Lsp] tags
     -- https://vim.fandom.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor (cursor change colour)
     -- CmpItemKindFunction = {bg = colours.blue, fg = colours.bg},
     -- CmpItemKindVariable = {bg = colours.yellow, fg = colours.bg},

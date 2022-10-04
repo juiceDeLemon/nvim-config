@@ -33,17 +33,18 @@ lualine.setup({
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { "location" },
+        lualine_z = { "progress" },
     },
     tabline = {
-        lualine_a = {},
+        lualine_a = { tabline.tabline_buffers },
         lualine_b = {},
-        lualine_c = { tabline.tabline_buffers }, -- tabline.nvim
-        lualine_x = { tabline.tabline_tabs }, -- tabline.nvim
+        lualine_c = {},
+        lualine_x = { tabline.tabline_tabs },
         -- lualine_y = { "aerial" },
         lualine_y = {},
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
     extensions = {},
+    req
 })
 

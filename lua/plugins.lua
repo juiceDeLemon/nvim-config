@@ -24,6 +24,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
+
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -51,7 +59,6 @@ return packer.startup(function(use)
     use "b3nj5m1n/kommentary" -- add/remove comments
     use "kylechui/nvim-surround" -- add/remove quotes
     use "windwp/nvim-autopairs" -- add closing brackets
-    use "kyazdani42/nvim-web-devicons" -- tree icons
     use { "kyazdani42/nvim-tree.lua" } -- tree
     use "moll/vim-bbye" -- :Bd over :bd
     use "RRethy/vim-illuminate" -- highlight same word
@@ -68,10 +75,13 @@ return packer.startup(function(use)
     -- use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
     -- above substitude:
     use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
-    use "Pocco81/auto-save.nvim" -- auto save
     use "juiceDeLemon/nvim-toggler" -- invert boolean and boolean-ish keywords
     use "rcarriga/nvim-notify" -- notifications
     use "jghauser/mkdir.nvim"
+
+    -- ICONS --
+    use "kyazdani42/nvim-web-devicons" -- tree icons
+    use "onsails/lspkind.nvim" -- lsp icons
 
     -- COMPLETION PLUGINS --
     use "hrsh7th/cmp-nvim-lsp" -- lsp
@@ -79,9 +89,9 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path
     use "hrsh7th/cmp-cmdline" -- commandline
     use "hrsh7th/cmp-nvim-lua" -- vim options
+    use "hrsh7th/cmp-emoji" -- lovely emoji
     use "hrsh7th/nvim-cmp" -- THE plugin
     use "saadparwaiz1/cmp_luasnip" -- snippet
-    use "onsails/lspkind.nvim" -- icons
 
     -- SNIPPETS --
     use "L3MON4D3/LuaSnip" -- snippets
