@@ -12,6 +12,7 @@ My neovim config
 - Go to https://github.com/neovim/nvim-lspconfig/ and install the servers using npm
 - if macOS: install https://formulae.brew.sh/formula/trash
 ## After cloning the repo:
+- MUST run :checkhealth to install other dependencies
 - Change the trash command in nvim-tree.lua to suit your OS
 - Change python path in ./lua/plugin-settings/lsp/settings/py.lua
 
