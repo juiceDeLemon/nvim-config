@@ -21,11 +21,8 @@ null_ls.setup({
 	autostart = true,
 	debug = false,
 	sources = {
-		formatting.prettier.with({
-			extra_filetypes = { "toml", "solidity" },
-			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-		}), -- js / ts / their frameworks (jsx angular vue...)
-		formatting.black.with({ extra_args = { "--fast" } }), -- python
+        formatting.eslint, -- js / ts / frameworks require plugins
+        formatting.autopep8, -- python
 		formatting.stylua, -- lua
 		formatting.google_java_format, -- java
 		formatting.clang_format, -- mainly c and cpp
