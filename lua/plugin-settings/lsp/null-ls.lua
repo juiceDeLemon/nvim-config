@@ -7,10 +7,8 @@
 
 local null_ls = require("null-ls")
 
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local null_format = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local null_diag = null_ls.builtins.diagnostics
+local formattings = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -42,16 +40,25 @@ local no_emacs = {
 	},
 }
 
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
+end
+
 null_ls.setup({
 	autostart = true,
 	debug = false,
 	sources = {
-		null_format.eslint, -- js / ts / frameworks require plugins
-		null_format.autopep8, -- python
-		null_format.stylua, -- lua
-		null_format.google_java_format, -- java
-		null_format.clang_format, -- mainly c and cpp
-		null_diag.flake8,
+		formattings.eslint, -- js / ts / frameworks require plugins
+		formattings.autopep8, -- python
+		formattings.stylua, -- lua
+		formattings.google_java_format, -- java
+		formattings.clang_format, -- mainly c and cpp
+		diagnostics.flake8,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
@@ -60,7 +67,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
+					lsp_formatting(bufnr)
 				end,
 			})
 		end -- autosave
