@@ -4,13 +4,9 @@
 -- ██║██║╚████║██║░░░██║░░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║██║░╚███║██║░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
 require "options"
 require "keymaps"
 require "plugins"
 require "plugin-settings"
 require "autocommands"
-if vim.fn.exists("g:neovide") == 1 then
-    require "neovide"
-end
-
+if vim.fn.exists("g:neovide") == 1 then require "neovide" end
