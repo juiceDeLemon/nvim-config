@@ -4,16 +4,7 @@
 -- ██║╚████║░╚████╔╝░██║██║╚██╔╝██║╚════╝░░░██║░░░██╔══██╗██╔══╝░░██╔══╝░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░╚███║░░╚██╔╝░░██║██║░╚═╝░██║░░░░░░░░░██║░░░██║░░██║███████╗███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝░░░░░░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    return
-end
-
-local config_status_ok, _ = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-    return
-end
+local nvim_tree = require "nvim-tree"
 
 local colours = require("colours")
 
@@ -23,38 +14,25 @@ vim.g.loaded_netrwPlugin = 1
 
 -- customise file font and colours
 -- https://neovim.io/doc/user/api.html
-vim.api.nvim_set_hl(0, "NvimTreeFolderName", {fg = colours.teal, bold = true, underline = true})
-vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", {fg = colours.blue, italic = true, bold = true, underline = true})
-vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", {fg = colours.comment, bold = true})
+vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = colours.teal, bold = true, underline = true })
+vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName",
+                    { fg = colours.blue, italic = true, bold = true, underline = true })
+vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", { fg = colours.comment, bold = true })
 
 nvim_tree.setup {
     hijack_cursor = true,
-    update_focused_file = {
-        enable = true,
-    },
-    diagnostics = {
-        enable = true,
-    },
+    update_focused_file = { enable = true },
+    diagnostics = { enable = true },
 
-    git = {
-        timeout = 5000,
-    },
-    view = {
-        preserve_window_proportions = true,
-        relativenumber = true,
-    },
+    git = { timeout = 5000 },
+    view = { preserve_window_proportions = true, relativenumber = true },
     renderer = {
         add_trailing = true,
         group_empty = true,
         highlight_git = true,
         highlight_opened_files = "name",
-        indent_markers = {
-            enable = true,
-            inline_arrows = true,
-        },
+        indent_markers = { enable = true, inline_arrows = true },
     },
-    trash = {
-        cmd = "trash ",
-    },
+    filters = { custom = { "^\\.git" } },
+    trash = { cmd = "trash " },
 }
-
