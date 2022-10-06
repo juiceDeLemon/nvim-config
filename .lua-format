@@ -1,0 +1,10 @@
+column_limit: 100
+chop_down_kv_table: false
+extra_sep_at_table_end: true
+break_after_operator: false
+single_quote_to_double_quote: true
+spaces_inside_table_braces: true
+spaces_around_equals_in_field: false
+line_breaks_after_function_body: 2
+line_separator: "lf"
+

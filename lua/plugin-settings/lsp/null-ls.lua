@@ -55,7 +55,7 @@ null_ls.setup({
 	sources = {
 		formattings.eslint, -- js / ts / frameworks require plugins
 		formattings.autopep8, -- python
-		formattings.stylua, -- lua
+		formattings.lua_format, -- lua
 		formattings.google_java_format, -- java
 		formattings.clang_format, -- mainly c and cpp
 		diagnostics.flake8,
