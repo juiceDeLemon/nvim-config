@@ -4,17 +4,14 @@
 -- ██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░░██║███████╗██║░░░░░██║░░██║██║░░██║██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
 local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
-    return
-end
+if not status_ok then return end
 
-alpha.setup(require'alpha.themes.dashboard'.config)
+alpha.setup(require"alpha.themes.dashboard".config)
 
 local dashboard = require "alpha.themes.dashboard"
 
-local M = { }
+local M = {}
 
 dashboard.section.header.val = {
     "░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██╗",
@@ -27,17 +24,21 @@ dashboard.section.header.val = {
 dashboard.section.header.opts.hl = "Function"
 
 dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert<CR>"),
-    -- dashboard.button("p", "  Find project", ":Telescope projects<CR>"),
-    dashboard.button("r", "  Recently used files", ":Telescope oldfiles<CR>"),
-    dashboard.button("t", "  Find text", ":Telescope live_grep<CR>"),
-    dashboard.button("c", "  Configuration", ":e ~/.config/nvim/<CR>"),
-    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+    dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
+    dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<CR>"),
+    -- dashboard.button("p", "  Find project", "<cmd>Telescope projects<CR>"),
+    dashboard.button("r", "  Recently used files", "<cmd>Telescope oldfiles<CR>"),
+    dashboard.button("t", "  Find text", "<cmd>Telescope live_grep<CR>"),
+    -- dashboard.button("e", "פּ  Open Tree", "<cmd>NvimTreeOpen<CR>"),
+    dashboard.button("e", "פּ  Open Tree", "<cmd>e .<CR>"),
+    dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<CR>"),
+    dashboard.button("p", "  Install plugins", "<cmd>PackerInstall<CR>"),
+    dashboard.button("q", "  Quit Neovim", "<cmd>qa<CR>"),
 }
 
 local function footer()
     local datetime = os.date "%d-%m-%Y %H:%M:%S"
+    -- LuaFormatter off
     local plugins_text = "  v"
         .. vim.version().major
         .. "."
@@ -46,13 +47,14 @@ local function footer()
         .. vim.version().patch
         .. "   "
         .. datetime
-
+    -- LuaFormatter on
     -- Quote
     local fortune = require "alpha.fortune"
     local quote = table.concat(fortune(), "\n")
 
     return plugins_text .. "\n" .. quote
 end
+
 
 dashboard.section.footer.val = footer()
 
@@ -64,4 +66,3 @@ dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
 
 return M
-
