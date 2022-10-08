@@ -79,6 +79,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path
     use "hrsh7th/cmp-cmdline" -- commandline
     use "hrsh7th/cmp-nvim-lua" -- vim options
+    use "petertriho/cmp-git" -- git
     use "hrsh7th/cmp-emoji" -- lovely emoji
     use "hrsh7th/nvim-cmp" -- THE plugin
     use "saadparwaiz1/cmp_luasnip" -- snippet
@@ -90,7 +91,7 @@ return packer.startup(function(use)
     -- LSP --
     use "neovim/nvim-lspconfig" -- enable
     use "williamboman/nvim-lsp-installer" -- server installer
-    use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
+    use "jose-elias-alvarez/null-ls.nvim" -- formatters, linter, code actions
     use "stevearc/aerial.nvim" -- code outline
     use "b0o/schemastore.nvim" -- schema
     use "SmiteshP/nvim-navic" -- breadcrumb
