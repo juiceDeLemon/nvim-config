@@ -47,32 +47,37 @@ return packer.startup(function(use)
     use "monsonjeremy/onedark.nvim" -- luv you very much
 
     -- GENERAL --
-    use "goolord/alpha-nvim" -- dashboard
-    use "wbthomason/packer.nvim" -- packer
-    use "nvim-lua/popup.nvim" -- popup api
     use "nvim-lua/plenary.nvim" -- many lua functions
-    use "b3nj5m1n/kommentary" -- add/remove comments
-    use "kylechui/nvim-surround" -- add/remove quotes
-    use "windwp/nvim-autopairs" -- add closing brackets
+    use "wbthomason/packer.nvim" -- packer
     use { "kyazdani42/nvim-tree.lua" } -- tree
+    use "akinsho/toggleterm.nvim" -- terminal in neovim
+    use "ahmedkhalf/project.nvim" -- project management
+
+    -- ENHANCEMENTS -- 
+    use "lewis6991/impatient.nvim" -- improve performance
     use "moll/vim-bbye" -- :Bd over :bd
+    use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
+
+    -- FUNCTIONAL --
+    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
+    use "kylechui/nvim-surround" -- add/remove quotes
+    use "folke/which-key.nvim" -- keybinds help
+    use "b3nj5m1n/kommentary" -- add/remove comments
+    use "windwp/nvim-autopairs" -- add closing brackets
+
+    -- VISUALS -- 
+    use "goolord/alpha-nvim" -- dashboard
+    use "nvim-lua/popup.nvim" -- popup api
     use "RRethy/vim-illuminate" -- highlight same word
     use "nvim-lualine/lualine.nvim" -- status bar
     use "kdheepak/tabline.nvim" -- tabline
-    use "akinsho/toggleterm.nvim" -- terminal in neovim
-    use "ahmedkhalf/project.nvim" -- project management
-    use "lewis6991/impatient.nvim" -- improve performance
     use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
     use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
-    use "folke/which-key.nvim" -- keybinds help
-    use "narutoxy/dim.lua" -- dim unused symbols
-    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
     -- neovim version 0.8 only
     -- use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
     -- above substitude:
     use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
     use "rcarriga/nvim-notify" -- notifications
-    use "jghauser/mkdir.nvim"
 
     -- ICONS --
     use "kyazdani42/nvim-web-devicons" -- tree icons
