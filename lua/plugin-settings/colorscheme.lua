@@ -7,12 +7,12 @@
 local onedark = require "onedark"
 local colours = require "colours"
 
-onedark.setup({
+onedark.setup {
     functionStyle = "underline",
     variableStyle = "bold",
     transparent = not require "neovide",
     customTelescope = true,
-})
+}
 
 -- custom highlights must be put after setup function
 -- this overrides colourscheme default
@@ -28,6 +28,7 @@ local highlights = { -- TODO: hi link https://neovim.io/doc/user/api.html
     -- change cursorline and cursorcolumn highlight
     CursorColumn = { bg = "#2D313B" },
     CursorLine = { bg = "#2D313B" },
+    CursorLineNr = { fg = colours.green },
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)
