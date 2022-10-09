@@ -56,6 +56,7 @@ return packer.startup(function(use)
     -- ENHANCEMENTS -- 
     use "lewis6991/impatient.nvim" -- improve performance
     use "moll/vim-bbye" -- :Bd over :bd
+    use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
     use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
 
     -- FUNCTIONAL --
