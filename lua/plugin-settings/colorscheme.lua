@@ -18,6 +18,8 @@ onedark.setup({
 -- this overrides colourscheme default
 -- otherwise the setup function will override the custom settings
 local highlights = { -- TODO: hi link https://neovim.io/doc/user/api.html
+    -- Which Key
+    WhichKeyborder = { fg = colours.text },
     -- change search highlight background colour
     IncSearch = { bg = colours.yellow, fg = colours.dark_text }, -- searching
     Search = { bg = colours.comment, fg = colours.bg }, -- results
