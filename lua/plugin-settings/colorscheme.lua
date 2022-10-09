@@ -11,7 +11,6 @@ onedark.setup {
     functionStyle = "underline",
     variableStyle = "bold",
     transparent = not require "neovide",
-    customTelescope = true,
 }
 
 -- custom highlights must be put after setup function
