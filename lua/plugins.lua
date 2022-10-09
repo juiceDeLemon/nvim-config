@@ -61,11 +61,12 @@ return packer.startup(function(use)
     use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
     use "folke/which-key.nvim" -- keybinds help
     use "narutoxy/dim.lua" -- dim unused symbols
+    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
     -- neovim version 0.8 only
     -- use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
     -- above substitude:
     use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
-    use "juiceDeLemon/nvim-toggler" -- invert boolean and boolean-ish keywords
+    -- use "juiceDeLemon/nvim-toggler" -- invert boolean and boolean-ish keywords
     use "rcarriga/nvim-notify" -- notifications
     use "jghauser/mkdir.nvim"
 
