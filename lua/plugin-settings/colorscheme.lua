@@ -27,7 +27,7 @@ local highlights = { -- TODO: hi link https://neovim.io/doc/user/api.html
     -- change cursorline and cursorcolumn highlight
     CursorColumn = { bg = "#2D313B" },
     CursorLine = { bg = "#2D313B" },
-    CursorLineNr = { fg = colours.green },
+    CursorLineNr = { fg = colours.green, bold = true },
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)
