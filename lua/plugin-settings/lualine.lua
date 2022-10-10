@@ -24,6 +24,7 @@ ll.setup {
         lualine_x = { tl.tabline_tabs },
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
-    winbar = { lualine_b = { { "filename", path = 3 }, navic.get_location } },
+    -- winbar = { lualine_b = { { "filename", path = 3 }, navic.get_location } },
+    winbar = { lualine_b = { { "filename", path = 3 } }, lualine_c = { navic.get_location } },
     extensions = {},
 }

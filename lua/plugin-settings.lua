@@ -14,7 +14,6 @@ require "plugin-settings.lsp"
 
 -- files:
 -- require("user.plugin-settings.autocommands") -- ????
-require "plugin-settings.aerial"
 require "plugin-settings.alpha"
 require "plugin-settings.autopairs"
 require "plugin-settings.cmp"
@@ -23,7 +22,7 @@ require "plugin-settings.colorscheme"
 -- require "plugin-settings.dap"
 require "plugin-settings.dial"
 -- require "plugin-settings.dim"
--- require "plugin-settings.gitsigns"
+require "plugin-settings.gitsigns"
 require "plugin-settings.hlargs"
 require "plugin-settings.illuminate"
 require "plugin-settings.impatient"

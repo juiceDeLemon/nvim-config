@@ -103,7 +103,6 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- enable
     use "williamboman/nvim-lsp-installer" -- server installer
     use "jose-elias-alvarez/null-ls.nvim" -- formatters, linter, code actions
-    use "stevearc/aerial.nvim" -- code outline
     use "b0o/schemastore.nvim" -- schema
     use "SmiteshP/nvim-navic" -- breadcrumb
 

@@ -83,9 +83,6 @@ keymap("v", "<C-x>", require("dial.map").dec_visual(), opts)
 keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
 keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
 
--- code outline
-keymap({ "n", "x" }, "<leader>o", "<cmd>AerialToggle<cr>", opts) -- o for outline
-
 -- tab line and buffer related
 -- previous
 keymap({ "n", "x" }, "<leader>h", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
