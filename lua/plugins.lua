@@ -70,8 +70,6 @@ return packer.startup(function(use)
     use "goolord/alpha-nvim" -- dashboard
     use "nvim-lua/popup.nvim" -- popup api
     use "RRethy/vim-illuminate" -- highlight same word
-    use "nvim-lualine/lualine.nvim" -- status bar
-    use "kdheepak/tabline.nvim" -- tabline
     use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
     use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
     -- neovim version 0.8 only
@@ -79,6 +77,11 @@ return packer.startup(function(use)
     -- above substitude:
     use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
     use "rcarriga/nvim-notify" -- notifications
+
+    -- STATUS LINES --
+    use "nvim-lualine/lualine.nvim" -- status bar
+    use "kdheepak/tabline.nvim" -- tabline
+    use "arkav/lualine-lsp-progress" -- lsp progress
 
     -- ICONS --
     use "kyazdani42/nvim-web-devicons" -- tree icons

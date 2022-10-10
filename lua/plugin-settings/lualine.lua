@@ -9,12 +9,16 @@ local tl = require "tabline"
 local navic = require "nvim-navic"
 
 ll.setup {
-    options = { globalstatus = true, refresh = { statusline = 250 } },
+    options = {
+        globalstatus = true,
+        refresh = { statusline = 250 },
+        ignore_focus = { "help", "NvimTree", "alpha" },
+    },
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "filename", "filetype" },
         lualine_c = { "branch", "diff", "diagnostics" },
-        lualine_x = { "encoding" },
+        lualine_x = { "lsp_progress", "filesize", "encoding" },
         lualine_y = { "location" },
         lualine_z = { "progress" },
     },
@@ -24,7 +28,6 @@ ll.setup {
         lualine_x = { tl.tabline_tabs },
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
-    -- winbar = { lualine_b = { { "filename", path = 3 }, navic.get_location } },
-    winbar = { lualine_b = { { "filename", path = 3 } }, lualine_c = { navic.get_location } },
+    winbar = { lualine_c = { { "filename", path = 3 }, navic.get_location } }, -- VSCode style
     extensions = {},
 }
