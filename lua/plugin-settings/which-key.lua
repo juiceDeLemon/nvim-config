@@ -20,3 +20,12 @@ wk.register({
         g = { "<cmd>LazyGit<cr>", "Open LazyGit" },
     },
 }, { mode = "n", prefix = "<leader>" })
+wk.register({
+    t = {
+        name = "Tabs",
+        h = { "<cmd>TablineBufferPrevious<cr>" },
+        l = { "<cmd>TablineBufferNext<cr>" },
+        t = { "<cmd>TablineTabNew<cr>" },
+        w = { "<cmd>Bdelete<cr>" },
+    },
+}, { mode = "n", prefix = "<leader>" })

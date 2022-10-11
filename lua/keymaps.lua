@@ -85,10 +85,10 @@ keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
 
 -- tab line and buffer related
 -- previous
-keymap({ "n", "x" }, "<leader>h", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
+keymap({ "n", "x" }, "<leader>th", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
 -- next
-keymap({ "n", "x" }, "<leader>l", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
+keymap({ "n", "x" }, "<leader>tl", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
 -- new
-keymap({ "n", "x" }, "<leader>t", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
+keymap({ "n", "x" }, "<leader>tt", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
 -- close (bbye)
-keymap({ "n", "x" }, "<leader>w", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
+keymap({ "n", "x" }, "<leader>tw", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
