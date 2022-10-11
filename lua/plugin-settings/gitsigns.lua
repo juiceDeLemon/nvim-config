@@ -29,5 +29,6 @@ gs.setup {
         style = "minimal",
         relative = "cursor",
     },
+    word_diff = true,
     yadm = { enable = true },
 }
