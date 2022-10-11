@@ -11,3 +11,12 @@ wk.setup {
     popup_mappings = { scroll_down = "<c-j>", scroll_up = "<c-k>" },
     window = { border = "single", winblend = 30 },
 }
+wk.register({
+    g = {
+        name = "Git",
+        h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
+        l = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
+        p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+        g = { "<cmd>LazyGit<cr>", "Open LazyGit" },
+    },
+}, { mode = "n", prefix = "<leader>" })

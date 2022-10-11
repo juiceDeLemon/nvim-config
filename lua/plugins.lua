@@ -121,7 +121,8 @@ return packer.startup(function(use)
     use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
 
     -- GIT --
-    use "lewis6991/gitsigns.nvim"
+    use "lewis6991/gitsigns.nvim" -- git diff bar (left)
+    use "kdheepak/lazygit.nvim" -- lazygit in neovim
 
     -- DAP --
     use "mfussenegger/nvim-dap"

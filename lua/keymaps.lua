@@ -90,5 +90,5 @@ keymap({ "n", "x" }, "<leader>h", "<cmd>TablineBufferPrevious<cr>", opts) -- h f
 keymap({ "n", "x" }, "<leader>l", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
 -- new
 keymap({ "n", "x" }, "<leader>t", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
--- close (doesn't have a plugin command)
+-- close (bbye)
 keymap({ "n", "x" }, "<leader>w", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
