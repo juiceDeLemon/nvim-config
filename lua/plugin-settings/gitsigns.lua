@@ -20,15 +20,11 @@ gs.setup {
         },
     },
     signcolumn = true,
-    numhl = true,
-    current_line_blame = true,
-    current_line_blame_opts = { virt_text = true, virt_text_pos = "eol", delay = 3000 },
     preview_config = {
         -- Options passed to nvim_open_win
         border = "rounded",
         style = "minimal",
         relative = "cursor",
     },
-    word_diff = true,
     yadm = { enable = true },
 }
