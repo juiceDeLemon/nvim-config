@@ -4,7 +4,6 @@
 -- ██╔══██║██║░░░██║░░░██║░░░██║░░██║██║░░██╗██║╚██╔╝██║██║░░██║░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({ "BufEnter" }, {
@@ -13,8 +12,12 @@ autocmd({ "BufEnter" }, {
         vim.cmd [[
             if winnr('$') <= 1 && bufname() == 'NvimTree_' . tabpagenr() | endif
         ]]
-    end,
+    end
+,
 })
+
+autocmd({ "FileType" },
+        { pattern = "nofile", desc = "open alpha when nofile", callback = vim.cmd "Alpha" })
 
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
@@ -25,4 +28,3 @@ autocmd({ "BufEnter" }, {
 --         vim.api.nvim_set_keymap({"n", "x"}, "k", "<nop>", { noremap = true, silent = true })
 --     end,
 -- })
-
