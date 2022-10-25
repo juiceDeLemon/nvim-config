@@ -41,7 +41,7 @@ M.setup = function()
     vim.diagnostic.config(config)
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
-                                                          { border = "rounded" })
+                                                 { border = "rounded" })
 
     vim.lsp.handlers["textDocument/signatureHelp"] =
         vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
@@ -73,7 +73,7 @@ M.on_attach = function(client, bufnr)
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
     M.capabilities.textDocument.completion.completionItem.snippetsSupport = true
-    M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+    M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
     lsp_keymaps(bufnr)
 
