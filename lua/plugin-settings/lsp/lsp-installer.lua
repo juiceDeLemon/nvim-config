@@ -4,11 +4,7 @@
 -- ██║░░░░░░╚═══██╗██╔═══╝░╚════╝██║██║╚████║░╚═══██╗░░░██║░░░██╔══██║██║░░░░░██║░░░░░██╔══╝░░██╔══██╗░░░██║░░░░░██║░░░██║██╔══██║
 -- ███████╗██████╔╝██║░░░░░░░░░░░██║██║░╚███║██████╔╝░░░██║░░░██║░░██║███████╗███████╗███████╗██║░░██║██╗███████╗╚██████╔╝██║░░██║
 -- ╚══════╝╚═════╝░╚═╝░░░░░░░░░░░╚═╝╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚══════╝╚══════╝╚═╝░░╚═╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
-local installer_status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not installer_status_ok then
-    return
-end
+local lsp_installer = require "nvim-lsp-installer"
 
 local servers = {
     "bashls", -- bash
@@ -27,21 +23,19 @@ local servers = {
 lsp_installer.setup()
 
 -- must put this after .setup() because wiki said so :)
-local config_status_ok, lspconfig = pcall(require, "lspconfig")
-if not config_status_ok then
-    return
-end
+local lspconfig = require "lspconfig"
 
 local default_opts = {
     on_attach = require("plugin-settings.lsp.handlers").on_attach,
     -- capabilities = require("plugin-settings.lsp.handlers").capabilities,
-    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol
+                                                                    .make_client_capabilities()),
 }
 
-local lang_specific_opts = { }
+local lang_specific_opts = {}
 
 for _, server in pairs(servers) do
-    lang_specific_opts = { } -- reset
+    lang_specific_opts = {} -- reset
 
     if server == "bashls" then -- bash
         local bash_opts = require("plugin-settings.lsp.settings.bash")
@@ -80,4 +74,3 @@ for _, server in pairs(servers) do
 
     lspconfig[server].setup(lang_specific_opts)
 end
-
