@@ -39,7 +39,7 @@ local options = {
     winblend = 30, -- enables pseudo-transparency for floating windows 
     pumblend = 30, -- enables pseudo-transparency for popup menu
     linespace = 2, -- add 2 pixels of padding between lines
-    guifont = "JetBrainsMono NF", -- set font (make sure to install jetbrains mono at nerdfonts.com or it's github page)
+    guifont = "JetBrainsMono NF", -- make sure to download the font (included in the JetBrainsMono file)
 }
 
 -- execute the options
