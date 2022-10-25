@@ -5,6 +5,7 @@
 -- ░░╚██╔╝░╚██╔╝░██║░░██║██║╚█████╔╝██║░░██║░░░░░░██║░╚██╗███████╗░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░╚════╝░╚═╝░░╚═╝░░░░░░╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local wk = require "which-key"
+-- 1 leader
 wk.setup {
     plugins = { spelling = { enabled = true, suggestions = 25 } },
     icons = { breadcrumb = "", separator = ":", group = "*" },
@@ -29,3 +30,11 @@ wk.register({
         w = { "<cmd>Bdelete<cr>" },
     },
 }, { mode = "n", prefix = "<leader>" })
+-- 2 leaders
+wk.register({
+    d = {
+        name = "SUSSY DUCK",
+        d = { "<cmd>lua require 'duck'.hatch('ඞ')<cr>" },
+        c = { "<cmd>lua require 'duck'.cook()<cr>" },
+    },
+}, { mode = "n", prefix = "<leader><leader>" })
