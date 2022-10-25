@@ -4,7 +4,7 @@
 -- ██╔═══╝░██║░░░░░██║░░░██║██║░░╚██╗██║██║╚████║░╚═══██╗░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░░░░░███████╗╚██████╔╝╚██████╔╝██║██║░╚███║██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░░░░╚══════╝░╚═════╝░░╚═════╝░╚═╝╚═╝░░╚══╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
--- jump to 50
+-- jump to 45
 local fn = vim.fn
 
 -- Automatically install packer
@@ -53,7 +53,7 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim" -- terminal in neovim
     use "ahmedkhalf/project.nvim" -- project management
 
-    -- ENHANCEMENTS -- 
+    -- ENHANCEMENTS --
     use "lewis6991/impatient.nvim" -- improve performance
     use "moll/vim-bbye" -- :Bd over :bd
     use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
@@ -66,17 +66,17 @@ return packer.startup(function(use)
     use "b3nj5m1n/kommentary" -- add/remove comments
     use "windwp/nvim-autopairs" -- add closing brackets
 
-    -- VISUALS -- 
+    -- VISUALS --
     use "goolord/alpha-nvim" -- dashboard
     use "nvim-lua/popup.nvim" -- popup api
+    use "folke/noice.nvim" -- new ui for messages cmdline and popupmenus
     use "RRethy/vim-illuminate" -- highlight same word
     use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
     use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
-    -- neovim version 0.8 only
-    -- use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
-    -- above substitude:
-    use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
-    use "rcarriga/nvim-notify" -- notifications
+    use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
+    use "tamton-aquib/duck.nvim" -- duck good
+    use "rcarriga/nvim-notify" -- noice dependencies
+    use "MunifTanjim/nui.nvim" -- noice dependencies
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
@@ -114,11 +114,17 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-project.nvim" -- project
 
     -- TREESITTER --
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- eye candy
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        commit = "9bfaf62e42bdcd042df1230e9188487e62a112c0",
+        run = ":TSUpdate",
+    } -- eye candy
     use "p00f/nvim-ts-rainbow" -- highlight brackets
     use "m-demare/hlargs.nvim" -- highlight arguments in another way
+    use "nvim-treesitter/nvim-treesitter-context" -- show start of code block at the top
     use "andymass/vim-matchup" -- extended % to keywords like if else
     use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
+    -- use "nvim-treesitter/playground" -- only for eye-candy
 
     -- GIT --
     use "lewis6991/gitsigns.nvim" -- git diff bar (left)
