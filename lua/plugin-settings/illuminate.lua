@@ -4,16 +4,7 @@
 -- ██║██║░░░░░██║░░░░░██║░░░██║██║╚██╔╝██║██║██║╚████║██╔══██║░░░██║░░░██╔══╝░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║███████╗███████╗╚██████╔╝██║░╚═╝░██║██║██║░╚███║██║░░██║░░░██║░░░███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝╚══════╝╚══════╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
-local status_ok, illuminate = pcall(require, "illuminate")
-if not status_ok then
-  return
-end
-
--- https://neovim.io/doc/user/api.html
-vim.api.nvim_set_hl(0, "IlluminatedWordText", {bg = "#2B3543"})
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", {bg = "#2B3543"})
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", {bg = "#2B3543"})
+local illuminate = require "illuminate"
 
 illuminate.configure {
     delay = 400,
@@ -33,4 +24,3 @@ illuminate.configure {
         "TelescopePrompt",
     },
 }
-
