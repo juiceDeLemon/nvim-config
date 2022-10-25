@@ -4,7 +4,6 @@
 -- ██╔══██║██║░░░██║░░░██║░░░██║░░██║██║░░██╗██║╚██╔╝██║██║░░██║░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({ "BufEnter" }, {
@@ -13,7 +12,8 @@ autocmd({ "BufEnter" }, {
         vim.cmd [[
             if winnr('$') <= 1 && bufname() == 'NvimTree_' . tabpagenr() | endif
         ]]
-    end,
+    end
+,
 })
 
 -- autocmd({ "UserGettingBored" }, {
@@ -25,4 +25,3 @@ autocmd({ "BufEnter" }, {
 --         vim.api.nvim_set_keymap({"n", "x"}, "k", "<nop>", { noremap = true, silent = true })
 --     end,
 -- })
-
