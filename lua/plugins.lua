@@ -11,7 +11,12 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
-        "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path,
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
     }
     print "Installing packer close and reopen Neovim..."
     vim.cmd [[packadd packer.nvim]]
@@ -42,32 +47,41 @@ return packer.startup(function(use)
     use "monsonjeremy/onedark.nvim" -- luv you very much
 
     -- GENERAL --
-    use "goolord/alpha-nvim" -- dashboard
-    use "wbthomason/packer.nvim" -- packer
-    use "nvim-lua/popup.nvim" -- popup api
     use "nvim-lua/plenary.nvim" -- many lua functions
-    use "b3nj5m1n/kommentary" -- add/remove comments
-    use "kylechui/nvim-surround" -- add/remove quotes
-    use "windwp/nvim-autopairs" -- add closing brackets
+    use "wbthomason/packer.nvim" -- packer
     use { "kyazdani42/nvim-tree.lua" } -- tree
-    use "moll/vim-bbye" -- :Bd over :bd
-    use "RRethy/vim-illuminate" -- highlight same word
-    use "nvim-lualine/lualine.nvim" -- status bar
-    use "kdheepak/tabline.nvim" -- tabline
     use "akinsho/toggleterm.nvim" -- terminal in neovim
     use "ahmedkhalf/project.nvim" -- project management
+
+    -- ENHANCEMENTS -- 
     use "lewis6991/impatient.nvim" -- improve performance
+    use "moll/vim-bbye" -- :Bd over :bd
+    use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
+    use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
+
+    -- FUNCTIONAL --
+    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
+    use "kylechui/nvim-surround" -- add/remove quotes
+    use "folke/which-key.nvim" -- keybinds help
+    use "b3nj5m1n/kommentary" -- add/remove comments
+    use "windwp/nvim-autopairs" -- add closing brackets
+
+    -- VISUALS -- 
+    use "goolord/alpha-nvim" -- dashboard
+    use "nvim-lua/popup.nvim" -- popup api
+    use "RRethy/vim-illuminate" -- highlight same word
     use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
     use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
-    use "folke/which-key.nvim" -- keybinds help
-    use "narutoxy/dim.lua" -- dim unused symbols
     -- neovim version 0.8 only
     -- use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
     -- above substitude:
     use "filipdutescu/renamer.nvim" -- rename every appearance of symbol
-    use "juiceDeLemon/nvim-toggler" -- invert boolean and boolean-ish keywords
     use "rcarriga/nvim-notify" -- notifications
-    use "jghauser/mkdir.nvim"
+
+    -- STATUS LINES --
+    use "nvim-lualine/lualine.nvim" -- status bar
+    use "kdheepak/tabline.nvim" -- tabline
+    use "arkav/lualine-lsp-progress" -- lsp progress
 
     -- ICONS --
     use "kyazdani42/nvim-web-devicons" -- tree icons
@@ -79,6 +93,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path
     use "hrsh7th/cmp-cmdline" -- commandline
     use "hrsh7th/cmp-nvim-lua" -- vim options
+    use "petertriho/cmp-git" -- git
     use "hrsh7th/cmp-emoji" -- lovely emoji
     use "hrsh7th/nvim-cmp" -- THE plugin
     use "saadparwaiz1/cmp_luasnip" -- snippet
@@ -90,8 +105,7 @@ return packer.startup(function(use)
     -- LSP --
     use "neovim/nvim-lspconfig" -- enable
     use "williamboman/nvim-lsp-installer" -- server installer
-    use "jose-elias-alvarez/null-ls.nvim" -- formatters and linters
-    use "stevearc/aerial.nvim" -- code outline
+    use "jose-elias-alvarez/null-ls.nvim" -- formatters, linter, code actions
     use "b0o/schemastore.nvim" -- schema
     use "SmiteshP/nvim-navic" -- breadcrumb
 
@@ -107,7 +121,8 @@ return packer.startup(function(use)
     use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
 
     -- GIT --
-    use "lewis6991/gitsigns.nvim"
+    use "lewis6991/gitsigns.nvim" -- git diff bar (left)
+    use "kdheepak/lazygit.nvim" -- lazygit in neovim
 
     -- DAP --
     use "mfussenegger/nvim-dap"

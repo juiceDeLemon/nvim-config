@@ -4,7 +4,6 @@
 -- ██╔═██╗░██╔══╝░░░░╚██╔╝░░██║╚██╔╝██║██╔══██║██╔═══╝░░╚═══██╗░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░╚██╗███████╗░░░██║░░░██║░╚═╝░██║██║░░██║██║░░░░░██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
 ------------------------
 -- COMMONLY USED CODE --
 ------------------------
@@ -66,7 +65,7 @@ keymap("x", ">", ">gv", opts)
 -- OTHER KEYMAPS (PLUGINS AND OTHERS) --
 ----------------------------------------
 -- tree
-keymap({"n", "x"}, "<leader>e", "<cmd>NvimTreeToggle<cr>", opts) -- e for explorer in vscode
+keymap({ "n", "x" }, "<leader>e", "<cmd>NvimTreeToggle<cr>", opts) -- e for explorer in vscode
 
 -- renamer
 -- if neovim version is 0.8
@@ -74,18 +73,22 @@ keymap({"n", "x"}, "<leader>e", "<cmd>NvimTreeToggle<cr>", opts) -- e for explor
 --     return ":IncRename " .. vim.fn.expand("<cword>")
 -- end, { expr = true })
 -- substitude
-keymap({"n", "x"}, "<leader>r", "<cmd>lua require(\"renamer\").rename()<cr>", opts) -- r for rename
+keymap({ "n", "x" }, "<leader>r", "<cmd>lua require(\"renamer\").rename()<cr>", opts) -- r for rename
 
--- code outline
-keymap({"n", "x"}, "<leader>o", "<cmd>AerialToggle<cr>", opts) -- o for outline
+-- dial
+keymap("n", "<C-a>", require("dial.map").inc_normal(), opts)
+keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
+keymap("v", "<C-a>", require("dial.map").inc_visual(), opts)
+keymap("v", "<C-x>", require("dial.map").dec_visual(), opts)
+keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
+keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
 
 -- tab line and buffer related
 -- previous
-keymap({"n", "x"}, "<leader>h", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
+keymap({ "n", "x" }, "<leader>th", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
 -- next
-keymap({"n", "x"}, "<leader>l", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
+keymap({ "n", "x" }, "<leader>tl", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
 -- new
-keymap({"n", "x"}, "<leader>t", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
--- close (doesn't have a plugin command)
-keymap({"n", "x"}, "<leader>w", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
-
+keymap({ "n", "x" }, "<leader>tt", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
+-- close (bbye)
+keymap({ "n", "x" }, "<leader>tw", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
