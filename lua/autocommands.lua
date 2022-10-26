@@ -7,7 +7,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({ "BufEnter" }, {
-    desc = "keeps nvimtree on the left",
+    desc = "idk",
     callback = function()
         vim.cmd [[
             if winnr('$') <= 1 && bufname() == 'NvimTree_' . tabpagenr() | endif
@@ -15,9 +15,6 @@ autocmd({ "BufEnter" }, {
     end
 ,
 })
-
-autocmd({ "FileType" },
-        { pattern = "nofile", desc = "open alpha when nofile", callback = vim.cmd "Alpha" })
 
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
