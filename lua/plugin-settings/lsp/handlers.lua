@@ -78,7 +78,6 @@ M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
 
     require("nvim-navic").attach(client, bufnr)
-    require("aerial").on_attach(client, bufnr)
 end
 
 
