@@ -4,14 +4,10 @@
 -- ██║░░██╗██║░░██║██║░░░░░██║░░██║██╔══██╗██║██╔══╝░░██╔══╝░░██╔══██╗░░░██║░░░░░██║░░░██║██╔══██║
 -- ╚█████╔╝╚█████╔╝███████╗╚█████╔╝██║░░██║██║███████╗███████╗██║░░██║██╗███████╗╚██████╔╝██║░░██║
 -- ░╚════╝░░╚════╝░╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝╚══════╝╚══════╝╚═╝░░╚═╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
-local status_ok, colorizer = pcall(require, "colorizer")
-if not status_ok then
-    return
-end
+local colorizer = require "colorizer"
 
 colorizer.setup {
-    filetypes = {"*"},
+    filetypes = { "*" },
     user_default_options = {
         RRGGBBAA = true, -- #RRGGBBAA hex codes
         names = false, -- name codes like teal, purple, pink, or even navy
@@ -20,6 +16,5 @@ colorizer.setup {
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
     },
     -- all the sub-options of filetypes apply to buftypes
-    buftypes = { },
+    buftypes = {},
 }
-

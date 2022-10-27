@@ -4,13 +4,6 @@
 -- ██║╚████║██║░░██║░░░██║░░░██║██╔══╝░░░░╚██╔╝░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░╚███║╚█████╔╝░░░██║░░░██║██║░░░░░░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
+local notify = require "notify"
 
-local status_ok, notify = pcall(require, "notify")
-if not status_ok then
-  return
-end
-
-notify.setup {
-    timeout = 6000,
-    stages = "slide",
-}
+notify.setup { timeout = 6000, stages = "slide" }

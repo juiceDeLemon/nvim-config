@@ -5,10 +5,6 @@
 -- ██║░░░░░███████╗╚██████╔╝╚██████╔╝░░░░░░╚█████╔╝██║░░░░░░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░░░░╚══════╝░╚═════╝░░╚═════╝░░░░░░░░╚════╝░╚═╝░░░░░░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 -- a b c d e f g h i j k l m n o p q r s t u v w x y z
--- local status_ok, plugin_var = pcall(require, "plugin call")
--- if not status_ok then
---     return
--- end
 -- folders:
 require "plugin-settings.lsp"
 

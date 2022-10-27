@@ -4,11 +4,7 @@
 -- ░░░██║░░░██╔══██║██╔══██╗██║░░░░░██║██║╚████║██╔══╝░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ░░░██║░░░██║░░██║██████╦╝███████╗██║██║░╚███║███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-
-local status_ok, tabline = pcall(require, "tabline")
-if not status_ok then
-    return
-end
+local tabline = require "tabline"
 
 tabline.setup {
     options = {
@@ -16,4 +12,3 @@ tabline.setup {
         modified_italic = true, -- and make it italic
     },
 }
-
