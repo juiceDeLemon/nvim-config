@@ -5,15 +5,9 @@
 -- ╚█████╔╝██║░╚═╝░██║██║░░░░░██╗███████╗╚██████╔╝██║░░██║
 -- ░╚════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 -- Set up nvim-cmp.
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then return end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then return end
-
-local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-if not lspkind_status_ok then return end
-
+local cmp = require "cmp"
+local snip = require "luasnip"
+local lspkind = require "lspkind"
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
@@ -57,8 +51,8 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            elseif snip.expand_or_jumpable() then
+                snip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else
@@ -70,8 +64,8 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            elseif snip.jumpable(-1) then
+                snip.jump(-1)
             else
                 fallback()
             end
@@ -115,10 +109,11 @@ cmp.setup.filetype("gitcommit", {
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ "/", "?" },
-                  { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
+    { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+    sources = cmp.config.sources({ { name = "nvim_lua" }, { name = "path" } },
+        { { name = "cmdline" } }),
 })

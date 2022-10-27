@@ -68,12 +68,8 @@ keymap("x", ">", ">gv", opts)
 keymap({ "n", "x" }, "<leader>e", "<cmd>NvimTreeToggle<cr>", opts) -- e for explorer in vscode
 
 -- renamer
--- if neovim version is 0.8
--- keymap({"n", "x"}, "<leader>r", function()
---     return ":IncRename " .. vim.fn.expand("<cword>")
--- end, { expr = true })
--- substitude
-keymap({ "n", "x" }, "<leader>r", "<cmd>lua require(\"renamer\").rename()<cr>", opts) -- r for rename
+keymap({ "n", "x" }, "<leader>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end
+, { expr = true })
 
 -- dial
 keymap("n", "<C-a>", require("dial.map").inc_normal(), opts)
@@ -92,3 +88,7 @@ keymap({ "n", "x" }, "<leader>tl", "<cmd>TablineBufferNext<cr>", opts) -- l for 
 keymap({ "n", "x" }, "<leader>tt", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
 -- close (bbye)
 keymap({ "n", "x" }, "<leader>tw", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
+
+-- SUSSY DUCK
+keymap({ "n", "x" }, "<leader><leader>dd", "<cmd>lua require 'duck'.hatch('ඞ')<cr>")
+keymap({ "n", "x" }, "<leader><leader>dk", "<cmd>lua require 'duck'.cook()<cr>")
