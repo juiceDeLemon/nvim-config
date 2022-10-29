@@ -59,11 +59,12 @@ return packer.startup(function(use)
     use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
 
     -- FUNCTIONAL --
-    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
-    use "kylechui/nvim-surround" -- add/remove quotes
-    use "folke/which-key.nvim" -- keybinds help
     use "b3nj5m1n/kommentary" -- add/remove comments
+    use "kylechui/nvim-surround" -- add/remove quotes
     use "windwp/nvim-autopairs" -- add closing brackets
+    use "abecodes/tabout.nvim" -- use tab to get out of brackets
+    use "folke/which-key.nvim" -- keybinds help
+    use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
     use "axelvc/template-string.nvim" -- JS change string to template string vice versa
 
     -- VISUALS --

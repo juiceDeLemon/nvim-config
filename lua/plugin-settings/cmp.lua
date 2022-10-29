@@ -8,21 +8,19 @@
 local cmp = require "cmp"
 local snip = require "luasnip"
 local lspkind = require "lspkind"
-require("luasnip.loaders.from_vscode").lazy_load()
+require"luasnip.loaders.from_vscode".lazy_load()
 
-local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0
-               and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
-               == nil
-end
-
+-- local has_words_before = function()
+--     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+--     return col ~= 0
+--                and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
+--                == nil
+-- end
 
 cmp.setup({
     enabled = true,
     preselect = cmp.PreselectMode.Item, -- TODO
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
         expand = function(args) require("luasnip").lsp_expand(args.body) end
 ,
     },
@@ -53,8 +51,6 @@ cmp.setup({
                 cmp.select_next_item()
             elseif snip.expand_or_jumpable() then
                 snip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
             else
                 fallback()
             end
