@@ -65,6 +65,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim" -- keybinds help
     use "b3nj5m1n/kommentary" -- add/remove comments
     use "windwp/nvim-autopairs" -- add closing brackets
+    use "axelvc/template-string.nvim" -- JS change string to template string vice versa
 
     -- VISUALS --
     use "goolord/alpha-nvim" -- dashboard
