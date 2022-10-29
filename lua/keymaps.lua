@@ -90,5 +90,5 @@ keymap({ "n", "x" }, "<leader>tt", "<cmd>TablineTabNew<cr>", opts) -- t for conv
 keymap({ "n", "x" }, "<leader>tw", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
 
 -- SUSSY DUCK
-keymap({ "n", "x" }, "<leader><leader>dd", "<cmd>lua require 'duck'.hatch('ඞ')<cr>")
-keymap({ "n", "x" }, "<leader><leader>dk", "<cmd>lua require 'duck'.cook()<cr>")
+-- keymap({ "n", "x" }, "<leader><leader>dd", "<cmd>lua require 'duck'.hatch('ඞ')<cr>")
+-- keymap({ "n", "x" }, "<leader><leader>dk", "<cmd>lua require 'duck'.cook()<cr>")
