@@ -124,10 +124,10 @@ return packer.startup(function(use)
     use "nvim-treesitter/nvim-treesitter-context" -- show start of code block at the top
     use "andymass/vim-matchup" -- extended % to keywords like if else
     use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
-    -- use "nvim-treesitter/playground" -- only for eye-candy
 
     -- GIT --
-    use "lewis6991/gitsigns.nvim" -- git diff bar (left)
+    use "lewis6991/gitsigns.nvim" -- git diff bar
+    use "akinsho/git-conflict.nvim" -- conflict solver
     use "kdheepak/lazygit.nvim" -- lazygit in neovim
 
     -- DAP --

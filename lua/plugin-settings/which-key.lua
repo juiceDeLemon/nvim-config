@@ -22,6 +22,17 @@ wk.register({
     },
 }, { mode = "n", prefix = "<leader>" })
 wk.register({
+    c = {
+        name = "Conflict",
+        c = { "<Plug>(git-conflict-ours)", "Accept Current" },
+        i = { "<Plug>(git-conflict-theirs)", "Accept Incoming Change" },
+        b = { "<Plug>(git-conflict-both)", "Accept Both" },
+        n = { "<Plug>(git-conflict-none)", "Accept None" },
+        h = { "<Plug>(git-conflict-prev-conflict)", "Previous Conflict" },
+        l = { "<Plug>(git-conflict-next-conflict)", "Next Conflict" },
+    },
+}, { mode = "n", prefix = "<leader>g" })
+wk.register({
     t = {
         name = "Tabs",
         h = { "<cmd>TablineBufferPrevious<cr>" },
