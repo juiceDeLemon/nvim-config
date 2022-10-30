@@ -15,6 +15,7 @@ wk.setup {
 
 -- 1 leader
 wk.register({
+    e = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
     g = {
         name = "Git",
         h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
@@ -31,6 +32,7 @@ wk.register({
             l = { "<Plug>(git-conflict-next-conflict)", "Next Conflict" },
         },
     },
+    r = { ":IncRename ", "Rename Element" },
     t = {
         name = "Tabs",
         h = { "<cmd>TablineBufferPrevious<cr>", "Previous Buffer" },
@@ -38,13 +40,12 @@ wk.register({
         t = { "<cmd>TablineTabNew<cr>", "New Buffer" },
         w = { "<cmd>Bdelete<cr>", "Delete Buffer" },
     },
-}, { mode = "n", prefix = "<leader>" })
-
--- 2 leaders
-wk.register({
-    d = {
-        name = "SUSSY DUCK",
-        d = { "<cmd>lua require 'duck'.hatch('ඞ')<cr>", "Join Lobby" },
-        k = { "<cmd>lua require 'duck'.cook()<cr>", "Eject Crewmate" },
+    ["<leader>"] = {
+        name = "2 Leaders",
+        d = {
+            name = "SUSSY DUCK",
+            d = { "<cmd>lua require 'duck'.hatch('ඞ')<cr>", "Join Lobby" },
+            k = { "<cmd>lua require 'duck'.cook()<cr>", "Eject Crewmate" },
+        },
     },
-}, { mode = "n", prefix = "<leader><leader>" })
+}, { mode = "n", prefix = "<leader>" })

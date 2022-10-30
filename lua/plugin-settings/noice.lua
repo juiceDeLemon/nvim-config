@@ -6,4 +6,4 @@
 -- ╚═╝░░╚══╝░╚════╝░╚═╝░╚════╝░╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local noice = require "noice"
 
-noice.setup {}
+noice.setup { presets = { inc_rename = true } }

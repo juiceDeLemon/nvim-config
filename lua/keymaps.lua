@@ -64,13 +64,6 @@ keymap("x", ">", ">gv", opts)
 ----------------------------------------
 -- OTHER KEYMAPS (PLUGINS AND OTHERS) --
 ----------------------------------------
--- tree
-keymap({ "n", "x" }, "<leader>e", "<cmd>NvimTreeToggle<cr>", opts) -- e for explorer in vscode
-
--- renamer
-keymap({ "n", "x" }, "<leader>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end
-, { expr = true })
-
 -- dial
 keymap("n", "<C-a>", require("dial.map").inc_normal(), opts)
 keymap("n", "<C-x>", require("dial.map").dec_normal(), opts)
@@ -78,17 +71,3 @@ keymap("v", "<C-a>", require("dial.map").inc_visual(), opts)
 keymap("v", "<C-x>", require("dial.map").dec_visual(), opts)
 keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
 keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
-
--- tab line and buffer related
--- previous
-keymap({ "n", "x" }, "<leader>th", "<cmd>TablineBufferPrevious<cr>", opts) -- h for left in vim
--- next
-keymap({ "n", "x" }, "<leader>tl", "<cmd>TablineBufferNext<cr>", opts) -- l for right in vim
--- new
-keymap({ "n", "x" }, "<leader>tt", "<cmd>TablineTabNew<cr>", opts) -- t for conventional cmd-t / ctrl-t
--- close (bbye)
-keymap({ "n", "x" }, "<leader>tw", "<cmd>Bdelete<cr>", opts) -- w for conventional cmd-w / ctrl-w
-
--- SUSSY DUCK
--- keymap({ "n", "x" }, "<leader><leader>dd", "<cmd>lua require 'duck'.hatch('ඞ')<cr>")
--- keymap({ "n", "x" }, "<leader><leader>dk", "<cmd>lua require 'duck'.cook()<cr>")
