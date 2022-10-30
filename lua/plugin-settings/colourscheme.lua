@@ -5,7 +5,7 @@
 -- ╚█████╔╝╚█████╔╝███████╗╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║███████╗██║░╚═╝░██║███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ░╚════╝░░╚════╝░╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local onedark = require "onedark"
-local colours = require "colours"
+local c = require "colours"
 
 onedark.setup {
     functionStyle = "underline",
@@ -21,29 +21,32 @@ local highlights = {
     -- NATIVE --
     ------------
     -- change split separator colour
-    VertSplit = { fg = colours.text },
+    VertSplit = { fg = c.comment },
     -- matching parenthesis (default plugin)
-    MatchParen = { bg = colours.hl, italic = true, bold = true },
+    MatchParen = { bg = c.hl, italic = true, bold = true },
     -- change search highlight background colour
-    IncSearch = { bg = colours.yellow, fg = colours.dark_text }, -- searching
-    Search = { bg = colours.comment, fg = colours.bg }, -- results
+    IncSearch = { bg = c.yellow, fg = c.dark_text }, -- searching
+    Search = { bg = c.comment, fg = c.bg }, -- results
     -- cursor related
-    Cursor = { bg = colours.red, fg = colours.text },
-    CursorColumn = { bg = colours.hl },
-    CursorLine = { bg = colours.hl },
-    CursorLineNr = { fg = colours.green, bold = true },
+    Cursor = { bg = c.red, fg = c.text },
+    CursorColumn = { bg = c.hl },
+    CursorLine = { bg = c.hl },
+    CursorLineNr = { fg = c.green, bold = true },
+    -- Popup menu
+    Pmenu = { fg = c.comment },
+    PmenuSbar = { fg = c.text },
     -------------
     -- PLUGINS --
     -------------
     -- illuminate
-    IlluminatedWordText = { bg = colours.hl, italic = true },
-    IlluminatedWordRead = { bg = colours.hl, italic = true },
-    IlluminatedWordWrite = { bg = colours.hl, italic = true },
+    IlluminatedWordText = { bg = c.hl, italic = true },
+    IlluminatedWordRead = { bg = c.hl, italic = true },
+    IlluminatedWordWrite = { bg = c.hl, italic = true },
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)
-    CmpItemAbbrMatch = { fg = colours.red, bold = true },
-    CmpItemMenu = { fg = colours.teal, italic = true }, -- [Lsp] tags
+    CmpItemAbbrMatch = { fg = c.red, bold = true },
+    CmpItemMenu = { fg = c.teal, italic = true }, -- [Lsp] tags
     -- CmpItemKindFunction = {bg = colours.blue, fg = colours.bg},
     -- CmpItemKindVariable = {bg = colours.yellow, fg = colours.bg},
     -- CmpItemKindKeyword = {bg = colours.purple, fg = colours.text},

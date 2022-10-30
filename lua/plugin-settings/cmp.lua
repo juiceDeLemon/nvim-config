@@ -26,11 +26,15 @@ cmp.setup({
     },
     window = {
         completion = {
+            border = "rounded",
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-            col_offset = -3,
+            col_offset = -2,
             side_padding = 0,
         },
-        documentation = { border = "rounded" },
+        documentation = {
+            border = "rounded",
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+        },
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
