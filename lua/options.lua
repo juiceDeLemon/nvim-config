@@ -14,6 +14,7 @@ local options = {
     ignorecase = true, -- ignore case in search patterns
     pumheight = 10, -- pop up menu height
     showtabline = 1, -- always show tabs
+    showmode = false, -- don't output -- MODE -- fucking annoying
     smartcase = true, -- smart case
     smartindent = true, -- make indenting smarter again
     autoindent = true, -- make indenting auto

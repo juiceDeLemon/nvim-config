@@ -7,6 +7,7 @@
 local ll = require "lualine"
 local tl = require "tabline"
 local navic = require "nvim-navic"
+local noice = require "noice"
 
 ll.setup {
     options = {
@@ -18,7 +19,12 @@ ll.setup {
         lualine_a = { "mode" },
         lualine_b = { "filename", "filetype" },
         lualine_c = { "branch", "diff", "diagnostics" },
-        lualine_x = { "lsp_progress", "filesize", "encoding" },
+        lualine_x = {
+            { noice.api.status.mode.get, cond = noice.api.status.mode.has },
+            { noice.api.status.search.get, cond = noice.api.status.search.has },
+            "filesize",
+            "encoding",
+        },
         lualine_y = { "location" },
         lualine_z = { "progress" },
     },
@@ -29,5 +35,4 @@ ll.setup {
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
     winbar = { lualine_c = { { "filename", path = 3 }, navic.get_location } }, -- VSCode style
-    extensions = {},
 }
