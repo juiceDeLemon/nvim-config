@@ -30,7 +30,7 @@ dashboard.section.buttons.val = {
     dashboard.button("t", "  Find text", "<cmd>Telescope live_grep<CR>"),
     dashboard.button("e", "פּ  Open Tree", "<cmd>e .<CR>"),
     dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<CR>"),
-    dashboard.button("p", "  Install plugins", "<cmd>PackerUpdate<CR>"),
+    dashboard.button("i", "  Install plugins", "<cmd>PackerUpdate<CR>"),
     dashboard.button("q", "  Quit Neovim", "<cmd>qa<CR>"),
 }
 
