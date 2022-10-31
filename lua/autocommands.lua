@@ -16,6 +16,29 @@ autocmd({ "BufEnter" }, {
 ,
 })
 
+autocmd({ "TextYankPost" }, {
+    desc = "Flash yanked content",
+    callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 275 } end
+,
+})
+
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+    pattern = { "*" },
+    desc = "Check for dupe files in other buffers",
+    callback = function() vim.cmd "checktime" end
+,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    desc = "I want to see the long line without scrolling",
+    pattern = { "gitcommit", "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.spell = true
+    end
+,
+})
+
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
 --     callback = function()
