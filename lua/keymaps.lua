@@ -44,6 +44,9 @@ keymap("", "<space>", "<Nop>", opts) -- reset
 vim.g.mapleader = " " -- map
 vim.g.maplocalleader = " " -- map
 
+-- code 
+keymap("", "<M-cr>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+
 -- resize splits with arrows
 keymap("", "<C-Up>", "<cmd>resize -2<cr>", opts)
 keymap("", "<C-Down>", "<cmd>resize +2<cr>", opts)
