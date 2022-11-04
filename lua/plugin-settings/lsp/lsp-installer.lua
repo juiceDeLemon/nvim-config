@@ -27,7 +27,6 @@ local lspconfig = require "lspconfig"
 
 local default_opts = {
     on_attach = require("plugin-settings.lsp.handlers").on_attach,
-    -- capabilities = require("plugin-settings.lsp.handlers").capabilities,
     capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol
                                                                     .make_client_capabilities()),
 }
