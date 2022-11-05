@@ -22,14 +22,14 @@ autocmd({ "TextYankPost" }, {
 ,
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+autocmd({ "BufWinEnter" }, {
     pattern = { "*" },
     desc = "Check for dupe files in other buffers",
     callback = function() vim.cmd "checktime" end
 ,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
     desc = "I want to see the long line without scrolling",
     pattern = { "gitcommit", "markdown" },
     callback = function()
