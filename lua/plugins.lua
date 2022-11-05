@@ -82,7 +82,6 @@ return packer.startup(function(use)
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
     use "kdheepak/tabline.nvim" -- tabline
-    use "arkav/lualine-lsp-progress" -- lsp progress
 
     -- ICONS --
     use "kyazdani42/nvim-web-devicons" -- tree icons
