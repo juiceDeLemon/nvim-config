@@ -86,8 +86,6 @@ null_ls.setup({
         end -- autosave
     end
 ,
-    on_init = function(new_client, _) new_client.offset_encoding = "utf-8" end
-,
 })
 
 null_ls.register(no_emacs)
