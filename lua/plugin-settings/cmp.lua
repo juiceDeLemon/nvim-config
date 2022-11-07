@@ -4,10 +4,15 @@
 -- ██║░░██╗██║╚██╔╝██║██╔═══╝░░░░██║░░░░░██║░░░██║██╔══██║
 -- ╚█████╔╝██║░╚═╝░██║██║░░░░░██╗███████╗╚██████╔╝██║░░██║
 -- ░╚════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
--- Set up nvim-cmp.
 local cmp = require "cmp"
 local snip = require "luasnip"
 local lspkind = require "lspkind"
+
+-- friendly-snip
+-- copied from https://github.com/L3MON4D3/LuaSnip/issues/37
+-- and changed ~/.config/nvim to $XDG_CONFIG_HOME
+-- XDG_CONFIG_HOME = the dir outside nvim config aka the config file
+vim.o.runtimepath = vim.o.runtimepath .. vim.env.XDG_CONFIG_HOME .. "nvim/lua/friendly-snippets"
 require"luasnip.loaders.from_vscode".lazy_load()
 
 -- local has_words_before = function()
@@ -21,7 +26,7 @@ cmp.setup({
     enabled = true,
     preselect = cmp.PreselectMode.Item,
     snippet = {
-        expand = function(args) require("luasnip").lsp_expand(args.body) end
+        expand = function(args) snip.lsp_expand(args.body) end
 ,
     },
     window = {
@@ -90,12 +95,12 @@ cmp.setup({
         }),
     },
     sources = cmp.config.sources({
+        { name = "luasnip", group_index = 1 },
         { name = "nvim_lsp", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 2 },
-        { name = "luasnip", group_index = 1 },
-        { name = "buffer", group_index = 3 },
-        { name = "emoji", group_index = 4 },
+        { name = "path", group_index = 3 },
+        { name = "buffer", group_index = 4 },
+        { name = "emoji", group_index = 5 },
     }),
     experimental = { ghost_text = true },
 })
@@ -117,3 +122,5 @@ cmp.setup.cmdline(":", {
     sources = cmp.config.sources({ { name = "nvim_lua" }, { name = "path" } },
         { { name = "cmdline" } }),
 })
+
+-- plugin capabilities are in somewhere in lsp/

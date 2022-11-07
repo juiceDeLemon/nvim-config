@@ -1,0 +1,13 @@
+{
+  "name": "snippets-by-juicedelemon",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      }
+    ]
+  }
+}
