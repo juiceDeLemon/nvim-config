@@ -39,6 +39,13 @@ autocmd({ "FileType" }, {
 ,
 })
 
+autocmd({ "FileType" }, {
+    desc = "no listchars for help files",
+    pattern = { "help" },
+    callback = function() vim.opt_local.list = false end
+,
+})
+
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
 --     callback = function()
