@@ -10,7 +10,6 @@ local servers = {
     "bashls", -- bash
     "clangd", -- c, c++
     "cssls", -- css
-    "grammarly", -- english
     "html", -- html
     "jsonls", -- json
     "tsserver", -- js, ts
