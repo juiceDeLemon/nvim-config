@@ -39,8 +39,9 @@ local options = {
     wrap = false, -- disable a long line wrapping to the next lin
     winblend = 30, -- enables pseudo-transparency for floating windows 
     pumblend = 30, -- enables pseudo-transparency for popup menu
-    linespace = 2, -- add 2 pixels of padding between lines
     guifont = "JetBrainsMono NF", -- make sure to download the font (included in the JetBrainsMono file)
+    list = true, -- list blank things like spaces and eol as characters
+    listchars = "tab: ,space:·,trail:*", -- change the character of above
 }
 
 -- execute the options
