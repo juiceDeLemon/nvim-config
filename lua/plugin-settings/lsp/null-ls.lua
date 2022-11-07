@@ -69,10 +69,12 @@ null_ls.setup({
         d.markdownlint,
         d.proselint,
         d.pydocstyle,
+        d.shellcheck,
         f.autopep8,
         f.clang_format,
         f.eslint,
         f.lua_format,
+        f.shfmt,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
