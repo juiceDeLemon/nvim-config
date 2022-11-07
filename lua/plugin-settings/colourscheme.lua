@@ -35,6 +35,8 @@ local highlights = {
     -- Popup menu
     Pmenu = { fg = c.comment },
     PmenuSbar = { fg = c.text },
+    -- listchars
+    Whitespace = { fg = c.hl },
     -------------
     -- PLUGINS --
     -------------
