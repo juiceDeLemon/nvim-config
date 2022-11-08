@@ -88,6 +88,7 @@ return packer.startup(function(use)
     use "onsails/lspkind.nvim" -- lsp icons
 
     -- COMPLETION PLUGINS --
+    use "hrsh7th/nvim-cmp" -- core
     use "hrsh7th/cmp-nvim-lsp" -- lsp
     use "hrsh7th/cmp-buffer" -- buffer
     use "hrsh7th/cmp-path" -- path
@@ -95,7 +96,6 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lua" -- vim options
     use "petertriho/cmp-git" -- git
     use "hrsh7th/cmp-emoji" -- lovely emoji
-    use "hrsh7th/nvim-cmp" -- THE plugin
     use "saadparwaiz1/cmp_luasnip" -- snippet
 
     -- SNIPPETS --
