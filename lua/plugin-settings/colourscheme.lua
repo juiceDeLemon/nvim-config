@@ -31,7 +31,10 @@ local highlights = {
     Cursor = { bg = c.red, fg = c.text },
     CursorColumn = { bg = c.hl },
     CursorLine = { bg = c.hl },
-    CursorLineNr = { fg = c.green, bold = true },
+    -- line numbers
+    LineNrAbove = { fg = c.green },
+    CursorLineNr = { fg = c.yellow, bold = true },
+    LineNrBelow = { fg = c.blue },
     -- Popup menu
     Pmenu = { fg = c.comment },
     PmenuSbar = { fg = c.text },
