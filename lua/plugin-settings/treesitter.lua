@@ -34,14 +34,7 @@ ts_configs.setup {
     rainbow = { -- rainbow parentheses
         enable = true,
         extended_mode = false,
-        colors = {
-            colours.red,
-            colours.yellow,
-            colours.green,
-            colours.teal,
-            colours.blue,
-            colours.purple,
-        },
+        colors = { colours.red, colours.yellow, colours.teal, colours.blue, colours.purple },
         disable = { "html" }, -- tags don't look good
     },
     -- autopairs = {
