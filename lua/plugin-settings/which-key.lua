@@ -13,12 +13,11 @@ wk.setup {
     window = { border = "single", winblend = 30 },
 }
 
--- 1 leader
 wk.register({
     e = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
     g = {
         name = "Git",
-        b = { "<cmd>lua require 'gitsigns'.blame_line()", "View Blame" },
+        b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "View Blame" },
         c = {
             name = "Conflict",
             c = { "<Plug>(git-conflict-ours)", "Accept Current" },
@@ -32,6 +31,7 @@ wk.register({
         h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
         l = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+        v = { "<cmd>lua require 'gitsigns'.select_hunk()<cr>", "Select Hunk" },
     },
     r = { ":IncRename ", "Rename Element" },
     t = {
@@ -42,7 +42,7 @@ wk.register({
         w = { "<cmd>Bdelete<cr>", "Delete Buffer" },
     },
     ["<leader>"] = {
-        name = "2 Leaders",
+        name = "leader",
         d = {
             name = "SUSSY DUCK",
             d = { "<cmd>lua require 'duck'.hatch('ඞ')<cr>", "Join Lobby" },
