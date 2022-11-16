@@ -78,6 +78,8 @@ return packer.startup(function(use)
     use "tamton-aquib/duck.nvim" -- duck good
     use "rcarriga/nvim-notify" -- noice dependencies
     use "MunifTanjim/nui.nvim" -- noice dependencies
+    use "petertriho/nvim-scrollbar" -- scrollbar
+    use "kevinhwang91/nvim-hlslens" -- noice looks book and support for scrollbar
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
