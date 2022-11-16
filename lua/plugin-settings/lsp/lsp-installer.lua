@@ -8,7 +8,7 @@ local lsp_installer = require "nvim-lsp-installer"
 
 local servers = {
     "bashls", -- bash
-    "clangd", -- c, c++
+    -- "clangd", -- c, c++
     "cssls", -- css
     "html", -- html
     "jsonls", -- json
