@@ -47,6 +47,8 @@ local highlights = {
     IlluminatedWordText = { bg = c.hl, italic = true },
     IlluminatedWordRead = { bg = c.hl, italic = true },
     IlluminatedWordWrite = { bg = c.hl, italic = true },
+    -- scrollbar
+    ScrollbarSearch = { fg = c.orange },
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)

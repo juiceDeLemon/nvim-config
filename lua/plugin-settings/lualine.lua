@@ -33,8 +33,5 @@ ll.setup {
         lualine_x = { tl.tabline_tabs },
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
-    winbar = {
-        lualine_c = { { "filename", path = 3 }, navic.get_location },
-        lualine_y = { { noice.api.status.search.get, cond = noice.api.status.search.has } },
-    }, -- VSCode style
+    winbar = { lualine_c = { { "filename", path = 3 }, navic.get_location } }, -- VSCode style
 }

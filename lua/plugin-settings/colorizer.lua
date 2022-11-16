@@ -10,6 +10,7 @@ colorizer.setup {
     filetypes = { "*" },
     user_default_options = {
         RRGGBBAA = true, -- #RRGGBBAA hex codes
+        RGB = false,
         names = false, -- name codes like teal, purple, pink, or even navy
         rgb_fn = true, -- CSS rgb() and rgba() functions
         hsl_fn = true, -- CSS hsl() and hsla() functions
