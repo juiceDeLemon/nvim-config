@@ -78,4 +78,6 @@ ls.add_snippets("cpp", {
         -- i(4, "++"),
     })),
     s("r0", { t({ "", "", "return 0;" }) }),
+    s("nl", { t(" << \"\\n\";") }),
+    s("template", { t("template <typename T>") }),
 })
