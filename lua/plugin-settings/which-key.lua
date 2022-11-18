@@ -27,6 +27,7 @@ wk.register({
             h = { "<Plug>(git-conflict-prev-conflict)", "Previous Conflict" },
             l = { "<Plug>(git-conflict-next-conflict)", "Next Conflict" },
         },
+        d = { "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk" },
         g = { "<cmd>LazyGit<cr>", "Open LazyGit" },
         h = { "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk" },
         l = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
