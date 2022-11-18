@@ -57,7 +57,7 @@ ls.config.set_config {
 
 -- all
 ls.add_snippets("all", {
-    s("date", f(function() return vim.fn.strftime("%d/%m/%y") end
+    s("dateDMY", f(function() return vim.fn.strftime("%d-%m-%y") end
 )),
 })
 
