@@ -21,5 +21,6 @@ vim.g.neovide_cursor_vfx_mode = "sonicboom"
 vim.api.nvim_set_keymap("", "<D-c>", "\"+y", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("", "<D-v>", "\"+p", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("", "<D-x>", "\"+d", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("", "<D-z>", "<cmd>u<cr>", { noremap = true, silent = true })
 
 return isNeovide
