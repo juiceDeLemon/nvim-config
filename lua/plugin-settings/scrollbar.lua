@@ -14,7 +14,7 @@ lens.setup()
 sb.setup {
     marks = {
         Cursor = { text = "━" },
-        Search = { highlight = "ScrollbarSearch" },
+        Search = { text = { "━", "═" }, highlight = "ScrollbarSearch" },
         GitAdd = { text = "▌" },
         GitChange = { text = "▌" },
         GitDelete = { text = "✕" },
