@@ -43,6 +43,10 @@ local highlights = {
     -------------
     -- PLUGINS --
     -------------
+    -- nvim-tree
+    NvimTreeFolderName = { fg = c.teal, bold = true, underline = true },
+    NvimTreeOpenedFolderName = { fg = c.blue, italic = true, bold = true, underline = true },
+    NvimTreeEmptyFolderName = { fg = c.comment, bold = true },
     -- illuminate
     IlluminatedWordText = { bg = c.hl, italic = true },
     IlluminatedWordRead = { bg = c.hl, italic = true },
