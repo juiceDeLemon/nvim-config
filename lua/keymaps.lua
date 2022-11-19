@@ -17,12 +17,13 @@ local keymap = vim.keymap.set -- shorten keymap function name
 ---------------
 -- REMINDERS --
 ---------------
--- n: Display normal mode maps
--- i: Display insert mode maps
--- x: Display visual mode maps
--- c: Display command-line mode maps
--- o: Display operator pending mode maps (link: https://www.reddit.com/r/vim/comments/dx52ko/what_exactly_are_operator_keymappings/)
--- (no character): all mode
+-- n = normal mode
+-- i = insert mode
+-- v = visual and select mode
+-- s = select mode
+-- x = visual mode
+-- c = command-line mode
+-- o = operator pending mode
 
 -- put character in the place of *
 -- CTRL = <c-*> (alt = a, meta = m)
@@ -34,7 +35,6 @@ local keymap = vim.keymap.set -- shorten keymap function name
 -- LEADER = <leader>
 -- TAB = <tab> NOTE: you can't use modifier keys like ctrl, alt and meta
 -- NO MAPPING = <nop>
--- OTHER: 1.6 of link?
 
 -------------------------------
 -- NON-MODE-SPECIFIC KEYMAPS --
@@ -53,10 +53,6 @@ keymap("", "<C-Down>", "<cmd>resize +2<cr>", opts)
 keymap("", "<C-Left>", "<cmd>vertical resize -2<cr>", opts)
 keymap("", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 
--- move line above / below
-keymap("", "<C-j>", "<cmd>m .+1<cr>", opts)
-keymap("", "<C-k>", "<cmd>m .-2<cr>", opts)
-
 -------------------------
 -- VISUAL MODE KEYMAPS --
 -------------------------
@@ -74,3 +70,13 @@ keymap("v", "<C-a>", require("dial.map").inc_visual(), opts)
 keymap("v", "<C-x>", require("dial.map").dec_visual(), opts)
 keymap("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
 keymap("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
+
+-- move.nvim
+keymap({ "n", "i" }, "<C-j>", "<cmd>MoveLine(1)<CR>", opts)
+keymap({ "n", "i" }, "<C-k>", "<cmd>MoveLine(-1)<CR>", opts)
+keymap({ "n", "i" }, "<C-h>", "<cmd>MoveHChar(-1)<CR>", opts)
+keymap({ "n", "i" }, "<C-l>", "<cmd>MoveHChar(1)<CR>", opts)
+keymap("v", "<C-j>", "<cmd>MoveBlock(1)<CR>", opts)
+keymap("v", "<C-k>", "<cmd>MoveBlock(-1)<CR>", opts)
+keymap("v", "<C-h>", "<cmd>MoveHBlock(-1)<CR>", opts)
+keymap("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)
