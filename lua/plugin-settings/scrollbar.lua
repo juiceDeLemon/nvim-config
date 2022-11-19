@@ -13,10 +13,10 @@ require"scrollbar.handlers.search".setup()
 lens.setup()
 sb.setup {
     marks = {
-        Cursor = { text = "" },
+        Cursor = { text = "━" },
         Search = { highlight = "ScrollbarSearch" },
-        GitAdd = { text = "║" },
-        GitChange = { text = "║" },
+        GitAdd = { text = "▌" },
+        GitChange = { text = "▌" },
         GitDelete = { text = "✕" },
     },
 }
