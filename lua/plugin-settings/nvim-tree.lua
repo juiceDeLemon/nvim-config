@@ -6,18 +6,9 @@
 -- ╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝░░░░░░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local nvim_tree = require "nvim-tree"
 
-local colours = require("colours")
-
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
-
--- customise file font and colours
--- https://neovim.io/doc/user/api.html
-vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = colours.teal, bold = true, underline = true })
-vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName",
-                    { fg = colours.blue, italic = true, bold = true, underline = true })
-vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", { fg = colours.comment, bold = true })
 
 nvim_tree.setup {
     hijack_cursor = true,
