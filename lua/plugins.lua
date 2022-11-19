@@ -59,7 +59,7 @@ return packer.startup(function(use)
     use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
 
     -- FUNCTIONAL --
-    use "b3nj5m1n/kommentary" -- add/remove comments
+    use "numToStr/Comment.nvim" -- comments
     use "kylechui/nvim-surround" -- add/remove quotes
     use "windwp/nvim-autopairs" -- add closing brackets
     use "abecodes/tabout.nvim" -- use tab to get out of brackets
@@ -80,6 +80,9 @@ return packer.startup(function(use)
     use "MunifTanjim/nui.nvim" -- noice dependencies
     use "petertriho/nvim-scrollbar" -- scrollbar
     use "kevinhwang91/nvim-hlslens" -- noice looks book and support for scrollbar
+    use "nvim-zh/colorful-winsep.nvim" -- make window separators better
+    use "fedepujol/move.nvim" -- move line/block up/down
+    use "levouh/tint.nvim" -- tint inactive window
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
