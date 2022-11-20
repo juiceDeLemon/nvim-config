@@ -40,6 +40,8 @@ local highlights = {
     PmenuSbar = { fg = c.text },
     -- listchars
     Whitespace = { fg = c.hl },
+    -- end of buffer ~
+    EndOfBuffer = { fg = c.comment },
     -------------
     -- PLUGINS --
     -------------
