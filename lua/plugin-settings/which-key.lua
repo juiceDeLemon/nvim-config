@@ -46,8 +46,11 @@ wk.register({
         name = "leader",
         d = {
             name = "SUSSY DUCK",
-            d = { "<cmd>lua require 'duck'.hatch('ඞ')<cr>", "Join Lobby" },
-            k = { "<cmd>lua require 'duck'.cook()<cr>", "Eject Crewmate" },
+            d = {
+                "<cmd>lua math.randomseed(os.time()); require'duck'.hatch('ඞ', math.random(1, 10))<cr>",
+                "Join Lobby",
+            },
+            k = { "<cmd>lua require'duck'.cook()<cr>", "Eject Crewmate" },
         },
     },
 }, { mode = "n", prefix = "<leader>" })
