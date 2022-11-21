@@ -42,7 +42,7 @@ packer.init {
 }
 
 return packer.startup(function(use)
-    -- YOUR MAJESTY --
+    -- HIS MAJESTY --
     use "monsonjeremy/onedark.nvim" -- luv you very much
 
     -- GENERAL --
@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use { "kyazdani42/nvim-tree.lua" } -- tree
     use "akinsho/toggleterm.nvim" -- terminal in neovim
     use "ahmedkhalf/project.nvim" -- project management
+    use "kevinhwang91/promise-async" -- ufo dependencies
 
     -- ENHANCEMENTS --
     use "lewis6991/impatient.nvim" -- improve performance
@@ -66,14 +67,14 @@ return packer.startup(function(use)
     use "folke/which-key.nvim" -- keybinds help
     use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
     use "axelvc/template-string.nvim" -- JS change string to template string vice versa
+    use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
+    use "goolord/alpha-nvim" -- dashboard
 
     -- VISUALS --
-    use "goolord/alpha-nvim" -- dashboard
     use "nvim-lua/popup.nvim" -- popup api
     use "folke/noice.nvim" -- new ui for messages cmdline and popupmenus
     use "RRethy/vim-illuminate" -- highlight same word
     use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
-    use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
     use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
     use "tamton-aquib/duck.nvim" -- duck good
     use "rcarriga/nvim-notify" -- noice dependencies
@@ -84,6 +85,7 @@ return packer.startup(function(use)
     use "fedepujol/move.nvim" -- move line/block up/down
     use "levouh/tint.nvim" -- tint inactive window
     use "karb94/neoscroll.nvim" -- smooth scrolling
+    use "kevinhwang91/nvim-ufo" -- folds
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
