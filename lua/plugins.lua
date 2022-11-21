@@ -83,6 +83,7 @@ return packer.startup(function(use)
     use "nvim-zh/colorful-winsep.nvim" -- make window separators better
     use "fedepujol/move.nvim" -- move line/block up/down
     use "levouh/tint.nvim" -- tint inactive window
+    use "karb94/neoscroll.nvim" -- smooth scrolling
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
