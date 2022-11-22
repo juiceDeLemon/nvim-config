@@ -10,7 +10,8 @@ local c = require "colours"
 onedark.setup {
     functionStyle = "underline",
     variableStyle = "bold",
-    transparent = not require "neovide",
+    -- transparent = not require "neovide",
+    transparent = false,
 }
 
 -- custom highlights must be put after setup function
