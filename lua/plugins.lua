@@ -86,6 +86,7 @@ return packer.startup(function(use)
     use "levouh/tint.nvim" -- tint inactive window
     use "karb94/neoscroll.nvim" -- smooth scrolling
     use "kevinhwang91/nvim-ufo" -- folds
+    use "folke/drop.nvim"
 
     -- STATUS LINES --
     use "nvim-lualine/lualine.nvim" -- status bar
