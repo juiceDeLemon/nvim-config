@@ -61,9 +61,6 @@ ls.add_snippets("all", {
 )),
 })
 
-ls.add_snippets("lua",
-    { s("lreq", fmt("local {} = require \"{}\"", { i(1, "var"), i(2, "module") })) })
-
 ls.add_snippets("cpp", {
     s("str", { t("std::string") }),
     s("trigger", fmta("for (size_t <>{<>}; <> << <>; <><>){\n\t<>\n}", {
