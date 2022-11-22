@@ -56,11 +56,19 @@ local highlights = {
     IlluminatedWordWrite = { bg = c.hl, italic = true },
     -- scrollbar
     ScrollbarSearch = { fg = c.orange },
+    -- indent blank line
+    IndentBlanklineIndent1 = { fg = c.red, nocombine = true },
+    IndentBlanklineIndent2 = { fg = c.yellow, nocombine = true },
+    IndentBlanklineIndent3 = { fg = c.green, nocombine = true },
+    IndentBlanklineIndent4 = { fg = c.teal, nocombine = true },
+    IndentBlanklineIndent5 = { fg = c.blue, nocombine = true },
+    IndentBlanklineIndent6 = { fg = c.purple, nocombine = true },
     -- cmp
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     -- (use nvim treesitter highlight group as reference)
     CmpItemAbbrMatch = { fg = c.red, bold = true },
     CmpItemMenu = { fg = c.teal, italic = true }, -- [Lsp] tags
+
     -- CmpItemKindFunction = {bg = colours.blue, fg = colours.bg},
     -- CmpItemKindVariable = {bg = colours.yellow, fg = colours.bg},
     -- CmpItemKindKeyword = {bg = colours.purple, fg = colours.text},
