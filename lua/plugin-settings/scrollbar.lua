@@ -12,6 +12,7 @@ require"scrollbar.handlers.search".setup()
 
 lens.setup()
 sb.setup {
+    hide_if_all_visible = true,
     marks = {
         Cursor = { text = "━" },
         Search = { text = { "━", "═" }, highlight = "ScrollbarSearch" },
