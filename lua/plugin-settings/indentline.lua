@@ -5,17 +5,7 @@
 -- ██║██║░╚███║██████╔╝███████╗██║░╚███║░░░██║░█████╗██████╦╝███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝╚═╝░░╚══╝╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░╚════╝░╚═════╝░╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local indent_line = require "indent_blankline"
-local colours = require "colours"
 
--- https://neovim.io/doc/user/api.html
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = colours.red, nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = colours.yellow, nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent3", { fg = colours.green, nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent4", { fg = colours.teal, nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent5", { fg = colours.blue, nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineIndent6", { fg = colours.purple, nocombine = true })
-
--- vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {
     "help",
     "packer",
