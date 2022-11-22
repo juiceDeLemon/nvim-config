@@ -6,4 +6,4 @@
 -- ░░░╚═╝░░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local t = require "tint"
 
-t.setup { tint = -55 }
+t.setup { tint = -55, highlight_ignore_patterns = { "Whitespace" } }
