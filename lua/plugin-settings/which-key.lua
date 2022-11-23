@@ -17,7 +17,7 @@ wk.register({
     e = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
     g = {
         name = "Git",
-        b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "View Blame" },
+        b = { "<cmd>lua require'gitsigns'.blame_line()<cr>", "View Blame" },
         c = {
             name = "Conflict",
             c = { "<Plug>(git-conflict-ours)", "Accept Current" },
@@ -32,7 +32,7 @@ wk.register({
         l = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
         p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
         r = { "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk" },
-        v = { "<cmd>lua require 'gitsigns'.select_hunk()<cr>", "Select Hunk" },
+        v = { "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk" },
     },
     r = { ":IncRename ", "Rename Element" },
     t = {
