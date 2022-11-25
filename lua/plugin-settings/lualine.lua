@@ -6,8 +6,9 @@
 -- ╚══════╝░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local ll = require "lualine"
 local tl = require "tabline"
-local navic = require "nvim-navic"
 local noice = require "noice"
+local b = require "barbecue"
+local i = require "icons"
 
 ll.setup {
     options = {
@@ -33,5 +34,9 @@ ll.setup {
         lualine_x = { tl.tabline_tabs },
         lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
     },
-    winbar = { lualine_c = { { "filename", path = 3 }, navic.get_location } }, -- VSCode style
+}
+b.setup {
+    modifiers = { dirname = ":~" },
+    symbols = { separator = i.ui.DivLineRight, default_context = "..." },
+    kinds = i.kinds,
 }
