@@ -26,3 +26,4 @@ servers using npm
 - MUST run :checkhealth to install other dependencies
 - Change the trash command in nvim-tree.lua to suit your OS
 - Change python path in ./lua/plugin-settings/lsp/settings/py.lua
+- Change screenshot path in ./lua/plugin-settings/silicon.lua
