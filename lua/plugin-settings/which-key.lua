@@ -71,6 +71,7 @@ wk.register({
             },
             k = { "<cmd>lua require'duck'.cook()<cr>", "Eject Crewmate" },
         },
+        m = { "<cmd>TSJToggle<cr>", "Toggle TSJ node" },
     },
 }, { mode = "n", prefix = "<leader>" })
 
