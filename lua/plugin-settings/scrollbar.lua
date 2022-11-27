@@ -12,6 +12,7 @@ require"scrollbar.handlers.search".setup()
 
 lens.setup()
 sb.setup {
+    show_in_active_only = true,
     hide_if_all_visible = true,
     marks = {
         Cursor = { text = "━" },
@@ -20,4 +21,5 @@ sb.setup {
         GitChange = { text = "▌" },
         GitDelete = { text = "✕" },
     },
+    handlers = { gitsigns = true, search = true },
 }
