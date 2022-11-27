@@ -46,6 +46,13 @@ autocmd({ "FileType" }, {
 ,
 })
 
+autocmd({ "FileType" }, {
+    desc = "FSRead",
+    pattern = { "text" },
+    callback = function() vim.cmd [[ FSRead]] end
+,
+})
+
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
 --     callback = function()
