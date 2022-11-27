@@ -1,0 +1,5 @@
+Cut and Paste is one of the most powerful tools available to you in Microsoft Word. It allows you reorganise your ideas and your writing by moving phrases, sentences or paragraphs from one part of your essay to another.
+
+This page shows you the basics of Cut and Paste. It shows you how to select text, how to cut, copy and paste it into another part of your essay. It also explains how to use the spike to cut and paste several pieces of unconnected text into one place.
+
+You can cut and paste text within a single Microsoft Word document or from one document to another. You can cut and paste graphics and tables as well as text. And you can cut and paste text, graphics and tables from one programme to another. For example you can cut and paste the text on this page (viewed in Microsoft Internet Explorer) to a Microsoft Word document, if you wish.
