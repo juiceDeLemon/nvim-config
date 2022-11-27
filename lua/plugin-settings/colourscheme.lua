@@ -46,6 +46,13 @@ local highlights = {
     -------------
     -- PLUGINS --
     -------------
+    -- scrollbar
+    ScrollbarSearch = { fg = c.orange },
+    -- navic
+    NavicSeparator = { fg = c.text },
+    -- FSRead
+    FSPrefix = { fg = c.text },
+    FSSuffix = { fg = "#6C7086" },
     -- nvim-tree
     NvimTreeFolderName = { fg = c.teal, bold = true, underline = true },
     NvimTreeOpenedFolderName = { fg = c.blue, italic = true, bold = true, underline = true },
@@ -54,8 +61,6 @@ local highlights = {
     IlluminatedWordText = { bg = c.hl, italic = true },
     IlluminatedWordRead = { bg = c.hl, italic = true },
     IlluminatedWordWrite = { bg = c.hl, italic = true },
-    -- scrollbar
-    ScrollbarSearch = { fg = c.orange },
     -- indent blank line
     IndentBlanklineIndent1 = { fg = c.red, nocombine = true },
     IndentBlanklineIndent2 = { fg = c.yellow, nocombine = true },
