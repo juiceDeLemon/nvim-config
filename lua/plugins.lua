@@ -4,7 +4,6 @@
 -- ██╔═══╝░██║░░░░░██║░░░██║██║░░╚██╗██║██║╚████║░╚═══██╗░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║░░░░░███████╗╚██████╔╝╚██████╔╝██║██║░╚███║██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░░░░╚══════╝░╚═════╝░░╚═════╝░╚═╝╚═╝░░╚══╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
--- jump to 45
 local fn = vim.fn
 
 -- Automatically install packer
@@ -50,27 +49,28 @@ return packer.startup {
         use "nvim-lua/plenary.nvim" -- many lua functions
         use "wbthomason/packer.nvim" -- packer
         use { "kyazdani42/nvim-tree.lua" } -- tree
-        use "akinsho/toggleterm.nvim" -- terminal in neovim
-        use "ahmedkhalf/project.nvim" -- project management
+        -- use "akinsho/toggleterm.nvim" -- terminal in neovim
+        -- use "ahmedkhalf/project.nvim" -- project management
         use "kevinhwang91/promise-async" -- ufo dependencies
 
         -- ENHANCEMENTS --
         use "lewis6991/impatient.nvim" -- improve performance
         use "moll/vim-bbye" -- :Bd over :bd
         use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
-        use "jghauser/mkdir.nvim" -- add dir when creating files when dir is not found
 
         -- FUNCTIONAL --
         use "numToStr/Comment.nvim" -- comments
         use "kylechui/nvim-surround" -- add/remove quotes
         use "windwp/nvim-autopairs" -- add closing brackets
-        use "abecodes/tabout.nvim" -- use tab to get out of brackets
         use "folke/which-key.nvim" -- keybinds help
         use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
-        use "axelvc/template-string.nvim" -- JS change string to template string vice versa
         use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
+        use "karb94/neoscroll.nvim" -- smooth scrolling
         use "goolord/alpha-nvim" -- dashboard
         use "NarutoXY/silicon.lua" -- screenshots
+        use "fedepujol/move.nvim" -- move line/block up/down
+        use "nullchilly/fsread.nvim" -- fsrx
+        use "chentoast/marks.nvim" -- better line marking
 
         -- VISUALS --
         use "nvim-lua/popup.nvim" -- popup api
@@ -82,22 +82,17 @@ return packer.startup {
         use "rcarriga/nvim-notify" -- noice dependencies
         use "MunifTanjim/nui.nvim" -- noice dependencies
         use "petertriho/nvim-scrollbar" -- scrollbar
-        use "kevinhwang91/nvim-hlslens" -- noice looks book and support for scrollbar
+        use "kevinhwang91/nvim-hlslens" -- noice looks bad and support for scrollbar
         use "nvim-zh/colorful-winsep.nvim" -- make window separators better
-        use "fedepujol/move.nvim" -- move line/block up/down
         use "levouh/tint.nvim" -- tint inactive window
-        use "karb94/neoscroll.nvim" -- smooth scrolling
         use "kevinhwang91/nvim-ufo" -- folds
-        use "folke/drop.nvim"
+        use "folke/drop.nvim" -- snowballs in alpha
         use "utilyre/barbecue.nvim" -- vscode style winbar
+        use "NarutoXY/dim.lua" -- dim unused variables
 
         -- STATUS LINES --
         use "nvim-lualine/lualine.nvim" -- status bar
         use "kdheepak/tabline.nvim" -- tabline
-
-        -- ICONS --
-        use "kyazdani42/nvim-web-devicons" -- tree icons
-        use "onsails/lspkind.nvim" -- lsp icons
 
         -- COMPLETION PLUGINS --
         use "hrsh7th/nvim-cmp" -- core
@@ -111,7 +106,7 @@ return packer.startup {
         use "saadparwaiz1/cmp_luasnip" -- snippet
 
         -- SNIPPETS --
-        use "L3MON4D3/LuaSnip" -- snippets
+        use "L3MON4D3/LuaSnip" -- snippet engine
         use "rafamadriz/friendly-snippets" -- a lot of snippets
 
         -- LSP --
@@ -119,7 +114,7 @@ return packer.startup {
         use "williamboman/nvim-lsp-installer" -- server installer
         use "jose-elias-alvarez/null-ls.nvim" -- formatters, linter, code actions
         use "b0o/schemastore.nvim" -- schema
-        use "SmiteshP/nvim-navic" -- breadcrumb
+        use "SmiteshP/nvim-navic" -- barbecue dependencies
 
         -- TELESCOPE --
         use "nvim-telescope/telescope.nvim" -- telescope itself
@@ -146,6 +141,10 @@ return packer.startup {
         use "mfussenegger/nvim-dap"
         use "rcarriga/nvim-dap-ui"
         use "Pocco81/DAPInstall.nvim"
+
+        -- ICONS --
+        use "kyazdani42/nvim-web-devicons" -- tree icons
+        use "onsails/lspkind.nvim" -- lsp icons
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
