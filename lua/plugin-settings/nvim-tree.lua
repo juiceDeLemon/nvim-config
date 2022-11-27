@@ -24,6 +24,6 @@ nvim_tree.setup {
         highlight_opened_files = "name",
         indent_markers = { enable = true, inline_arrows = true },
     },
-    filters = { custom = { "^\\.git" } },
+    filters = { custom = { "^\\.git", ".DS_Store" } },
     trash = { cmd = "trash " },
 }
