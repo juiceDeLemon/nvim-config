@@ -5,10 +5,11 @@
 -- ░░╚██╔╝░╚██╔╝░██║░░██║██║╚█████╔╝██║░░██║░░░░░░██║░╚██╗███████╗░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░╚════╝░╚═╝░░╚═╝░░░░░░╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local wk = require "which-key"
+local i = require "icons"
 
 wk.setup {
     plugins = { spelling = { enabled = true, suggestions = 25 } },
-    icons = { breadcrumb = "", separator = ":", group = "*" },
+    icons = { breadcrumb = i.ui.DivLineRight, separator = ":", group = "*" },
     popup_mappings = { scroll_down = "<c-j>", scroll_up = "<c-k>" },
     window = { border = "single", winblend = 30 },
 }
@@ -35,6 +36,24 @@ wk.register({
         v = { "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk" },
     },
     r = { ":IncRename ", "Rename Element" },
+    s = {
+        name = "Screenshot",
+        c = {
+            name = "To Clipboard",
+            s = {
+                "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true }<cr>",
+                "Current Line",
+            },
+            v = {
+                "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true, visible = true }<cr>",
+                "Visible Area",
+            },
+        },
+        v = {
+            "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = ture, visible = true }<cr>",
+            "Visible Area",
+        },
+    },
     t = {
         name = "Tabs",
         h = { "<cmd>TablineBufferPrevious<cr>", "Previous Buffer" },
@@ -54,3 +73,25 @@ wk.register({
         },
     },
 }, { mode = "n", prefix = "<leader>" })
+
+wk.register({
+    s = {
+        name = "Screenshot",
+        c = {
+            name = "To Clipboard",
+            s = {
+                "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true }<cr>",
+                "Generate Selection",
+            },
+            b = {
+                "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true, show_buf = true }<cr>",
+                "Whole Buffer (highlighted selected)",
+            },
+        },
+        s = { "<cmd>lua require'silicon'.visualise_cmdline{}<cr>", "Generate Selection" },
+        b = {
+            "<cmd>lua require'silicon'.visualise_cmdline{ show_buf = true }<cr>",
+            "Whole Buffer (highlighted selected)",
+        },
+    },
+}, { mode = "v", prefix = "<leader>" })
