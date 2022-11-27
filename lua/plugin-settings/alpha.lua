@@ -23,16 +23,17 @@ dashboard.section.header.val = {
 dashboard.section.header.opts.hl = "Function"
 
 dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
-    dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<CR>"),
-    -- dashboard.button("p", "  Find project", "<cmd>Telescope projects<CR>"),
-    dashboard.button("r", "  Recently used files", "<cmd>Telescope oldfiles<CR>"),
-    dashboard.button("t", "  find Text", "<cmd>Telescope live_grep<CR>"),
-    dashboard.button("e", "פּ  open tree", "<cmd>e .<CR>"),
-    dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<CR>"),
-    dashboard.button("i", "  Install plugins", "<cmd>PackerUpdate<CR>"),
+    dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
+    dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<cr>"),
+    -- dashboard.button("p", "  Find project", "<cmd>Telescope projects<cr>"),
+    dashboard.button("r", "  Recently used files", "<cmd>Telescope oldfiles<cr>"),
+    dashboard.button("t", "  find Text", "<cmd>Telescope live_grep<cr>"),
+    dashboard.button("e", "פּ  open tree", "<cmd>e .<cr>"),
+    dashboard.button("g", "  open lazyGit", "<cmd>LazyGit<cr>"),
+    dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
+    dashboard.button("i", "  Update plugins", "<cmd>PackerUpdate<cr>"),
     dashboard.button("h", "?  Help command", ":h "),
-    dashboard.button("q", "  Quit neovim", "<cmd>qa<CR>"),
+    dashboard.button("q", "  Quit neovim", "<cmd>qa<cr>"),
 }
 
 local function footer()
