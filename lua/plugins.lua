@@ -71,6 +71,7 @@ return packer.startup {
         use "fedepujol/move.nvim" -- move line/block up/down
         use "nullchilly/fsread.nvim" -- fsrx
         use "chentoast/marks.nvim" -- better line marking
+        use "Wansmer/treesj" -- expand or minimise multiblock codes (tables)
 
         -- VISUALS --
         use "nvim-lua/popup.nvim" -- popup api
