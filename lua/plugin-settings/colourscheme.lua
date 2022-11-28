@@ -10,8 +10,8 @@ local c = require "colours"
 onedark.setup {
     functionStyle = "underline",
     variableStyle = "bold",
-    -- transparent = not require "neovide",
-    transparent = false,
+    transparent = not require "neovide",
+    -- transparent = false,
 }
 
 -- custom highlights must be put after setup function
@@ -29,7 +29,6 @@ local highlights = {
     IncSearch = { bg = c.yellow, fg = c.dark_text }, -- searching
     Search = { bg = c.comment, fg = c.bg }, -- results
     -- cursor related
-    Cursor = { bg = c.red, fg = c.text },
     CursorColumn = { bg = c.hl },
     CursorLine = { bg = c.hl },
     -- line numbers
