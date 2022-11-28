@@ -57,20 +57,20 @@ return packer.startup {
         use "lewis6991/impatient.nvim" -- improve performance
         use "moll/vim-bbye" -- :Bd over :bd
         use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
+        use "chentoast/marks.nvim" -- better line marking
+        use "karb94/neoscroll.nvim" -- smooth scrolling
+        use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
 
-        -- FUNCTIONAL --
+        -- FEATURES --
         use "numToStr/Comment.nvim" -- comments
         use "kylechui/nvim-surround" -- add/remove quotes
         use "windwp/nvim-autopairs" -- add closing brackets
         use "folke/which-key.nvim" -- keybinds help
-        use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
         use "NvChad/nvim-colorizer.lua" -- highlight hex, css etc
-        use "karb94/neoscroll.nvim" -- smooth scrolling
         use "goolord/alpha-nvim" -- dashboard
         use "NarutoXY/silicon.lua" -- screenshots
         use "fedepujol/move.nvim" -- move line/block up/down
         use "nullchilly/fsread.nvim" -- fsrx
-        use "chentoast/marks.nvim" -- better line marking
         use "Wansmer/treesj" -- expand or minimise multiblock codes (tables)
 
         -- VISUALS --
