@@ -80,7 +80,3 @@ keymap("v", "<C-j>", "<cmd>MoveBlock(1)<CR>", opts)
 keymap("v", "<C-k>", "<cmd>MoveBlock(-1)<CR>", opts)
 keymap("v", "<C-h>", "<cmd>MoveHBlock(-1)<CR>", opts)
 keymap("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)
-
--- ufo
-keymap("n", "zR", require"ufo".openAllFolds, opts)
-keymap("n", "zM", require"ufo".closeAllFolds, opts)
