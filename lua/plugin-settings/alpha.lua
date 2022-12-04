@@ -31,7 +31,7 @@ dashboard.section.buttons.val = {
     dashboard.button("e", "פּ  open tree", "<cmd>e .<cr>"),
     dashboard.button("g", "  open lazyGit", "<cmd>LazyGit<cr>"),
     dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
-    dashboard.button("i", "  Update plugins", "<cmd>PackerUpdate<cr>"),
+    dashboard.button("x", "  games", "<cmd>VimBeGood<cr>"),
     dashboard.button("h", "?  Help command", ":h "),
     dashboard.button("q", "  Quit neovim", "<cmd>qa<cr>"),
 }
