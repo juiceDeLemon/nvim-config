@@ -5,7 +5,12 @@
 -- ██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 
+-- Augroups
+local aug_smart_numbering = augroup("smart_numbering", {})
+
+-- Autocommands
 autocmd({ "BufEnter" }, {
     desc = "idk",
     callback = function()
@@ -49,7 +54,25 @@ autocmd({ "FileType" }, {
 autocmd({ "FileType" }, {
     desc = "FSRead",
     pattern = { "text" },
-    callback = function() vim.cmd [[ FSRead]] end
+    callback = function() vim.cmd [[ FSRead ]] end
+,
+})
+
+autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
+    desc = "Relative Number if not insert mode",
+    pattern = { "*" },
+    group = aug_smart_numbering,
+    callback = function()
+        if vim.opt.number and vim.fn.mode() ~= "i" then vim.opt.relativenumber = true end
+    end
+,
+})
+
+autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
+    desc = "No Relative Number if insert mode",
+    pattern = { "*" },
+    group = aug_smart_numbering,
+    callback = function() if vim.opt.number then vim.opt.relativenumber = false end end
 ,
 })
 
