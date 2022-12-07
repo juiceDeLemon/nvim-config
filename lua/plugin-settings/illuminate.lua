@@ -8,19 +8,6 @@ local illuminate = require "illuminate"
 
 illuminate.configure {
     delay = 400,
-    filetypes_denylist = {
-        "dirvish",
-        "fugitive",
-        "alpha",
-        "NvimTree",
-        "packer",
-        "neogitstatus",
-        "Trouble",
-        "lir",
-        "Outline",
-        "spectre_panel",
-        "toggleterm",
-        "DressingSelect",
-        "TelescopePrompt",
-    },
+    filetypes_denylist = { "alpha", "NvimTree", "packer", "toggleterm", "TelescopePrompt" },
+    modes_denylist = { "i" },
 }
