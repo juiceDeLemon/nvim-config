@@ -51,7 +51,6 @@ return packer.startup {
         use { "kyazdani42/nvim-tree.lua" } -- tree
         -- use "akinsho/toggleterm.nvim" -- terminal in neovim
         -- use "ahmedkhalf/project.nvim" -- project management
-        use "kevinhwang91/promise-async" -- ufo dependencies
 
         -- ENHANCEMENTS --
         use "lewis6991/impatient.nvim" -- improve performance
@@ -79,21 +78,19 @@ return packer.startup {
         use "RRethy/vim-illuminate" -- highlight same word
         use "lukas-reineke/indent-blankline.nvim" -- lines of indentation
         use "smjonas/inc-rename.nvim" -- eye-candy symbol rename
-        use "tamton-aquib/duck.nvim" -- duck good
         use "rcarriga/nvim-notify" -- noice dependencies
         use "MunifTanjim/nui.nvim" -- noice dependencies
         use "petertriho/nvim-scrollbar" -- scrollbar
         use "kevinhwang91/nvim-hlslens" -- noice looks bad and support for scrollbar
         use "nvim-zh/colorful-winsep.nvim" -- make window separators better
         use "levouh/tint.nvim" -- tint inactive window
-        use "kevinhwang91/nvim-ufo" -- folds
         use "folke/drop.nvim" -- snowballs in alpha
         use "utilyre/barbecue.nvim" -- vscode style winbar
         use "NarutoXY/dim.lua" -- dim unused variables
 
         -- STATUS LINES --
         use "nvim-lualine/lualine.nvim" -- status bar
-        use "kdheepak/tabline.nvim" -- tabline
+        use "nanozuki/tabby.nvim" -- tabline
 
         -- COMPLETION PLUGINS --
         use "hrsh7th/nvim-cmp" -- core
@@ -146,6 +143,10 @@ return packer.startup {
         -- ICONS --
         use "kyazdani42/nvim-web-devicons" -- tree icons
         use "onsails/lspkind.nvim" -- lsp icons
+
+        -- PLAY --
+        use "tamton-aquib/duck.nvim" -- duck good
+        use "ThePrimeagen/vim-be-good" -- games
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

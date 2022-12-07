@@ -5,7 +5,6 @@
 -- ███████╗╚██████╔╝██║░░██║███████╗██║██║░╚███║███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ╚══════╝░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local ll = require "lualine"
-local tl = require "tabline"
 local noice = require "noice"
 local b = require "barbecue"
 local i = require "icons"
@@ -29,11 +28,6 @@ ll.setup {
         lualine_z = { "progress" },
     },
     inactive_sections = { lualine_a = { "filename" }, lualine_z = { "progress" } },
-    tabline = {
-        lualine_a = { tl.tabline_buffers },
-        lualine_x = { tl.tabline_tabs },
-        lualine_z = { "vim.fn.strftime(\"%H:%M\")" }, -- time
-    },
 }
 b.setup {
     modifiers = { dirname = ":~" },
