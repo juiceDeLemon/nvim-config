@@ -66,7 +66,6 @@ null_ls.setup({
         d.flake8,
         d.gitlint,
         d.jsonlint,
-        d.markdownlint,
         d.proselint,
         d.pydocstyle,
         d.shellcheck,
