@@ -4,9 +4,9 @@
 -- ██║██║╚████║██║░░░██║░░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ██║██║░╚███║██║░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
 -- ╚═╝╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-require "options"
 require "plugins"
 require "plugin-settings"
+require "options"
 require "keymaps"
 require "autocommands"
 -- require"luasnip.loaders.from_vscode".lazy_load("")
