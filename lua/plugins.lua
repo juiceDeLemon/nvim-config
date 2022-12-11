@@ -46,15 +46,14 @@ return packer.startup {
         use "monsonjeremy/onedark.nvim" -- luv you very much
 
         -- GENERAL --
+        use "wbthomason/packer.nvim" -- plugins
         use "nvim-lua/plenary.nvim" -- many lua functions
-        use "wbthomason/packer.nvim" -- packer
-        use { "kyazdani42/nvim-tree.lua" } -- tree
+        use "kyazdani42/nvim-tree.lua" -- tree
         -- use "akinsho/toggleterm.nvim" -- terminal in neovim
         -- use "ahmedkhalf/project.nvim" -- project management
 
         -- ENHANCEMENTS --
         use "lewis6991/impatient.nvim" -- improve performance
-        use "moll/vim-bbye" -- :Bd over :bd
         use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
         use "chentoast/marks.nvim" -- better line marking
         use "karb94/neoscroll.nvim" -- smooth scrolling
