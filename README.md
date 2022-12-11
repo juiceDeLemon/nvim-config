@@ -17,6 +17,7 @@ system e.g. on macOS: "git clone https://github.com/juiceDeLemon/nvim-config ~/.
 - **[Pyright](https://github.com/microsoft/pyright)
 - **[Silicon](https://crates.io/crates/silicon)
 - [npm (well I'm lazy and I couldn't find an npm repo)
+- **[Deno](https://deno.land)
 - Go to **[lspconfig](https://github.com/neovim/nvim-lspconfig/) and install the
 servers using npm
 - if don't have trash: install **[trash](https://formulae.brew.sh/formula/trash)
