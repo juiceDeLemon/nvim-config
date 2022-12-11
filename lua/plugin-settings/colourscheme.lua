@@ -77,6 +77,11 @@ local highlights = {
     -- CmpItemKindVariable = {bg = colours.yellow, fg = colours.bg},
     -- CmpItemKindKeyword = {bg = colours.purple, fg = colours.text},
     -- CmpItemKindFile = {bg = colours.green, fg = colours.text},
+    ----------------
+    -- TREESITTER --
+    ----------------
+    ["@operator.lua"] = { fg = c.red },
+    ["@operator"] = { fg = c.red },
 }
 
 for k, v in pairs(highlights) do vim.api.nvim_set_hl(0, k, v) end
