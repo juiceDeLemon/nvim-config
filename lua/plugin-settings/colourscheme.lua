@@ -4,15 +4,10 @@
 -- ██║░░██╗██║░░██║██║░░░░░██║░░██║██╔══██╗░╚═══██╗██║░░██╗██╔══██║██╔══╝░░██║╚██╔╝██║██╔══╝░░░░░██║░░░░░██║░░░██║██╔══██║
 -- ╚█████╔╝╚█████╔╝███████╗╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║███████╗██║░╚═╝░██║███████╗██╗███████╗╚██████╔╝██║░░██║
 -- ░╚════╝░░╚════╝░╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚══════╝╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-local onedark = require "onedark"
+local o = require "onedark"
 local c = require "colours"
 
-onedark.setup {
-    functionStyle = "underline",
-    variableStyle = "bold",
-    transparent = not require "neovide",
-    -- transparent = false,
-}
+o.setup { functionStyle = "underline", variableStyle = "bold", transparent = not require "neovide" }
 
 -- custom highlights must be put after setup function
 -- this overrides colourscheme default
@@ -68,19 +63,9 @@ local highlights = {
     IndentBlanklineIndent5 = { fg = c.blue, nocombine = true },
     IndentBlanklineIndent6 = { fg = c.purple, nocombine = true },
     -- cmp
-    -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
-    -- (use nvim treesitter highlight group as reference)
     CmpItemAbbrMatch = { fg = c.red, bold = true },
     CmpItemMenu = { fg = c.teal, italic = true }, -- [Lsp] tags
-
-    -- CmpItemKindFunction = {bg = colours.blue, fg = colours.bg},
-    -- CmpItemKindVariable = {bg = colours.yellow, fg = colours.bg},
-    -- CmpItemKindKeyword = {bg = colours.purple, fg = colours.text},
-    -- CmpItemKindFile = {bg = colours.green, fg = colours.text},
-    ----------------
-    -- TREESITTER --
-    ----------------
-    ["@operator.lua"] = { fg = c.red },
+    -- treesitter
     ["@operator"] = { fg = c.red },
 }
 
