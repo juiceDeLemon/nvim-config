@@ -43,8 +43,7 @@ packer.init {
 return packer.startup {
     (function(use)
         -- HIS MAJESTY --
-        -- use "monsonjeremy/onedark.nvim" -- luv you very much
-        use "navarasu/onedark.nvim"
+        use "monsonjeremy/onedark.nvim" -- luv you very much
 
         -- GENERAL --
         use "wbthomason/packer.nvim" -- plugins
@@ -102,6 +101,7 @@ return packer.startup {
         use "petertriho/cmp-git" -- git
         use "hrsh7th/cmp-emoji" -- lovely emoji
         use "saadparwaiz1/cmp_luasnip" -- snippet
+        use "lukas-reineke/cmp-under-comparator" -- comparing fix
 
         -- SNIPPETS --
         use "L3MON4D3/LuaSnip" -- snippet engine
