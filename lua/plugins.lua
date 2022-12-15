@@ -43,7 +43,8 @@ packer.init {
 return packer.startup {
     (function(use)
         -- HIS MAJESTY --
-        use "monsonjeremy/onedark.nvim" -- luv you very much
+        -- use "monsonjeremy/onedark.nvim" -- luv you very much
+        use "navarasu/onedark.nvim"
 
         -- GENERAL --
         use "wbthomason/packer.nvim" -- plugins
@@ -118,11 +119,7 @@ return packer.startup {
         use "nvim-telescope/telescope-project.nvim" -- project
 
         -- TREESITTER --
-        use {
-            "nvim-treesitter/nvim-treesitter",
-            commit = "9bfaf62e42bdcd042df1230e9188487e62a112c0",
-            run = ":TSUpdate",
-        } -- eye candy
+        use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- eye candy
         use "p00f/nvim-ts-rainbow" -- highlight brackets
         use "m-demare/hlargs.nvim" -- highlight arguments in another way
         use "nvim-treesitter/nvim-treesitter-context" -- show start of code block at the top
