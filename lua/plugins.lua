@@ -56,7 +56,7 @@ return packer.startup {
         use "lewis6991/impatient.nvim" -- improve performance
         use "nacro90/numb.nvim" -- peek line when entering go to line in commandline
         use "chentoast/marks.nvim" -- better line marking
-        use "karb94/neoscroll.nvim" -- smooth scrolling
+        use "declancm/cinnamon.nvim" -- smooth scrolling
         use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
 
         -- FEATURES --
