@@ -22,7 +22,7 @@ require"luasnip.loaders.from_vscode".lazy_load()
 --                == nil
 -- end
 
-cmp.setup({
+cmp.setup {
     enabled = true,
     preselect = cmp.PreselectMode.Item,
     snippet = {
@@ -52,9 +52,8 @@ cmp.setup({
             else
                 cmp.complete()
             end
-            -- LuaFormatter off
-        end, { "i", "s" }),
-        -- LuaFormatter on
+        end
+, { "i", "s" }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -63,9 +62,8 @@ cmp.setup({
             else
                 fallback()
             end
-            -- LuaFormatter off
-        end, { "i", "s" }),
-        -- LuaFormatter on
+        end
+, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -74,53 +72,67 @@ cmp.setup({
             else
                 fallback()
             end
-            -- LuaFormatter off
-        end, { "i", "s" }),
-        -- LuaFormatter on
+        end
+, { "i", "s" }),
     }),
+    sources = cmp.config.sources({
+        { name = "luasnip", group_index = 1, keyword_length = 3 },
+        { name = "nvim_lsp", group_index = 2, keyword_length = 3 },
+        { name = "nvim_lua", group_index = 2, keyword_length = 3 },
+        { name = "path", group_index = 3, keyword_length = 3 },
+        { name = "buffer", group_index = 4, keyword_length = 3 },
+        { name = "emoji", group_index = 5, keyword_length = 3 },
+        { name = "issues", group_index = 6 },
+    }),
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            require"cmp-under-comparator".under,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+        },
+    },
     formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = lspkind.cmp_format({
-            mode = "symbol", -- show only symbol annotations
+        format = lspkind.cmp_format {
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-            menu = ({
+            with_text = true,
+            menu = {
                 luasnip = "[Snips]",
                 nvim_lsp = "[Lsp]",
                 nvim_lua = "[Vim]",
                 buffer = "[Buf]",
                 path = "[Path]",
                 emoji = "[:)]",
-            }),
-        }),
+                issues = "[Issues]",
+            },
+        },
     },
-    sources = cmp.config.sources({
-        { name = "luasnip", group_index = 1 },
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 3 },
-        { name = "buffer", group_index = 4 },
-        { name = "emoji", group_index = 5 },
-    }),
     experimental = { ghost_text = true },
-})
+}
 
--- Set configuration for specific filetype.
 cmp.setup.filetype("gitcommit", {
-    sources = cmp.config.sources({
-        { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-    }, { { name = "buffer" } }),
+    sources = cmp.config.sources {
+        { name = "cmp_git", keyword_length = 3 },
+        { name = "buffer", keyword_length = 3 },
+    },
 })
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ "/", "?" },
-    { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
+cmp.setup.cmdline({ "/", "?" }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = { { name = "buffer", keyword_length = 3 } },
+})
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({ { name = "nvim_lua" }, { name = "path" } },
-        { { name = "cmdline" } }),
+    sources = cmp.config.sources({
+        { name = "nvim_lua", keyword_length = 3 },
+        { name = "path", keyword_length = 3 },
+    }, { { name = "cmdline", keyword_length = 3 } }),
 })
 
 -- plugin capabilities are in somewhere in lsp/
