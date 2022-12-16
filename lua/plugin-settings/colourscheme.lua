@@ -44,6 +44,7 @@ local highlights = {
     ScrollbarSearch = { fg = c.orange },
     -- barbecue (basically navic)
     BarbecueSeparator = { fg = c.text },
+    CodewindowBackground = { bg = c.dark_bg },
     -- FSRead
     FSPrefix = { fg = c.text },
     FSSuffix = { fg = "#6C7086" },
