@@ -12,6 +12,7 @@ require "plugin-settings.completion"
 -- files:
 require "plugin-settings.alpha"
 require "plugin-settings.autopairs"
+require "plugin-settings.codewindow"
 require "plugin-settings.colorizer"
 require "plugin-settings.colourscheme"
 require "plugin-settings.comment"

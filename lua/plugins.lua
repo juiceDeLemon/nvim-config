@@ -58,6 +58,7 @@ return packer.startup {
         use "chentoast/marks.nvim" -- better line marking
         use "karb94/neoscroll.nvim" -- smooth scrolling
         use "monaqa/dial.nvim" -- inc/dec value and toggle boolean-like keywords/booleans
+        use "gorbit99/codewindow.nvim" -- vscode like bar on the right
 
         -- FEATURES --
         use "numToStr/Comment.nvim" -- comments
