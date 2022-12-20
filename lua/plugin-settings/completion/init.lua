@@ -122,17 +122,13 @@ cmp.setup.filetype("gitcommit", {
     },
 })
 
-cmp.setup.cmdline({ "/", "?" }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = { { name = "buffer", keyword_length = 3 } },
-})
+cmp.setup.cmdline({ "/", "?" },
+    { mapping = cmp.mapping.preset.cmdline(), sources = { { name = "buffer" } } })
 
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = "nvim_lua", keyword_length = 3 },
-        { name = "path", keyword_length = 3 },
-    }, { { name = "cmdline", keyword_length = 3 } }),
+    sources = cmp.config.sources({ { name = "nvim_lua" }, { name = "path" } },
+        { { name = "cmdline" } }),
 })
 
 -- plugin capabilities are in somewhere in lsp/
