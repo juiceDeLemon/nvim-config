@@ -122,7 +122,6 @@ return packer.startup {
         -- TREESITTER --
         use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- eye candy
         use "p00f/nvim-ts-rainbow" -- highlight brackets
-        use "m-demare/hlargs.nvim" -- highlight arguments in another way
         use "nvim-treesitter/nvim-treesitter-context" -- show start of code block at the top
         use "andymass/vim-matchup" -- extended % to keywords like if else
         use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
