@@ -126,6 +126,7 @@ return packer.startup {
         use "nvim-treesitter/nvim-treesitter-context" -- show start of code block at the top
         use "andymass/vim-matchup" -- extended % to keywords like if else
         use "windwp/nvim-ts-autotag" -- auto close and rename html/php etc tags
+        use "nvim-treesitter/playground" -- handly tool to check treesitter group
 
         -- GIT --
         use "lewis6991/gitsigns.nvim" -- git diff bar

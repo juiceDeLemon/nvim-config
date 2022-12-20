@@ -67,7 +67,12 @@ local highlights = {
     CmpItemAbbrMatch = { fg = c.red, bold = true },
     CmpItemMenu = { fg = c.teal, italic = true }, -- [Lsp] tags
     -- treesitter
-    ["@operator"] = { fg = c.red },
+    ["@operator"] = { fg = c.teal },
+    ["@keyword"] = { fg = c.purple, italic = true },
+    ["@include"] = { fg = c.purple, italic = true },
+    ["@constructor"] = { fg = c.teal, italic = true },
+    ["@variable.builtin"] = { fg = c.yellow },
+    ["@parameter"] = { italic = true },
 }
 
 for k, v in pairs(highlights) do vim.api.nvim_set_hl(0, k, v) end
