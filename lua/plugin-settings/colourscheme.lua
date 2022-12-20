@@ -7,7 +7,7 @@
 local o = require "onedark"
 local c = require "colours"
 
-o.setup { functionStyle = "underline", variableStyle = "bold", transparent = not require "neovide" }
+o.setup { functionStyle = "underline", variableStyle = "bold" }
 
 -- custom highlights must be put after setup function
 -- this overrides colourscheme default
@@ -21,7 +21,7 @@ local highlights = {
     -- matching parenthesis (default plugin)
     MatchParen = { bg = c.hl, italic = true, bold = true },
     -- change search highlight background colour
-    IncSearch = { bg = c.yellow, fg = c.dark_text }, -- searching
+    IncSearch = { bg = c.yellow, fg = c.dark_text }, -- first result searching
     Search = { bg = c.comment, fg = c.bg }, -- results
     -- cursor related
     CursorColumn = { bg = c.hl },
