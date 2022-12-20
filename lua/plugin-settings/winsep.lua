@@ -8,7 +8,7 @@ local ws = require "colorful-winsep"
 local c = require "colours"
 
 ws.setup {
-    highlight = { guibg = c.bg, guifg = c.red },
+    highlight = { bg = c.bg, fg = c.red },
     create_event = function()
         if vim.fn.winnr("$") == 3 then
             local win_id = vim.fn.win_getid(vim.fn.winnr("h"))
