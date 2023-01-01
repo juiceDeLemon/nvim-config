@@ -15,6 +15,7 @@ ts_configs.setup {
         "c",
         "cpp",
         "css",
+        "help",
         "html",
         "json",
         "javascript",
@@ -27,7 +28,7 @@ ts_configs.setup {
     },
     sync_install = true,
     -- modules
-    highlight = { enable = true, additional_vim_regex_highlighting = true },
+    highlight = { enable = true },
     indent = { enable = true },
     -- extensions
     matchup = { enable = true, disable_virtual_text = true, include_match_words = true },
