@@ -64,12 +64,12 @@ keymap("x", ">", ">gv", opts)
 -- OTHER KEYMAPS (PLUGINS AND OTHERS) --
 ----------------------------------------
 -- dial
-keymap("n", "<C-a>", require"dial.map".inc_normal(), opts)
-keymap("n", "<C-x>", require"dial.map".dec_normal(), opts)
-keymap("v", "<C-a>", require"dial.map".inc_visual(), opts)
-keymap("v", "<C-x>", require"dial.map".dec_visual(), opts)
-keymap("v", "g<C-a>", require"dial.map".inc_gvisual(), opts)
-keymap("v", "g<C-x>", require"dial.map".dec_gvisual(), opts)
+-- keymap("n", "<C-a>", require"dial.map".inc_normal(), opts)
+-- keymap("n", "<C-x>", require"dial.map".dec_normal(), opts)
+-- keymap("v", "<C-a>", require"dial.map".inc_visual(), opts)
+-- keymap("v", "<C-x>", require"dial.map".dec_visual(), opts)
+-- keymap("v", "g<C-a>", require"dial.map".inc_gvisual(), opts)
+-- keymap("v", "g<C-x>", require"dial.map".dec_gvisual(), opts)
 
 -- move.nvim
 keymap({ "n", "i" }, "<C-j>", "<cmd>MoveLine(1)<CR>", opts)
