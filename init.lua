@@ -1,13 +1,3 @@
--- ██╗███╗░░██╗██╗████████╗░░░██╗░░░░░██╗░░░██╗░█████╗░
--- ██║████╗░██║██║╚══██╔══╝░░░██║░░░░░██║░░░██║██╔══██╗
--- ██║██╔██╗██║██║░░░██║░░░░░░██║░░░░░██║░░░██║███████║
--- ██║██║╚████║██║░░░██║░░░░░░██║░░░░░██║░░░██║██╔══██║
--- ██║██║░╚███║██║░░░██║░░░██╗███████╗╚██████╔╝██║░░██║
--- ╚═╝╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
-require "plugins"
-require "plugin-settings"
-require "options"
-require "keymaps"
-require "autocommands"
--- require"luasnip.loaders.from_vscode".lazy_load("")
-if vim.fn.exists("g:neovide") == 1 then require "neovide" end
+require "u.options"
+require "u.keymaps"
+require "u.autocmds"

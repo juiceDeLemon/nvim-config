@@ -7,7 +7,7 @@
 local o = require "onedark"
 local c = require "colours"
 
-o.setup { functionStyle = "underline", variableStyle = "bold" }
+o.setup { transparent = true, functionStyle = "underline", variableStyle = "bold" }
 
 -- custom highlights must be put after setup function
 -- this overrides colourscheme default
