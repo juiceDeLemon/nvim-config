@@ -80,3 +80,10 @@ keymap("v", "<C-j>", "<cmd>MoveBlock(1)<CR>", opts)
 keymap("v", "<C-k>", "<cmd>MoveBlock(-1)<CR>", opts)
 keymap("v", "<C-h>", "<cmd>MoveHBlock(-1)<CR>", opts)
 keymap("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)
+
+-- TO BE LEGENDARY --
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+
+-- telescope
+-- keymap("n", "<leader>f

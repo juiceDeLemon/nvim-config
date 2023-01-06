@@ -1,9 +1,3 @@
--- ░█████╗░██╗░░░██╗████████╗░█████╗░░█████╗░███╗░░░███╗██████╗░░░░██╗░░░░░██╗░░░██╗░█████╗░
--- ██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗██╔══██╗████╗░████║██╔══██╗░░░██║░░░░░██║░░░██║██╔══██╗
--- ███████║██║░░░██║░░░██║░░░██║░░██║██║░░╚═╝██╔████╔██║██║░░██║░░░██║░░░░░██║░░░██║███████║
--- ██╔══██║██║░░░██║░░░██║░░░██║░░██║██║░░██╗██║╚██╔╝██║██║░░██║░░░██║░░░░░██║░░░██║██╔══██║
--- ██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝╚█████╔╝██║░╚═╝░██║██████╔╝██╗███████╗╚██████╔╝██║░░██║
--- ╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═════╝░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
@@ -47,14 +41,11 @@ autocmd({ "FileType" }, {
 autocmd({ "FileType" }, {
     desc = "no listchars for help files",
     pattern = { "help" },
-    callback = function() vim.opt_local.list = false end
-,
-})
-
-autocmd({ "FileType" }, {
-    desc = "FSRead",
-    pattern = { "text" },
-    callback = function() vim.cmd [[ FSRead ]] end
+    callback = function()
+        vim.opt_local.list = false
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+    end
 ,
 })
 
