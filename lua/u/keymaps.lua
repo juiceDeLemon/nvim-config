@@ -85,5 +85,16 @@ keymap("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
+-- alphabet
+keymap("n", "<leader><leader><leader>a", function()
+    print("abcdefghijklmnopqrstuvwxyz")
+end, opts)
+
 -- telescope
--- keymap("n", "<leader>f
+keymap("n", "<leader>ft", "<cmd>Telescope<cr>")
+keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- # but better
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+keymap("n", "<leader>fg", "<cmd>Telescope git_status<cr>")
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- help menu fuzzy
+keymap("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>")
+keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find text
