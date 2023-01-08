@@ -8,6 +8,7 @@ require"tokyonight".setup {
         hi.TreesitterContextBottom = { bold = true, underline = true }
         hi.CursorLineNr = { fg = c.fg }
         hi.LineNr = { fg = c.dark5 }
+        hi.Pmenu = { fg = c.border_highlight }
     end
 }
 

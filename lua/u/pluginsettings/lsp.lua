@@ -31,7 +31,7 @@ local on_attach = function(client, _)
     keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
     keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
 
-    c = vim.lsp.protocol.make_client_capabilities()
+    local c = vim.lsp.protocol.make_client_capabilities()
     -- python stuff
     if client.name == 'pyright' then
         c.hover = false
@@ -40,6 +40,7 @@ local on_attach = function(client, _)
         c.rename = false
         c.signature_help = false
     end
+    c = require"cmp_nvim_lsp".default_capabilities()
 end
 
 require"mason-lspconfig".setup_handlers {

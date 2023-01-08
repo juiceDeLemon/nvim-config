@@ -1,3 +1,4 @@
+require "u.pluginsettings.cmp"
 require "u.pluginsettings.colourscheme"
 require "u.pluginsettings.comment"
 require "u.pluginsettings.lsp"
