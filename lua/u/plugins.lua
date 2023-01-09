@@ -25,7 +25,7 @@ require "lazy".setup {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "Maan2003/lsp_lines.nvim",
-    "mhartington/formatter.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
 
     -- COMPLETION --
     "hrsh7th/nvim-cmp",
