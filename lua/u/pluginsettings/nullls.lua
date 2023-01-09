@@ -8,7 +8,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local lsp_formatting = function(bufnr)
     vim.lsp.buf.format({
-        filter = function(client) return client.name == "null-ls" end,
+        filter = function(client) return client.name == "null-ls" end
+,
         bufnr = bufnr,
     })
 end
@@ -19,7 +20,7 @@ nl.setup({
     debug = false,
     sources = {
         d.clang_check,
-        d.cspell,
+        -- d.cspell,
         d.luacheck,
         d.pylint,
         d.shellcheck,
@@ -36,10 +37,12 @@ nl.setup({
             vim.api.nvim_create_autocmd("BufWritePre", {
                 group = augroup,
                 buffer = bufnr,
-                callback = function() lsp_formatting(bufnr) end,
+                callback = function() lsp_formatting(bufnr) end
+,
             })
         end -- autosave
-    end,
+    end
+,
 })
 
 local no_emacs = {
@@ -66,7 +69,8 @@ local no_emacs = {
                 end
             end
             return diagnostics
-        end,
+        end
+,
     },
 }
 
