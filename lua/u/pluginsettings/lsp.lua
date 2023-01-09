@@ -50,10 +50,20 @@ require"mason-lspconfig".setup_handlers {
         }
     end
 }
-
-require'lspconfig'.sumneko_lua.setup {
-    settings = { Lua = { diagnostics = { globals = {'vim'} } } },
+require"lspconfig".sumneko_lua.setup {
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace",
+            },
+            diagnostics = {
+                globals = { "vim" },
+            }
+        },
+    },
+    on_attach = on_attach
 }
+
 
 vim.diagnostic.config { virtual_text = false }
 require"lsp_lines".setup()
