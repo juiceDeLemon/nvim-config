@@ -27,7 +27,7 @@ nl.setup({
 
         f.black,
         f.clang_format,
-        f.lua_format,
+        f.stylua,
         f.prettier,
         f.shfmt,
     },
