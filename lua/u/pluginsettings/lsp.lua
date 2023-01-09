@@ -1,6 +1,4 @@
-require"mason".setup {
-    ui = { border = "rounded" }
-}
+require"mason".setup { ui = { border = "rounded" } }
 
 require"mason-lspconfig".setup {
     ensure_installed = {
@@ -11,7 +9,7 @@ require"mason-lspconfig".setup {
         "marksman",
         "pyright", -- python completion, rename and type checking
         "pylsp", -- python hover, documentation, go to def, syntax checking
-    }
+    },
 }
 
 local on_attach = function(client, _)
@@ -33,70 +31,84 @@ local on_attach = function(client, _)
 
     local c = vim.lsp.protocol.make_client_capabilities()
     -- python stuff
-    if client.name == 'pyright' then
-        c.hover = false
-    end
-    if client.name == 'pylsp' then
+    if client.name == "pyright" then c.hover = false end
+    if client.name == "pylsp" then
         c.rename = false
         c.signature_help = false
     end
 end
 
+
 require"mason-lspconfig".setup_handlers {
     function(server_name)
         require"lspconfig"[server_name].setup {
             on_attach = on_attach,
-            capabilities = require('cmp_nvim_lsp').default_capabilities()
+            capabilities = require"cmp_nvim_lsp".default_capabilities(),
         }
     end
+,
 }
 require"lspconfig".sumneko_lua.setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim" },
-            }
-        },
-    },
+    settings = { Lua = { diagnostics = { globals = { "vim" } } } },
     on_attach = on_attach,
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities = require"cmp_nvim_lsp".default_capabilities(),
 }
-
 
 vim.diagnostic.config { virtual_text = false }
 require"lsp_lines".setup()
 
 local settings = {
-  pyright = {
-    python = {
-      analysis = {
-        useLibraryCodeForTypes = true,
-        diagnosticSeverityOverrides = {
-          reportGeneralTypeIssues = "none",
-          reportOptionalMemberAccess = "none",
-          reportOptionalSubscript = "none",
-          reportPrivateImportUsage = "none",
+    pyright = {
+        python = {
+            analysis = {
+                useLibraryCodeForTypes = true,
+                diagnosticSeverityOverrides = {
+                    reportGeneralTypeIssues = "none",
+                    reportOptionalMemberAccess = "none",
+                    reportOptionalSubscript = "none",
+                    reportPrivateImportUsage = "none",
+                },
+                autoImportCompletions = false,
+            },
+            linting = { pylintEnabled = false },
         },
-        autoImportCompletions = false,
-      },
-      linting = {pylintEnabled = false}
-    }
-  },
-  pylsp = {
-    pylsp = {
-      builtin = {
-        installExtraArgs = {'flake8', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylint', 'yapf'},
-      },
-      plugins = {
-        jedi_completion = { enabled = false },
-        rope_completion = { enabled = false },
-        flake8 = { enabled = false },
-        pyflakes = { enabled = false },
-        pycodestyle = {
-          ignore = {'E226', 'E266', 'E302', 'E303', 'E304', 'E305', 'E402', 'C0103', 'W0104', 'W0621', 'W391', 'W503', 'W504'},
-          maxLineLength = 99,
-        },
-      },
     },
-  },
+    pylsp = {
+        pylsp = {
+            builtin = {
+                installExtraArgs = {
+                    "flake8",
+                    "pycodestyle",
+                    "pydocstyle",
+                    "pyflakes",
+                    "pylint",
+                    "yapf",
+                },
+            },
+            plugins = {
+                jedi_completion = { enabled = false },
+                rope_completion = { enabled = false },
+                flake8 = { enabled = false },
+                pyflakes = { enabled = false },
+                pycodestyle = {
+                    ignore = {
+                        "E226",
+                        "E266",
+                        "E302",
+                        "E303",
+                        "E304",
+                        "E305",
+                        "E402",
+                        "C0103",
+                        "W0104",
+                        "W0621",
+                        "W391",
+                        "W503",
+                        "W504",
+                    },
+                    maxLineLength = 99,
+                },
+            },
+        },
+    },
 }
