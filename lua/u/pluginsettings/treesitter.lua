@@ -1,4 +1,4 @@
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup {
     -- configs
     ensure_installed = {
         "bash",

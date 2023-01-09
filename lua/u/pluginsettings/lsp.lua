@@ -1,6 +1,6 @@
-require"mason".setup { ui = { border = "rounded" } }
+require("mason").setup { ui = { border = "rounded" } }
 
-require"mason-lspconfig".setup {
+require("mason-lspconfig").setup {
     ensure_installed = {
         "bashls",
         "clangd",
@@ -38,24 +38,22 @@ local on_attach = function(client, _)
     end
 end
 
-
-require"mason-lspconfig".setup_handlers {
+require("mason-lspconfig").setup_handlers {
     function(server_name)
-        require"lspconfig"[server_name].setup {
+        require("lspconfig")[server_name].setup {
             on_attach = on_attach,
-            capabilities = require"cmp_nvim_lsp".default_capabilities(),
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
         }
-    end
-,
+    end,
 }
-require"lspconfig".sumneko_lua.setup {
+require("lspconfig").sumneko_lua.setup {
     settings = { Lua = { diagnostics = { globals = { "vim" } } } },
     on_attach = on_attach,
-    capabilities = require"cmp_nvim_lsp".default_capabilities(),
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
 vim.diagnostic.config { virtual_text = false }
-require"lsp_lines".setup()
+require("lsp_lines").setup()
 
 local settings = {
     pyright = {

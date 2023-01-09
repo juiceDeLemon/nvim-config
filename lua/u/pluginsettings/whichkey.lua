@@ -73,4 +73,3 @@ wk.register({
         m = { "<cmd>TSJToggle<cr>", "Toggle TSJ node" },
     },
 }, { mode = "n", prefix = "<leader>" })
-

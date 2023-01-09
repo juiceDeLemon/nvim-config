@@ -11,21 +11,18 @@ autocmd({ "BufEnter" }, {
         vim.cmd [[
             if winnr('$') <= 1 && bufname() == 'NvimTree_' . tabpagenr() | endif
         ]]
-    end
-,
+    end,
 })
 
 autocmd({ "TextYankPost" }, {
     desc = "Flash yanked content",
-    callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 275 } end
-,
+    callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 275 } end,
 })
 
 autocmd({ "BufWinEnter" }, {
     pattern = { "*" },
     desc = "Check for dupe files in other buffers",
-    callback = function() vim.cmd "checktime" end
-,
+    callback = function() vim.cmd "checktime" end,
 })
 
 autocmd({ "FileType" }, {
@@ -34,8 +31,7 @@ autocmd({ "FileType" }, {
     callback = function()
         vim.opt_local.wrap = true
         vim.opt_local.spell = true
-    end
-,
+    end,
 })
 
 autocmd({ "FileType" }, {
@@ -45,8 +41,7 @@ autocmd({ "FileType" }, {
         vim.opt_local.list = false
         vim.opt_local.number = false
         vim.opt_local.relativenumber = false
-    end
-,
+    end,
 })
 
 autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
@@ -55,16 +50,16 @@ autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
     group = aug_smart_numbering,
     callback = function()
         if vim.opt.number and vim.fn.mode() ~= "i" then vim.opt.relativenumber = true end
-    end
-,
+    end,
 })
 
 autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
     desc = "No Relative Number if insert mode",
     pattern = { "*" },
     group = aug_smart_numbering,
-    callback = function() if vim.opt.number then vim.opt.relativenumber = false end end
-,
+    callback = function()
+        if vim.opt.number then vim.opt.relativenumber = false end
+    end,
 })
 
 -- autocmd({ "UserGettingBored" }, {

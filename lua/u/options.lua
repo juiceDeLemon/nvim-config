@@ -30,7 +30,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.scrolloff = 20 -- auto <z><z>
 vim.opt.sidescrolloff = 40 -- scrolloff but vertical
 vim.opt.wrap = false -- disable a long line wrapping to the next lin
-vim.opt.winblend = 30 -- enables pseudo-transparency for floating windows 
+vim.opt.winblend = 30 -- enables pseudo-transparency for floating windows
 vim.opt.pumblend = 30 -- enables pseudo-transparency for popup menu
 vim.opt.guifont = "JetBrainsMono NF" -- make sure to download the font (included in the JetBrainsMono file)
 vim.opt.list = true -- list blank things like spaces and eol as characters
@@ -40,5 +40,5 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- Don't know if this works
 
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+vim.cmd "autocmd BufEnter * set formatoptions-=cro"
+vim.cmd "autocmd BufEnter * setlocal formatoptions-=cro"

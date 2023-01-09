@@ -44,7 +44,7 @@ keymap("", "<space>", "<Nop>", opts) -- reset
 vim.g.mapleader = " " -- map
 vim.g.maplocalleader = " " -- map
 
--- code 
+-- code
 keymap("", "<M-cr>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 
 -- resize splits with arrows
@@ -86,9 +86,7 @@ keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- alphabet
-keymap("n", "<leader><leader><leader>a", function()
-    print("abcdefghijklmnopqrstuvwxyz")
-end, opts)
+keymap("n", "<leader><leader><leader>a", function() print "abcdefghijklmnopqrstuvwxyz" end, opts)
 
 -- telescope
 keymap("n", "<leader>ft", "<cmd>Telescope<cr>")

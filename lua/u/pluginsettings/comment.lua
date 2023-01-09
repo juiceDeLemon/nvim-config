@@ -1,3 +1,3 @@
-require"Comment".setup {
+require("Comment").setup {
     ignore = "^$", -- ignore blanklines
 }

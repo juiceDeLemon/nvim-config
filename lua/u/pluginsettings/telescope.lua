@@ -1,4 +1,4 @@
-require"telescope".setup {
+require("telescope").setup {
     defaults = {
         path_display = { "smart" },
         file_ignore_patterns = {
@@ -10,10 +10,9 @@ require"telescope".setup {
             ".idea/",
             ".vscode/",
         },
-        winblend = 30
+        winblend = 30,
     },
 }
 
-
-require"telescope".load_extension "frecency"
-require"telescope".load_extension "fzf"
+require("telescope").load_extension "frecency"
+require("telescope").load_extension "fzf"

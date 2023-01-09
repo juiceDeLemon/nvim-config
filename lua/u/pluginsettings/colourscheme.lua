@@ -1,4 +1,4 @@
-require"tokyonight".setup {
+require("tokyonight").setup {
     style = "night",
     transparent = true,
     dim_inactive = true,
@@ -9,7 +9,7 @@ require"tokyonight".setup {
         hi.CursorLineNr = { fg = c.fg }
         hi.LineNr = { fg = c.dark5 }
         hi.Pmenu = { fg = c.border_highlight }
-    end
+    end,
 }
 
 vim.cmd [[ colorscheme tokyonight-night ]]

@@ -14,7 +14,6 @@ source.new = function()
     return self
 end
 
-
 source.complete = function(self, _, callback)
     local bufnr = vim.api.nvim_get_current_buf()
 
@@ -53,19 +52,15 @@ source.complete = function(self, _, callback)
 
                 callback { items = items, isIncomplete = false }
                 self.cache[bufnr] = items
-            end
-,
+            end,
         }):start()
     else
         callback { items = self.cache[bufnr], isIncomplete = false }
     end
 end
 
-
 source.get_trigger_characters = function() return { "#" } end
 
-
 source.is_available = function() return vim.bo.filetype == "gitcommit" end
-
 
 require("cmp").register_source("gh_issues", source.new())
