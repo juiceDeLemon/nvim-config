@@ -40,7 +40,6 @@ local on_attach = function(client, _)
         c.rename = false
         c.signature_help = false
     end
-    c = require"cmp_nvim_lsp".default_capabilities()
 end
 
 require"mason-lspconfig".setup_handlers {
