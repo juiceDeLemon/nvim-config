@@ -74,11 +74,11 @@ cmp.setup {
 , { "i", "s" }),
     }),
     sources = cmp.config.sources({
-        { name = "luasnip", group_index = 1, keyword_length = 3 },
-        { name = "nvim_lsp", group_index = 2, keyword_length = 3 },
+        { name = "luasnip", group_index = 1 },
+        { name = "nvim_lsp", group_index = 2 },
         { name = "nvim_lua", group_index = 2, keyword_length = 3 },
         { name = "path", group_index = 3, keyword_length = 3 },
-        { name = "buffer", group_index = 4, keyword_length = 3 },
+        { name = "buffer", group_index = 4, keyword_length = 5 },
         { name = "issues", group_index = 6 },
     }),
     sorting = {
