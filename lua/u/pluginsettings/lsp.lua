@@ -46,22 +46,21 @@ end
 require"mason-lspconfig".setup_handlers {
     function(server_name)
         require"lspconfig"[server_name].setup {
-            on_attach = on_attach
+            on_attach = on_attach,
+            capabilities = require('cmp_nvim_lsp').default_capabilities()
         }
     end
 }
 require"lspconfig".sumneko_lua.setup {
     settings = {
         Lua = {
-            completion = {
-                callSnippet = "Replace",
-            },
             diagnostics = {
                 globals = { "vim" },
             }
         },
     },
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
 }
 
 
