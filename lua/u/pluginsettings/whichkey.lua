@@ -28,7 +28,7 @@ wk.register({
         r = { "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk" },
         v = { "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk" },
     },
-    r = { ":IncRename ", "Rename Element" },
+    -- r = { ":IncRename ", "Rename Element" },
     s = {
         name = "Screenshot",
         c = {
