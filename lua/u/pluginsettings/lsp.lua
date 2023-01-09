@@ -55,6 +55,9 @@ require'lspconfig'.sumneko_lua.setup {
     settings = { Lua = { diagnostics = { globals = {'vim'} } } },
 }
 
+vim.diagnostic.config { virtual_text = false }
+require"lsp_lines".setup()
+
 local settings = {
   pyright = {
     python = {
