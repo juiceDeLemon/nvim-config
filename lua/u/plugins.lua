@@ -46,14 +46,18 @@ require("lazy").setup {
     "nvim-treesitter/nvim-treesitter-context",
     "nvim-treesitter/playground",
 
-    -- TREES --
-    "nvim-tree/nvim-tree.lua",
-    "mbbill/undotree",
-
     -- TELESCOPE --
     "nvim-telescope/telescope.nvim",
     "nvim-telescope/telescope-frecency.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
+    -- TREES --
+    "nvim-tree/nvim-tree.lua",
+    "mbbill/undotree",
+
+    -- CODE ACTIONS --
+    "weilbith/nvim-code-action-menu",
+    "kosayoda/nvim-lightbulb",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
