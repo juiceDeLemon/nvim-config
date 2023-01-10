@@ -14,8 +14,6 @@ require("luasnip.loaders.from_vscode").lazy_load()
 --                == nil
 -- end
 
--- lspkind.init { preset = "codicons" }
-
 cmp.setup {
     enabled = true,
     preselect = cmp.PreselectMode.Item,
