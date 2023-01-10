@@ -10,4 +10,4 @@ require("mini.animate").setup { cursor = { enable = false } }
 require("nvim-lightbulb").setup {
     autocmd = { enabled = true },
 }
-vim.fn.sign_define("LightBulbSig", { text = "" })
+vim.fn.sign_define("LightBulbSign", { text = "" })
