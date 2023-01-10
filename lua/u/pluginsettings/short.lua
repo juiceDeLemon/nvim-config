@@ -5,3 +5,9 @@ require("Comment").setup {
 
 -- animate
 require("mini.animate").setup { cursor = { enable = false } }
+
+-- lightbulb icon
+require("nvim-lightbulb").setup {
+    autocmd = { enabled = true },
+}
+vim.fn.sign_define("LightBulbSig", { text = "" })

@@ -44,12 +44,6 @@ autocmd({ "FileType" }, {
     end,
 })
 
-autocmd({ "CursorHold", "CursorHoldI" }, {
-    desc = "i lik light bubs",
-    pattern = { "*" },
-    callback = function() require("nvim-lightbulb").update_lightbulb() end,
-})
-
 autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
     desc = "Relative Number if not insert mode",
     pattern = { "*" },
