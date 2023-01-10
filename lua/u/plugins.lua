@@ -19,6 +19,7 @@ require("lazy").setup {
     -- PLUGINS --
     "numToStr/Comment.nvim",
     "folke/which-key.nvim",
+    "kylechui/nvim-surround",
 
     -- LSP --
     "neovim/nvim-lspconfig",

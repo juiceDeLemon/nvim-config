@@ -11,3 +11,6 @@ require("nvim-lightbulb").setup {
     autocmd = { enabled = true },
 }
 vim.fn.sign_define("LightBulbSign", { text = "" })
+
+-- surround
+require("nvim-surround").setup()
