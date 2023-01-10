@@ -59,9 +59,14 @@ require("lazy").setup {
     "weilbith/nvim-code-action-menu",
     "kosayoda/nvim-lightbulb",
 
+    -- EYE-CANDY --
+    "folke/noice.nvim",
+    "echasnovski/mini.animate",
+
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
     "kkharji/sqlite.lua",
 
     -- ICONS --
