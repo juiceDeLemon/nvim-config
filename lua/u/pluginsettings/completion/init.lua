@@ -1,9 +1,3 @@
--- ░█████╗░███╗░░░███╗██████╗░░░░░██╗
--- ██╔══██╗████╗░████║██╔══██╗░░░██╔╝
--- ██║░░╚═╝██╔████╔██║██████╔╝░░██╔╝░
--- ██║░░██╗██║╚██╔╝██║██╔═══╝░░██╔╝░░
--- ╚█████╔╝██║░╚═╝░██║██║░░░░░██╔╝░░░
--- ░╚════╝░╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝░░░░
 local cmp = require "cmp"
 local snip = require "luasnip"
 local lspkind = require "lspkind"
@@ -19,6 +13,8 @@ require("luasnip.loaders.from_vscode").lazy_load()
 --                and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
 --                == nil
 -- end
+
+-- lspkind.init { preset = "codicons" }
 
 cmp.setup {
     enabled = true,
@@ -93,7 +89,7 @@ cmp.setup {
         fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format {
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-            with_text = true,
+            mode = "symbol_text",
             menu = {
                 luasnip = "[Snips]",
                 nvim_lsp = "[Lsp]",
@@ -114,4 +110,4 @@ cmp.setup.cmdline(":", {
     sources = cmp.config.sources({ { name = "nvim_lua" }, { name = "path" } }, { { name = "cmdline" } }),
 })
 
--- plugin capabilities are in somewhere in lsp/
+-- plugin capabilities are in somewhere in lsp.lua

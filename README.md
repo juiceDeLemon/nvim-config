@@ -2,6 +2,8 @@ hi
 
 run :checkhealth and follow the intructions
 
+nerdfonts with codicon
+
 you need these binaries
 trash
 grep
