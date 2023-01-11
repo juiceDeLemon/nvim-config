@@ -72,6 +72,7 @@ require("lazy").setup {
     "echasnovski/mini.animate",
     "goolord/alpha-nvim",
     "lukas-reineke/indent-blankline.nvim",
+    "smjonas/inc-rename.nvim",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",

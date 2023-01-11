@@ -17,3 +17,6 @@ require("hlslens").setup()
 
 -- git conflict
 require("git-conflict").setup()
+
+-- renamer
+require("inc_rename").setup()
