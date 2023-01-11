@@ -9,6 +9,15 @@ wk.setup {
 
 wk.register({
     e = { "<cmd>NvimTreeToggle<cr>", "Toggle Tree" },
+    f = {
+        name = "Telescope",
+        c = { "<cmd>Telescope grep_string<cr>", "Search Cursor String" },
+        f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+        h = { "<cmd>Telescope help_tags<cr>", "Help Menu" },
+        o = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+        s = { "<cmd>Telescope live_grep<cr>", "Search String" },
+        t = { "<cmd>Telescope<cr>", "Telescope Menu" },
+    },
     g = {
         name = "Git",
         b = { "<cmd>lua require'gitsigns'.blame_line()<cr>", "View Blame" },
@@ -28,7 +37,6 @@ wk.register({
         r = { "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk" },
         v = { "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk" },
     },
-    -- r = { ":IncRename ", "Rename Element" },
     s = {
         name = "Screenshot",
         c = {
@@ -68,8 +76,13 @@ wk.register({
         ["8"] = { "8gt", "Goto Tab 8" },
         ["9"] = { "9gt", "Goto Tab 9" },
     },
+    u = { "<cmd>UndotreeToggle<cr><c-w>h", "Toggle UndoTree" },
     ["<leader>"] = {
-        name = "leader",
+        name = "leader*2",
+        ["<leader>"] = {
+            name = "leader*3",
+            a = { "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'", "alphabet" },
+        },
         m = { "<cmd>TSJToggle<cr>", "Toggle TSJ node" },
     },
 }, { mode = "n", prefix = "<leader>" })

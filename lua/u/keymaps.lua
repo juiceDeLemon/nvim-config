@@ -38,9 +38,6 @@ keymap("", "<space>", "<Nop>", opts) -- reset
 vim.g.mapleader = " " -- map
 vim.g.maplocalleader = " " -- map
 
--- code
-keymap("", "<M-cr>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-
 -- resize splits with arrows
 keymap("", "<C-Up>", "<cmd>resize -2<cr>", opts)
 keymap("", "<C-Down>", "<cmd>resize +2<cr>", opts)
@@ -74,19 +71,3 @@ keymap("v", "<C-j>", "<cmd>MoveBlock(1)<CR>", opts)
 keymap("v", "<C-k>", "<cmd>MoveBlock(-1)<CR>", opts)
 keymap("v", "<C-h>", "<cmd>MoveHBlock(-1)<CR>", opts)
 keymap("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)
-
--- TO BE LEGENDARY --
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", opts)
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
-
--- alphabet
-keymap("n", "<leader><leader><leader>a", function() print "abcdefghijklmnopqrstuvwxyz" end, opts)
-
--- telescope
-keymap("n", "<leader>ft", "<cmd>Telescope<cr>")
-keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- # but better
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap("n", "<leader>fg", "<cmd>Telescope git_status<cr>")
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- help menu fuzzy
-keymap("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>")
-keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find text
