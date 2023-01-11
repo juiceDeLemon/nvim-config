@@ -19,7 +19,6 @@ require("lazy").setup {
     -- PLUGINS --
     "numToStr/Comment.nvim",
     "folke/which-key.nvim",
-    "mrjones2014/legendary.nvim",
     "kylechui/nvim-surround",
     "kevinhwang91/nvim-hlslens",
 
