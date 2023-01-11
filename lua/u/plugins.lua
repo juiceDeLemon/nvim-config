@@ -72,6 +72,7 @@ require("lazy").setup {
     "goolord/alpha-nvim",
     "lukas-reineke/indent-blankline.nvim",
     "smjonas/inc-rename.nvim",
+    "petertriho/nvim-scrollbar",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
