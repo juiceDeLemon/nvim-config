@@ -61,6 +61,7 @@ require("lazy").setup {
     -- GIT --
     "lewis6991/gitsigns.nvim",
     "akinsho/git-conflict.nvim",
+    "kdheepak/lazygit.nvim",
 
     -- CODE ACTIONS --
     "weilbith/nvim-code-action-menu",
