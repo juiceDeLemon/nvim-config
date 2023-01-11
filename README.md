@@ -3,9 +3,11 @@ hi
 run :checkhealth and follow the intructions
 
 you need these binaries
-trash
-grep
-clang check
+
+- trash
+- grep
+- wtf clang check ?
+- [silicon](https://github.com/aloxaf/silicon)
 
 install the needed formatters from mason
 listed in null-ls
