@@ -58,6 +58,9 @@ require("lazy").setup {
     "nvim-tree/nvim-tree.lua",
     "mbbill/undotree",
 
+    -- GIT --
+    "lewis6991/gitsigns.nvim",
+
     -- CODE ACTIONS --
     "weilbith/nvim-code-action-menu",
     "kosayoda/nvim-lightbulb",
@@ -66,6 +69,7 @@ require("lazy").setup {
     "folke/noice.nvim",
     "echasnovski/mini.animate",
     "goolord/alpha-nvim",
+    "lukas-reineke/indent-blankline.nvim",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",

@@ -1,6 +1,7 @@
 require "u.pluginsettings.alpha"
 require "u.pluginsettings.completion"
 require "u.pluginsettings.colourscheme"
+require "u.pluginsettings.indentline"
 require "u.pluginsettings.lsp"
 require "u.pluginsettings.noice"
 require "u.pluginsettings.nullls"

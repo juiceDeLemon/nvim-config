@@ -9,6 +9,7 @@ require("tokyonight").setup {
         hi.CursorLineNr = { fg = c.fg }
         hi.LineNr = { fg = c.dark5 }
         hi.Pmenu = { fg = c.border_highlight }
+        hi.IndentBlanklineSpaceChar = { fg = c.Whitespace }
     end,
 }
 
