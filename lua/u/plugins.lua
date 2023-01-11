@@ -21,6 +21,7 @@ require("lazy").setup {
     "folke/which-key.nvim",
     "mrjones2014/legendary.nvim",
     "kylechui/nvim-surround",
+    "kevinhwang91/nvim-hlslens",
 
     -- LSP --
     "neovim/nvim-lspconfig",
