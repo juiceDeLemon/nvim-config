@@ -1,3 +1,4 @@
+require "u.pluginsettings.alpha"
 require "u.pluginsettings.completion"
 require "u.pluginsettings.colourscheme"
 require "u.pluginsettings.lsp"

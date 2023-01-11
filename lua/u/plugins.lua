@@ -19,6 +19,7 @@ require("lazy").setup {
     -- PLUGINS --
     "numToStr/Comment.nvim",
     "folke/which-key.nvim",
+    "mrjones2014/legendary.nvim",
     "kylechui/nvim-surround",
 
     -- LSP --
@@ -63,6 +64,7 @@ require("lazy").setup {
     -- EYE-CANDY --
     "folke/noice.nvim",
     "echasnovski/mini.animate",
+    "goolord/alpha-nvim",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
