@@ -14,3 +14,6 @@ require("nvim-surround").setup()
 
 -- hlslens
 require("hlslens").setup()
+
+-- git conflict
+require("git-conflict").setup()
