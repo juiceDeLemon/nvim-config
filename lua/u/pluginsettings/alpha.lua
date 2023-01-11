@@ -17,15 +17,15 @@ dashboard.section.header.val = {
 dashboard.section.header.opts.hl = "Function"
 
 dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
-    dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<cr>"),
-    dashboard.button("r", "  Recently used files", "<cmd>Telescope oldfiles<cr>"),
-    dashboard.button("t", "  find Text", "<cmd>Telescope live_grep<cr>"),
-    dashboard.button("e", "פּ  open tree", "<cmd>e .<cr>"),
-    dashboard.button("g", "  open lazyGit", "<cmd>LazyGit<cr>"),
-    dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
-    dashboard.button("h", "?  Help command", "<cmd>Telescope help_tags<cr>"),
-    dashboard.button("q", "  Quit neovim", "<cmd>qa<cr>"),
+    dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
+    dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<cr>"),
+    dashboard.button("o", "  recently used files", "<cmd>Telescope oldfiles<cr>"),
+    dashboard.button("t", "  find Text", "<cmd>Telescope live_grep<cr>"),
+    dashboard.button("e", "  open tree", "<cmd>e .<cr>"),
+    dashboard.button("g", "  open lazyGit", "<cmd>LazyGit<cr>"),
+    dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
+    dashboard.button("h", "  Help command", "<cmd>Telescope help_tags<cr>"),
+    dashboard.button("q", "  Quit neovim", "<cmd>qa<cr>"),
 }
 
 local function footer()
