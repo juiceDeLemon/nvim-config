@@ -7,34 +7,25 @@ require("mason-lspconfig").setup {
         "jsonls",
         "sumneko_lua",
         "marksman",
-        "pyright", -- python completion, rename and type checking
-        "pylsp", -- python hover, documentation, go to def, syntax checking
+        "pylsp",
     },
 }
 
-local on_attach = function(client, _)
+local on_attach = function(_, _)
     local opts = { noremap = true, silent = true }
-    local keymap = vim.keymap.set
-    keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-    keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-    keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<cr>", opts)
-    keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
-    keymap("n", "<leader>la", "<cmd>CodeActionMenu<cr>", opts)
-    keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-    keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-    keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-    keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-    keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
-
-    local c = vim.lsp.protocol.make_client_capabilities()
-    -- python stuff
-    if client.name == "pyright" then c.hover = false end
-    if client.name == "pylsp" then
-        c.rename = false
-        c.signature_help = false
-    end
+    local map = vim.keymap.set
+    map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+    map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+    map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+    map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+    map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<cr>", opts)
+    map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+    map("n", "<leader>la", "<cmd>CodeActionMenu<cr>", opts)
+    map("n", "<leader>lh", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+    map("n", "<leader>ll", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+    map("n", "<leader>lr", ":IncRename ", opts)
+    map("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+    map("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
 end
 
 require("mason-lspconfig").setup_handlers {
@@ -46,7 +37,7 @@ require("mason-lspconfig").setup_handlers {
     end,
 }
 require("lspconfig").sumneko_lua.setup {
-    settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+    settings = { Lua = { diagnostics = { globals = { "vim", "require" } } } },
     on_attach = on_attach,
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
@@ -61,21 +52,6 @@ vim.diagnostic.config { virtual_text = false }
 require("lsp_lines").setup()
 
 local settings = {
-    pyright = {
-        python = {
-            analysis = {
-                useLibraryCodeForTypes = true,
-                diagnosticSeverityOverrides = {
-                    reportGeneralTypeIssues = "none",
-                    reportOptionalMemberAccess = "none",
-                    reportOptionalSubscript = "none",
-                    reportPrivateImportUsage = "none",
-                },
-                autoImportCompletions = false,
-            },
-            linting = { pylintEnabled = false },
-        },
-    },
     pylsp = {
         pylsp = {
             builtin = {
@@ -115,3 +91,5 @@ local settings = {
         },
     },
 }
+
+vim.g.python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
