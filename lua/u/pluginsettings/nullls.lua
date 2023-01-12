@@ -17,8 +17,7 @@ nl.setup {
     autostart = true,
     debug = false,
     sources = {
-        d.clang_check,
-        -- d.cspell,
+        d.cpplint,
         d.luacheck,
         d.pylint,
         d.shellcheck,
