@@ -29,11 +29,13 @@ map("x", ">", ">gv", opts)
 map("x", "p", '"_dP')
 
 -- system clipboard yanking
-map("n", "Y", '"+y')
-map("n", "<c-Y>", '"+yy')
-map("n", "D", '"+d')
-map("n", "<c-D>", '"+dd')
+map("n", "Y", "<nop>")
+map("n", "+y", '"+y')
+map("n", "+Y", '"+yy')
 map("v", "Y", '"+y')
+map("n", "D", "<nop>")
+map("n", "+d", '"+d')
+map("n", "+D", '"+dd')
 map("v", "D", '"+d')
 
 -- dial
