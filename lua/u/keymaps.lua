@@ -1,8 +1,5 @@
 local opts = { noremap = true, silent = true }
 
--- idk what this does
--- local term_opts = { silent = true }
-
 local map = vim.keymap.set
 
 -- n = normal mode
