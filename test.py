@@ -1,12 +1,13 @@
 import pygame
 
-print("hello world")
-  
 
 
 
 
 
+pygame.init()
+
+print(    "hello world")
 
 
 class Ligma:
