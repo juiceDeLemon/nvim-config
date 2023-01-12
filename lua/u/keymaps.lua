@@ -30,9 +30,9 @@ map("x", "p", '"_dP')
 
 -- system clipboard yanking
 map("n", "Y", '"+y')
-map("n", "<c-y>", '"+yy')
+map("n", "<c-Y>", '"+yy')
 map("n", "D", '"+d')
-map("n", "<c-d>", '"+dd')
+map("n", "<c-D>", '"+dd')
 map("v", "Y", '"+y')
 map("v", "D", '"+d')
 
