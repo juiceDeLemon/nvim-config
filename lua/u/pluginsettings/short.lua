@@ -23,3 +23,6 @@ require("inc_rename").setup()
 
 -- winsep
 require("colorful-winsep").setup()
+
+-- cursorword
+require("mini.cursorword").setup()
