@@ -20,3 +20,6 @@ require("git-conflict").setup()
 
 -- renamer
 require("inc_rename").setup()
+
+-- winsep
+require("colorful-winsep").setup()

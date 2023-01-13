@@ -74,6 +74,7 @@ require("lazy").setup {
     "lukas-reineke/indent-blankline.nvim",
     "smjonas/inc-rename.nvim",
     "petertriho/nvim-scrollbar",
+    "nvim-zh/colorful-winsep.nvim",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
