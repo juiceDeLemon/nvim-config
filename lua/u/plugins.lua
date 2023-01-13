@@ -22,6 +22,7 @@ require("lazy").setup {
     "kylechui/nvim-surround",
     "kevinhwang91/nvim-hlslens",
     "echasnovski/mini.cursorword",
+    "monaqa/dial.nvim",
 
     -- LSP --
     "neovim/nvim-lspconfig",

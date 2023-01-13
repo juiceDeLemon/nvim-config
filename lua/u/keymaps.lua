@@ -39,12 +39,12 @@ map("n", "+D", '"+dd')
 map("v", "D", '"+d')
 
 -- dial
--- keymap("n", "<C-a>", require"dial.map".inc_normal(), opts)
--- keymap("n", "<C-x>", require"dial.map".dec_normal(), opts)
--- keymap("v", "<C-a>", require"dial.map".inc_visual(), opts)
--- keymap("v", "<C-x>", require"dial.map".dec_visual(), opts)
--- keymap("v", "g<C-a>", require"dial.map".inc_gvisual(), opts)
--- keymap("v", "g<C-x>", require"dial.map".dec_gvisual(), opts)
+map("n", "<C-a>", require("dial.map").inc_normal(), opts)
+map("n", "<C-x>", require("dial.map").dec_normal(), opts)
+map("v", "<C-a>", require("dial.map").inc_visual(), opts)
+map("v", "<C-x>", require("dial.map").dec_visual(), opts)
+map("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
+map("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
 
 -- move.nvim
 map({ "n", "i" }, "<C-j>", "<cmd>MoveLine(1)<CR>", opts)

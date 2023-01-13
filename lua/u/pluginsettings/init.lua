@@ -1,6 +1,7 @@
 require "u.pluginsettings.alpha"
 require "u.pluginsettings.colourscheme"
 require "u.pluginsettings.completion"
+require "lua.u.pluginsettings.dial"
 require "u.pluginsettings.gitsigns"
 require "u.pluginsettings.indentline"
 require "u.pluginsettings.lsp"
