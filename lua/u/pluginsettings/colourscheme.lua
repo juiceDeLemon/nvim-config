@@ -1,6 +1,5 @@
 require("tokyonight").setup {
     style = "night",
-    transparent = true,
     dim_inactive = true,
     on_highlights = function(hi, c)
         -- colours refers to here:
