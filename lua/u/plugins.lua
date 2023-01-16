@@ -78,11 +78,16 @@ require("lazy").setup {
     "petertriho/nvim-scrollbar",
     "nvim-zh/colorful-winsep.nvim",
 
+    -- STATUS LINE --
+    "nvim-lualine/lualine.nvim",
+    "utilyre/barbecue.nvim",
+
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
     "kkharji/sqlite.lua",
+    "SmiteshP/nvim-navic",
 
     -- ICONS --
     "nvim-tree/nvim-web-devicons",

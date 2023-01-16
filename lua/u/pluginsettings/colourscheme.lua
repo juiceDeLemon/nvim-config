@@ -1,6 +1,7 @@
 require("tokyonight").setup {
     style = "night",
     dim_inactive = true,
+    lualine_bold = true,
     on_highlights = function(hi, c)
         -- colours refers to here:
         -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
