@@ -81,7 +81,7 @@ wk.register({
         name = "leader*2",
         ["<leader>"] = {
             name = "leader*3",
-            a = { "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'", "alphabet" },
+            a = { "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "alphabet" },
         },
         m = { "<cmd>TSJToggle<cr>", "Toggle TSJ node" },
     },
