@@ -45,13 +45,3 @@ map("v", "<C-a>", require("dial.map").inc_visual(), opts)
 map("v", "<C-x>", require("dial.map").dec_visual(), opts)
 map("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
 map("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
-
--- move.nvim
-map({ "n", "i" }, "<C-j>", "<cmd>MoveLine(1)<CR>", opts)
-map({ "n", "i" }, "<C-k>", "<cmd>MoveLine(-1)<CR>", opts)
-map({ "n", "i" }, "<C-h>", "<cmd>MoveHChar(-1)<CR>", opts)
-map({ "n", "i" }, "<C-l>", "<cmd>MoveHChar(1)<CR>", opts)
-map("v", "<C-j>", "<cmd>MoveBlock(1)<CR>", opts)
-map("v", "<C-k>", "<cmd>MoveBlock(-1)<CR>", opts)
-map("v", "<C-h>", "<cmd>MoveHBlock(-1)<CR>", opts)
-map("v", "<C-l>", "<cmd>MoveHBlock(1)<CR>", opts)

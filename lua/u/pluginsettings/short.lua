@@ -1,9 +1,5 @@
 -- comment
--- ignore blanklines
-require("Comment").setup { ignore = "^$" }
-
--- animate
-require("mini.animate").setup { cursor = { enable = false } }
+require("Comment").setup { ignore = "^$" } -- ignore blankline
 
 -- lightbulb icon
 require("nvim-lightbulb").setup { autocmd = { enabled = true } }
@@ -26,3 +22,6 @@ require("colorful-winsep").setup()
 
 -- cursorword
 require("mini.cursorword").setup()
+
+-- animate
+require("mini.animate").setup { cursor = { enable = false } }

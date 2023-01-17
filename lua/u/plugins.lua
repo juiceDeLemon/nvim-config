@@ -21,7 +21,6 @@ require("lazy").setup {
     "folke/which-key.nvim",
     "kylechui/nvim-surround",
     "kevinhwang91/nvim-hlslens",
-    "echasnovski/mini.cursorword",
     "monaqa/dial.nvim",
 
     -- LSP --
@@ -82,6 +81,10 @@ require("lazy").setup {
     -- STATUS LINE --
     "nvim-lualine/lualine.nvim",
     "utilyre/barbecue.nvim",
+
+    -- MINI --
+    "echasnovski/mini.cursorword",
+    "echasnovski/mini.move",
 
     -- DEPENDENCIES --
     "nvim-lua/plenary.nvim",
