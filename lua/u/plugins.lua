@@ -22,6 +22,7 @@ require("lazy").setup {
     "kylechui/nvim-surround",
     "kevinhwang91/nvim-hlslens",
     "monaqa/dial.nvim",
+    "NvChad/nvim-colorizer.lua",
 
     -- LSP --
     "neovim/nvim-lspconfig",
