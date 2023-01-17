@@ -21,7 +21,7 @@ require("inc_rename").setup()
 require("colorful-winsep").setup()
 
 -- cursorword
-require("mini.cursorword").setup()
+require("mini.cursorword").setup { delay = 600 }
 
 -- animate
 require("mini.animate").setup { cursor = { enable = false } }
