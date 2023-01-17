@@ -6,7 +6,6 @@ ll.setup {
     options = {
         globalstatus = true,
         refresh = { statusline = 250 },
-        ignore_focus = { "help", "NvimTree", "alpha" },
     },
     sections = {
         lualine_a = { { "mode", fmt = function(str) return "ඞ " .. str end } },
