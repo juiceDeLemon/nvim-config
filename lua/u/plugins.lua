@@ -23,6 +23,7 @@ require("lazy").setup {
     "kevinhwang91/nvim-hlslens",
     "monaqa/dial.nvim",
     "NvChad/nvim-colorizer.lua",
+    "princejoogie/chafa.nvim",
 
     -- LSP --
     "neovim/nvim-lspconfig",
@@ -93,6 +94,7 @@ require("lazy").setup {
     "rcarriga/nvim-notify",
     "kkharji/sqlite.lua",
     "SmiteshP/nvim-navic",
+    "m00qek/baleia.nvim",
 
     -- ICONS --
     "nvim-tree/nvim-web-devicons",

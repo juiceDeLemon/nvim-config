@@ -6,8 +6,8 @@ you need these binaries
 
 - trash
 - grep
-- wtf clang check ?
 - [silicon](https://github.com/aloxaf/silicon)
+- [chafa](https://github.com/hpjansson/chafa)
 
 install the needed formatters from mason
 listed in null-ls

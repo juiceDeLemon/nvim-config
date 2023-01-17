@@ -25,3 +25,6 @@ require("mini.cursorword").setup { delay = 600 }
 
 -- animate
 require("mini.animate").setup { cursor = { enable = false } }
+
+-- chafa
+require("chafa").setup()
