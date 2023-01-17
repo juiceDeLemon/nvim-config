@@ -30,6 +30,7 @@ require("lazy").setup {
     "williamboman/mason-lspconfig.nvim",
     "Maan2003/lsp_lines.nvim",
     "jose-elias-alvarez/null-ls.nvim",
+    "LostNeophyte/null-ls-embedded",
 
     -- COMPLETION --
     "hrsh7th/nvim-cmp",
