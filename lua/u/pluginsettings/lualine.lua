@@ -1,8 +1,6 @@
-local ll = require "lualine"
 local noice = require "noice"
-local b = require "barbecue"
 
-ll.setup {
+require("lualine").setup {
     options = {
         globalstatus = true,
         refresh = { statusline = 250 },
@@ -21,7 +19,7 @@ ll.setup {
     },
     inactive_sections = { lualine_a = { "filename" }, lualine_z = { "progress" } },
 }
-b.setup {
+require("barbecue").setup {
     modifiers = { dirname = ":~" },
     symbols = { separator = "", default_context = "..." },
     kinds = {
