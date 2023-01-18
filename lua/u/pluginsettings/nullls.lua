@@ -17,13 +17,11 @@ nl.setup {
     autostart = true,
     debug = false,
     sources = {
-        d.cpplint,
         d.luacheck,
         d.pylint,
         d.shellcheck,
 
         f.black,
-        f.clang_format,
         f.stylua,
         f.prettier,
         f.shfmt,
