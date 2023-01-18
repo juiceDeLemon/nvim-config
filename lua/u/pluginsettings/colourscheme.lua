@@ -1,5 +1,6 @@
 require("tokyonight").setup {
     style = "night",
+    styles = { functions = { bold = true } },
     dim_inactive = true,
     lualine_bold = true,
     on_highlights = function(hi, c)
@@ -10,6 +11,8 @@ require("tokyonight").setup {
         hi.LineNr = { fg = c.dark5 }
         hi.Pmenu = { fg = c.border_highlight }
         hi.IndentBlanklineSpaceChar = { fg = c.Whitespace }
+        hi.CmpItemAbbrMatch = { fg = c.blue1, bold = true }
+        hi.CmpItemMenu = { fg = c.comment, italic = true }
     end,
 }
 
