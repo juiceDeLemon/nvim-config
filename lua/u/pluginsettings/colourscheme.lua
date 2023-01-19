@@ -13,6 +13,10 @@ require("tokyonight").setup {
         hi.IndentBlanklineSpaceChar = { fg = c.Whitespace }
         hi.CmpItemAbbrMatch = { fg = c.blue1, bold = true }
         hi.CmpItemMenu = { fg = c.comment, italic = true }
+        hi.Visual = { bold = true, reverse = true }
+        hi.TelescopePreviewLine = { bg = c.bg_visual }
+        hi.TelescopeSelection = { bg = c.bg_visual }
+        hi.TelescopeSelectionCaret = { bg = c.bg_visual }
     end,
 }
 
