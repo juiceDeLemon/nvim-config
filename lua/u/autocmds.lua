@@ -44,6 +44,14 @@ autocmd({ "FileType" }, {
     end,
 })
 
+autocmd({ "SearchWrapped" }, {
+    desc = ':noh if no "n" or "N" after a while',
+    pattern = { "*" },
+    callback = function()
+        vim.defer_fn(function() vim.cmd [[noh]] end, 3000)
+    end,
+})
+
 autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
     desc = "Relative Number if not insert mode",
     pattern = { "*" },
