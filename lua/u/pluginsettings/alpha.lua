@@ -43,13 +43,13 @@ dashboard.section.buttons.val = {
 
 local function footer()
     local datetime = os.date "%d-%m-%Y %H:%M:%S"
-    local plugins_text = "  v"
+    local plugins_text = "  v"
         .. vim.version().major
         .. "."
         .. vim.version().minor
         .. "."
         .. vim.version().patch
-        .. "   "
+        .. "   "
         .. datetime
     -- Quote
     local fortune = require "alpha.fortune"
