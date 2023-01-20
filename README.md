@@ -9,7 +9,7 @@ you need these binaries
 - [silicon](https://github.com/aloxaf/silicon)
 - [chafa](https://github.com/hpjansson/chafa)
 
-change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog)
+change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog). you might want to use venv all the time because it isn't working.
 
 install the needed formatters from mason
 listed in null-ls
