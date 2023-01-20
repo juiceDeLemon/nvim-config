@@ -35,6 +35,7 @@ vim.opt.pumblend = 30 -- enables pseudo-transparency for popup menu
 vim.opt.guifont = "JetBrainsMono NF" -- make sure to download the font (included in the JetBrainsMono file)
 vim.opt.list = true -- list blank things like spaces and eol as characters
 vim.opt.listchars = "tab: ,space:·,trail:*" -- change the character of above
+vim.opt.mouse = "a"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
