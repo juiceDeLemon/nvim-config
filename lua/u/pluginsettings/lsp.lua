@@ -41,6 +41,8 @@ require("lspconfig").sumneko_lua.setup {
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -90,5 +92,3 @@ local settings = {
         },
     },
 }
-
-vim.g.python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
