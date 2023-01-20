@@ -29,8 +29,7 @@ rename_Dir() {
 # Clone new nvim directory
 clone() {
 	echo "Cloning..."
-	git clone https://github.com/ye-junzhe/BetterNvim ~/.config/nvim
-	nvim +PackerSync
+	git clone https://github.com/juiceDeLemon/nvim-config ~/.config/nvim
 }
 
 # Check if neovim is installed and warn if not

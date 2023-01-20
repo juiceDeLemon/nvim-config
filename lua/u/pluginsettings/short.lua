@@ -2,7 +2,7 @@
 require("Comment").setup { ignore = "^$" } -- ignore blankline
 
 -- lightbulb icon
-require("nvim-lightbulb").setup { autocmd = { enabled = true } }
+require("nvim-lightbulb").setup { float = { enabled = true } }
 vim.fn.sign_define("LightBulbSign", { text = "" })
 
 -- surround
