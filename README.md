@@ -9,6 +9,8 @@ you need these binaries
 - [silicon](https://github.com/aloxaf/silicon)
 - [chafa](https://github.com/hpjansson/chafa)
 
+change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog)
+
 install the needed formatters from mason
 listed in null-ls
 
