@@ -24,6 +24,7 @@ require("lazy").setup {
     "monaqa/dial.nvim",
     "NvChad/nvim-colorizer.lua",
     "princejoogie/chafa.nvim",
+    "folke/trouble.nvim",
 
     -- LSP --
     "neovim/nvim-lspconfig",

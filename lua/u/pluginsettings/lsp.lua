@@ -11,20 +11,24 @@ require("mason-lspconfig").setup {
 }
 
 local on_attach = function(_, _)
-    local opts = { noremap = true, silent = true }
-    local map = vim.keymap.set
-    map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-    map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-    map("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<cr>", opts)
-    map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
-    map("n", "<leader>la", "<cmd>CodeActionMenu<cr>", opts)
-    map("n", "<leader>lh", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-    map("n", "<leader>ll", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-    map("n", "<leader>lr", ":IncRename ", opts)
-    map("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-    map("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
+    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
+    require("which-key").register({
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+        I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+        r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+    }, { mode = "n", prefix = "g" })
+    require("which-key").register({
+        l = {
+            name = "LSP",
+            a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
+            h = { "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Previous" },
+            l = { "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", "Next" },
+            r = { ":IncRename ", "Rename Symbol" },
+            s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+            q = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics" },
+        },
+    }, { mode = "n", prefix = "<leader>" })
 end
 
 require("mason-lspconfig").setup_handlers {
