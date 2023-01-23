@@ -25,6 +25,7 @@ require("lazy").setup {
     "NvChad/nvim-colorizer.lua",
     "princejoogie/chafa.nvim",
     "folke/trouble.nvim",
+    "folke/todo-comments.nvim",
 
     -- LSP --
     "neovim/nvim-lspconfig",

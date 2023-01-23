@@ -27,3 +27,6 @@ require("mini.animate").setup { cursor = { enable = false } }
 
 -- chafa
 require("chafa").setup()
+
+-- todo comments
+require("todo-comments").setup()
