@@ -37,6 +37,8 @@ map("n", "D", "<nop>")
 map("n", "+d", '"+d')
 map("n", "+D", '"+dd')
 map("v", "D", '"+d')
+map("n", "+p", '"+p')
+map("n", "+P", '"+P')
 
 -- dial
 map("n", "<C-a>", require("dial.map").inc_normal(), opts)
