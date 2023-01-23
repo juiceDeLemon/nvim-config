@@ -2,10 +2,10 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 -- Augroups
-local aug_smart_numbering = augroup("smart_numbering", {})
+-- there is none
 
 -- Autocommands
-autocmd({ "BufEnter" }, {
+autocmd("BufEnter", {
     desc = "idk",
     callback = function()
         vim.cmd [[
@@ -14,18 +14,18 @@ autocmd({ "BufEnter" }, {
     end,
 })
 
-autocmd({ "TextYankPost" }, {
+autocmd("TextYankPost", {
     desc = "Flash yanked content",
-    callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 275 } end,
+    callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 100 } end,
 })
 
-autocmd({ "BufWinEnter" }, {
+autocmd("BufWinEnter", {
     pattern = { "*" },
     desc = "Check for dupe files in other buffers",
     callback = function() vim.cmd "checktime" end,
 })
 
-autocmd({ "FileType" }, {
+autocmd("FileType", {
     desc = "I want to see the long line without scrolling",
     pattern = { "gitcommit", "markdown" },
     callback = function()
@@ -34,7 +34,7 @@ autocmd({ "FileType" }, {
     end,
 })
 
-autocmd({ "FileType" }, {
+autocmd("FileType", {
     desc = "no listchars for help files",
     pattern = { "help" },
     callback = function()
@@ -44,29 +44,11 @@ autocmd({ "FileType" }, {
     end,
 })
 
-autocmd({ "SearchWrapped" }, {
+autocmd("SearchWrapped", {
     desc = ':noh if no "n" or "N" after a while',
     pattern = { "*" },
     callback = function()
         vim.defer_fn(function() vim.cmd [[noh]] end, 3000)
-    end,
-})
-
-autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
-    desc = "Relative Number if not insert mode",
-    pattern = { "*" },
-    group = aug_smart_numbering,
-    callback = function()
-        if vim.opt.number and vim.fn.mode() ~= "i" then vim.opt.relativenumber = true end
-    end,
-})
-
-autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
-    desc = "No Relative Number if insert mode",
-    pattern = { "*" },
-    group = aug_smart_numbering,
-    callback = function()
-        if vim.opt.number then vim.opt.relativenumber = false end
     end,
 })
 
