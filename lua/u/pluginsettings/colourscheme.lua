@@ -6,6 +6,8 @@ require("tokyonight").setup {
     on_highlights = function(hi, c)
         -- colours refers to here:
         -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
+        hi.Normal = { bg = c.none }
+        hi.NormalFloat = { bg = c.none }
         hi.TreesitterContextBottom = { bold = true, underline = true }
         hi.CursorLineNr = { fg = c.fg }
         hi.LineNr = { fg = c.dark5 }
@@ -17,7 +19,8 @@ require("tokyonight").setup {
         hi.TelescopePreviewLine = { bg = c.bg_visual }
         hi.TelescopeSelection = { bg = c.bg_visual }
         hi.TelescopeSelectionCaret = { bg = c.bg_visual }
+        hi.EndOfBuffer = { fg = c.comment }
     end,
 }
 
-vim.cmd [[ colorscheme tokyonight ]]
+vim.cmd.colorscheme "tokyonight"
