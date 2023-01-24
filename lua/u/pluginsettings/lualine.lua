@@ -17,7 +17,9 @@ require("lualine").setup {
         lualine_y = { "location" },
         lualine_z = { "progress" },
     },
-    inactive_sections = { lualine_a = { "filename" }, lualine_z = { "progress" } },
+    tabline = {
+        lualine_a = { { "tabs", fmt = function(str) return "ඞ " .. str end } },
+    },
 }
 require("barbecue").setup {
     modifiers = { dirname = ":~" },
