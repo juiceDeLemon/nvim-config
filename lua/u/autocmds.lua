@@ -44,14 +44,6 @@ autocmd("FileType", {
     end,
 })
 
-autocmd("SearchWrapped", {
-    desc = ':noh if no "n" or "N" after a while',
-    pattern = { "*" },
-    callback = function()
-        vim.defer_fn(function() vim.cmd [[noh]] end, 3000)
-    end,
-})
-
 -- autocmd({ "UserGettingBored" }, {
 --     desc = "disable the 4 primitive movement keys to teach the user a lesson",
 --     callback = function()
