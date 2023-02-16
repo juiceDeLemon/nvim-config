@@ -11,16 +11,13 @@ require("nvim-surround").setup()
 require("hlslens").setup()
 
 -- git conflict
-require("git-conflict").setup()
+require("git-conflict").setup {}
 
 -- renamer
 require("inc_rename").setup()
 
 -- winsep
 require("colorful-winsep").setup()
-
--- cursorword
-require("mini.cursorword").setup { delay = 600 }
 
 -- animate
 require("mini.animate").setup { cursor = { enable = false } }
@@ -29,4 +26,9 @@ require("mini.animate").setup { cursor = { enable = false } }
 require("chafa").setup()
 
 -- todo comments
-require("todo-comments").setup()
+require("todo-comments").setup { highlight = { before = "fg", keyword = "bg" } }
+
+-- flight
+require("flight").setup()
+-- require("flit").setup()
+-- require("mini.jump").setup()
