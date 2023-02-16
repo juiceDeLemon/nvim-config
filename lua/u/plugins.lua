@@ -12,20 +12,31 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup {
+require("lazy").setup({
     -- COLOURSCHEME --
     { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
 
+    -- DEDICATED TO FOLKE --
+    "folke/which-key.nvim",
+    "folke/trouble.nvim",
+    "folke/todo-comments.nvim",
+    "folke/noice.nvim",
+    "folke/neodev.nvim",
+
+    -- MY PLUGINS --
+    { "juiceDeLemon/flight.nvim", lazy = false, dev = true },
+    "ggandor/leap.nvim",
+    "ggandor/flit.nvim",
+    "tpope/vim-repeat",
+    "echasnovski/mini.jump",
+
     -- PLUGINS --
     "numToStr/Comment.nvim",
-    "folke/which-key.nvim",
     "kylechui/nvim-surround",
     "kevinhwang91/nvim-hlslens",
     "monaqa/dial.nvim",
     "NvChad/nvim-colorizer.lua",
     "princejoogie/chafa.nvim",
-    "folke/trouble.nvim",
-    "folke/todo-comments.nvim",
 
     -- LSP --
     "neovim/nvim-lspconfig",
@@ -74,7 +85,6 @@ require("lazy").setup {
     "kosayoda/nvim-lightbulb",
 
     -- EYE-CANDY --
-    "folke/noice.nvim",
     "echasnovski/mini.animate",
     "goolord/alpha-nvim",
     "lukas-reineke/indent-blankline.nvim",
@@ -101,4 +111,4 @@ require("lazy").setup {
     -- ICONS --
     "nvim-tree/nvim-web-devicons",
     "onsails/lspkind.nvim",
-}
+}, { dev = { path = "~/Repos/neovim_plugins/" } })
