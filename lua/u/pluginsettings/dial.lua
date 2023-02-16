@@ -23,6 +23,7 @@ require("dial.config").augends:register_group {
             word = true,
             cyclic = true,
         },
+        augend.constant.new { elements = { "start", "end" }, word = true, cyclic = true },
         augend.constant.new { elements = { "!=", "==" }, word = false, cyclic = true },
         augend.constant.new { elements = { "!==", "===" }, word = false, cyclic = true },
         augend.constant.new { elements = { "+=", "-=", "*=", "/=" }, word = false, cyclic = true },
