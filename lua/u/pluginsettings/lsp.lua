@@ -4,7 +4,7 @@ require("mason-lspconfig").setup {
     ensure_installed = {
         "bashls",
         "jsonls",
-        "sumneko_lua",
+        "lua_ls",
         "marksman",
         "pylsp",
     },
@@ -41,7 +41,7 @@ require("mason-lspconfig").setup_handlers {
         }
     end,
 }
-require("lspconfig").sumneko_lua.setup {
+require("lspconfig").lua_ls.setup {
     settings = { Lua = { diagnostics = { globals = { "vim", "require" } } } },
     on_attach = on_attach,
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
