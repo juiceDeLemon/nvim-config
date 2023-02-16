@@ -1,5 +1,4 @@
 require("indent_blankline").setup {
-    indent_blankline_char = "▏",
     indent_blankline_filetype_exclude = {
         "help",
         "Trouble",
@@ -13,7 +12,6 @@ require("indent_blankline").setup {
         "method",
         "^if",
         "^while",
-        "jsx_element",
         "^for",
         "^object",
         "^table",
@@ -21,8 +19,6 @@ require("indent_blankline").setup {
         "arguments",
         "if_statement",
         "else_clause",
-        "jsx_element",
-        "jsx_self_closing_element",
         "try_statement",
         "catch_clause",
         "import_statement",
