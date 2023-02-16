@@ -31,6 +31,7 @@ autocmd("FileType", {
     callback = function()
         vim.opt_local.wrap = true
         vim.opt_local.spell = true
+        vim.opt_local.colorcolumn = ""
     end,
 })
 
@@ -42,6 +43,11 @@ autocmd("FileType", {
         vim.opt_local.number = false
         vim.opt_local.relativenumber = false
     end,
+})
+
+autocmd("BufEnter", {
+    callback = function() vim.opt.formatoptions:remove { "c", "r", "o" } end,
+    desc = "Disable New Line Comment",
 })
 
 -- autocmd({ "UserGettingBored" }, {
