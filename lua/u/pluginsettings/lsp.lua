@@ -31,6 +31,8 @@ local on_attach = function(_, _)
     }, { mode = "n", prefix = "<leader>" })
 end
 
+require("neodev").setup {}
+
 require("mason-lspconfig").setup_handlers {
     function(server_name)
         require("lspconfig")[server_name].setup {
