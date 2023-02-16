@@ -10,11 +10,6 @@ local map = vim.keymap.set
 -- c = command-line mode
 -- o = operator pending mode
 
--- space as leader key
-map("", "<space>", "<nop>", opts) -- reset
-vim.g.mapleader = " " -- map
-vim.g.maplocalleader = " " -- map
-
 -- resize splits with arrows
 map("", "<C-Up>", "<cmd>resize -2<cr>", opts)
 map("", "<C-Down>", "<cmd>resize +2<cr>", opts)
