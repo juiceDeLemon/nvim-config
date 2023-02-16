@@ -1,5 +1,6 @@
 require("noice").setup {
-    messages = { view_search = false },
+    cmdline = { view = "cmdline" },
+    messages = { enabled = false },
     lsp = {
         override = {
             ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -7,7 +8,7 @@ require("noice").setup {
             ["cmp.entry.get_documentation"] = true,
         },
     },
-    presets = { inc_rename = true, lsp_doc_border = true },
+    presets = { bottom_search = true, command_palette = true, inc_rename = true, lsp_doc_border = true },
 }
 
 require("notify").setup { stages = "slide", background_colour = "None" }
