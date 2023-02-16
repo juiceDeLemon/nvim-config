@@ -14,6 +14,9 @@ change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog
 install the needed formatters from mason
 listed in null-ls
 
+change the dev = { path = "" } } directory to where you store your own plugins.
+you can put your own plugins there.
+
 to add a new language support you need to add the language in
 lua/u/pluginsettings/lsp.lua ensure_install
 and
