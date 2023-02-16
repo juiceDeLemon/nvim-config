@@ -10,7 +10,6 @@ require("telescope").setup {
             ".idea/",
             ".vscode/",
         },
-        winblend = 30,
     },
 }
 
