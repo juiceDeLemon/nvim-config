@@ -31,7 +31,7 @@ cmp.setup {
    mapping = cmp.mapping.preset.insert {
       ["<C-b>"] = cmp.mapping.scroll_docs(-4),
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
-      ["<C-CR>"] = cmp.mapping.confirm { select = true },
+      ["<C-y>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping(function()
          local isVisible = cmp.visible()
          if isVisible then
