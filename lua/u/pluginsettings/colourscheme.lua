@@ -1,6 +1,6 @@
 require("tokyonight").setup {
     style = "night",
-    styles = { functions = { bold = true } },
+    styles = { functions = { bold = true }, sidebars = "transparent", floats = "transparent" },
     transparent = true,
     dim_inactive = true,
     lualine_bold = true,
