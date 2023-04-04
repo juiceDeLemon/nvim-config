@@ -31,11 +31,12 @@ dashboard.section.buttons.val = {
     dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<cr>"),
     dashboard.button("o", "  recently used files", "<cmd>Telescope oldfiles<cr>"),
     dashboard.button("s", "  find String", "<cmd>Telescope live_grep<cr>"),
-    dashboard.button("e", "  open tree", "<cmd>e .<cr>"),
-    dashboard.button("g", "  open lazyGit", "<cmd>LazyGit<cr>"),
+    dashboard.button("e", "  open Explorer", "<cmd>e .<cr>"),
+    dashboard.button("r", "  Restore session", "<cmd>SessionLoadLast<cr>"),
     dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
     dashboard.button("h", "  Help command", "<cmd>Telescope help_tags<cr>"),
-    dashboard.button("q", "  i forgor how to :q :'(", "<cmd>qa<cr>"),
+    dashboard.button("b", "  BlackJack", "<cmd>BlackJackNewGame<cr>"),
+    dashboard.button("q", "  too lazy to :q XD", "<cmd>qa<cr>"),
 }
 
 local function footer()
