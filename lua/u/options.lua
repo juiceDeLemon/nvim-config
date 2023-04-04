@@ -33,4 +33,4 @@ vim.opt.wrap = false
 vim.opt.guifont = "JetBrainsMono NF"
 vim.opt.list = true
 vim.opt.listchars = "tab: ,space:·,trail:*"
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
