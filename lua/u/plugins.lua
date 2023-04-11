@@ -47,7 +47,6 @@ require("lazy").setup({
    "Maan2003/lsp_lines.nvim",
    "SmiteshP/nvim-navbuddy",
    "jose-elias-alvarez/null-ls.nvim",
-   "LostNeophyte/null-ls-embedded",
 
    -- COMPLETION --
    "hrsh7th/nvim-cmp",

@@ -25,8 +25,6 @@ nl.setup {
       f.stylua,
       f.prettier,
       f.shfmt,
-
-      require("null-ls-embedded").nls_source,
    },
    on_attach = function(client, bufnr)
       if client.supports_method "textDocument/formatting" then
