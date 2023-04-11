@@ -22,6 +22,9 @@ require("persisted").setup { use_git_branch = true, autosave = false }
 -- navbuddy
 require("nvim-navbuddy").setup()
 
+-- neogen
+require("neogen").setup { snippet_engine = "luasnip" }
+
 -- flight
 require("flight").setup()
 -- require("mini.jump").setup()

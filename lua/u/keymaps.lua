@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true }
 
 local map = vim.keymap.set -- abbreviation
 local map_d = function(mapping, command, desc, mode) -- map with desc
@@ -45,6 +45,9 @@ map("n", "<m-k>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>")
 map("n", "<m-j>", "<cmd>call append(line('.'), repeat([''], v:count1))<cr>") -- below
 
 -- <leader>
+-- neogen (a for annotation)
+map_d("<leader>a", "V<cmd>Neogen<cr>", "Neogen")
+
 -- nvim tree
 map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
 
