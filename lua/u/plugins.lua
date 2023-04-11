@@ -34,9 +34,9 @@ require("lazy").setup({
    "numToStr/Comment.nvim",
    "kylechui/nvim-surround",
    "kevinhwang91/nvim-hlslens",
-   "monaqa/dial.nvim",
    "NvChad/nvim-colorizer.lua",
    "olimorris/persisted.nvim",
+   "CKolkey/ts-node-action",
 
    -- LSP --
    "neovim/nvim-lspconfig",
@@ -101,6 +101,7 @@ require("lazy").setup({
    "MunifTanjim/nui.nvim", -- navbuddy
    { "kkharji/sqlite.lua", lazy = false }, -- telescope-frequency
    "SmiteshP/nvim-navic", -- barbecue, navbuddy
+   "tpope/vim-repeat", -- ts-node-action
 
    -- ICONS --
    "nvim-tree/nvim-web-devicons",
