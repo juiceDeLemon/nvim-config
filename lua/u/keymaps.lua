@@ -1,6 +1,10 @@
 local opts = { noremap = true, silent = true }
 
-local map = vim.keymap.set
+local map = vim.keymap.set -- abbreviation
+local map_d = function(mapping, command, desc) -- map with desc
+   opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
+   map({ "n", "v" }, mapping, command, opts)
+end
 
 -- n = normal mode
 -- i = insert mode
@@ -25,11 +29,11 @@ map("x", "p", '"_dP')
 
 -- system clipboard yanking
 map("n", "Y", "<nop>")
-map("n", "+y", '"+y')
+map({ "n", "x" }, "+y", '"+y')
 map("n", "+Y", '"+yy')
 map("v", "Y", '"+y')
 map("n", "D", "<nop>")
-map("n", "+d", '"+d')
+map({ "n", "x" }, "+d", '"+d')
 map("n", "+D", '"+dd')
 map("v", "D", '"+d')
 map("n", "+p", '"+p')
@@ -42,3 +46,64 @@ map("v", "<C-a>", require("dial.map").inc_visual(), opts)
 map("v", "<C-x>", require("dial.map").dec_visual(), opts)
 map("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
 map("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
+
+-- <leader>
+-- nvim tree
+map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
+
+-- telescope
+map_d("<leader>fc", "<cmd>Telescope grep_string<cr>", "Search Cursor String")
+map_d("<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
+map_d("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help Menu")
+map_d("<leader>fl", "<cmd>Telescope lazy<cr>", "Plugin Links")
+map_d("<leader>fo", "<cmd>Telescope oldfiles<cr>", "Recent Files")
+map_d("<leader>fs", "<cmd>Telescope live_grep<cr>", "Search String")
+map_d("<leader>ft", "<cmd>Telescope<cr>", "Telescope Menu")
+
+-- git
+map_d("<leader>gb", "<cmd>lua require'gitsigns'.blame_line()<cr>", "View Blame")
+-- conflict
+map_d("<leader>gcc", "<Plug>(git-conflict-ours)", "Accept Current")
+map_d("<leader>gci", "<Plug>(git-conflict-theirs)", "Accept Incoming Change")
+map_d("<leader>gcb", "<Plug>(git-conflict-both)", "Accept Both")
+map_d("<leader>gcn", "<Plug>(git-conflict-none)", "Accept None")
+map_d("<leader>gch", "<Plug>(git-conflict-prev-conflict)", "Previous Conflict")
+map_d("<leader>gcl", "<Plug>(git-conflict-next-conflict)", "Next Conflict")
+-- signs
+map_d("<leader>gh", "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk")
+map_d("<leader>gl", "<cmd>Gitsigns next_hunk<cr>", "Next Hunk")
+map_d("<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
+map_d("<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk")
+map_d("<leader>gv", "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk")
+
+-- navbuddy
+map_d("<leader>o", "<cmd>Navbuddy<cr>", "Navbuddy")
+
+-- persisted
+map_d("<leader>rr", "<cmd>SessionSave<cr>", "Save Session")
+map_d("<leader>rt", "<cmd>Telescope persisted<cr>", "Telescope")
+
+-- silicon
+--    c = {
+--       name = "To Clipboard",
+--       s = {
+--          "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true }<cr>",
+--          "Current Line",
+--       },
+--       v = {
+--          "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true, visible = true }<cr>",
+--          "Visible Area",
+--       },
+--    },
+--    v = {
+--       "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = ture, visible = true }<cr>",
+--       "Visible Area",
+--    },
+-- },
+
+map_d("<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", "Toggle Undo Tree")
+
+-- <leader><leader> (useless things)
+map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
+map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")
+map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "alphabet")
