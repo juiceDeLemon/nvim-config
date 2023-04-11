@@ -13,6 +13,8 @@ local s = snip.s
 -- t(<line1>, <line2> etc)
 local t = snip.text_node
 
+local i = snip.insert_node
+
 -- fmt mode
 -- fmt(<string>, { nodes })
 local fmt = require("luasnip.extras.fmt").fmt
@@ -31,4 +33,6 @@ snip.add_snippets("all", {
 snip.add_snippets("lua", {
    -- stylua comments
    s("styluaignore", fmt("-- stylua: ignore {}", { c(1, { t "start", t "end", t "" }) })),
+   -- the keymap thing
+   s("<cmd>", fmt("<cmd>{}<cr>", { i(1) })),
 })
