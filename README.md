@@ -23,6 +23,6 @@ lua/u/pluginsettings/lsp.lua ensure_install
 and
 lua/u/pluginsettings/nullls.lua and add all sources:
 code actions, formatting, diagnostics, hover (c.cspell etc)
-and
-treesitter
+and treesitter
+and check if your lsp needs to be configured here: https://github.com/lvimuser/lsp-inlayhints.nvim
 you might need to search for something like rust-tools or rust-analyzer 3rd-party plugins

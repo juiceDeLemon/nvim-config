@@ -25,6 +25,9 @@ require("nvim-navbuddy").setup()
 -- neogen
 require("neogen").setup { snippet_engine = "luasnip" }
 
+-- inlayhints
+require("lsp-inlayhints").setup()
+
 -- flight
 require("flight").setup()
 -- require("mini.jump").setup()

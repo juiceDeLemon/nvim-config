@@ -21,6 +21,7 @@ local on_attach = function(client, bufnr)
    map("n", "<leader>lq", "<cmd>TroubleToggle document_diagnostics<cr>", { noremap = true, silent = true, desc = "Diagnostics" })
    -- stylua: ignore end
    require("nvim-navbuddy").attach(client, bufnr)
+   require("lsp-inlayhints").on_attach(client, bufnr, false)
 end
 
 require("neodev").setup {}
