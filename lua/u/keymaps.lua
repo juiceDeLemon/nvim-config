@@ -40,6 +40,10 @@ map("v", "D", '"+d')
 map("n", "+p", '"+p')
 map("n", "+P", '"+P')
 
+-- put new line above/below
+map("n", "<m-k>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>") -- above
+map("n", "<m-j>", "<cmd>call append(line('.'), repeat([''], v:count1))<cr>") -- below
+
 -- <leader>
 -- nvim tree
 map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")

@@ -34,3 +34,5 @@ vim.opt.guifont = "JetBrainsMono NF"
 vim.opt.list = true
 vim.opt.listchars = "tab: ,space:·,trail:*"
 vim.opt.mouse = ""
+vim.opt.splitbelow = true
+vim.opt.splitright = true
