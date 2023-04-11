@@ -37,6 +37,8 @@ require("lazy").setup({
    "NvChad/nvim-colorizer.lua",
    "olimorris/persisted.nvim",
    "CKolkey/ts-node-action",
+   "danymat/neogen",
+   { "Julian/vim-textobj-variable-segment", lazy = false }, -- buggy, works half the time
 
    -- LSP --
    "neovim/nvim-lspconfig",
@@ -102,6 +104,7 @@ require("lazy").setup({
    { "kkharji/sqlite.lua", lazy = false }, -- telescope-frequency
    "SmiteshP/nvim-navic", -- barbecue, navbuddy
    "tpope/vim-repeat", -- ts-node-action
+   { "kana/vim-textobj-user", lazy = false }, -- vim-textobj-variable-segment
 
    -- ICONS --
    "nvim-tree/nvim-web-devicons",
