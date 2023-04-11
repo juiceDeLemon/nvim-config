@@ -1,18 +1,19 @@
 local opts = { noremap = true, silent = true }
 
 local map = vim.keymap.set -- abbreviation
-local map_d = function(mapping, command, desc) -- map with desc
+local map_d = function(mapping, command, desc, mode) -- map with desc
    opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
-   map({ "n", "v" }, mapping, command, opts)
+   if mode == nil then mode = { "n", "v" } end
+   map(mode, mapping, command, opts)
 end
 
--- n = normal mode
--- i = insert mode
--- v = visual and select mode
--- s = select mode
--- x = visual mode
--- c = command-line mode
--- o = operator pending mode
+-- n = normal
+-- i = insert
+-- v = visual and select
+-- s = select
+-- x = visual
+-- c = command-line
+-- o = operator pending
 
 -- resize splits with arrows
 map("", "<C-Up>", "<cmd>resize -2<cr>", opts)
@@ -39,14 +40,6 @@ map("v", "D", '"+d')
 map("n", "+p", '"+p')
 map("n", "+P", '"+P')
 
--- dial
-map("n", "<C-a>", require("dial.map").inc_normal(), opts)
-map("n", "<C-x>", require("dial.map").dec_normal(), opts)
-map("v", "<C-a>", require("dial.map").inc_visual(), opts)
-map("v", "<C-x>", require("dial.map").dec_visual(), opts)
-map("v", "g<C-a>", require("dial.map").inc_gvisual(), opts)
-map("v", "g<C-x>", require("dial.map").dec_gvisual(), opts)
-
 -- <leader>
 -- nvim tree
 map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
@@ -55,7 +48,7 @@ map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
 map_d("<leader>fc", "<cmd>Telescope grep_string<cr>", "Search Cursor String")
 map_d("<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
 map_d("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help Menu")
-map_d("<leader>fl", "<cmd>Telescope lazy<cr>", "Plugin Links")
+map_d("<leader>fp", "<cmd>Telescope lazy<cr>", "Plugin Links")
 map_d("<leader>fo", "<cmd>Telescope oldfiles<cr>", "Recent Files")
 map_d("<leader>fs", "<cmd>Telescope live_grep<cr>", "Search String")
 map_d("<leader>ft", "<cmd>Telescope<cr>", "Telescope Menu")
@@ -75,6 +68,9 @@ map_d("<leader>gl", "<cmd>Gitsigns next_hunk<cr>", "Next Hunk")
 map_d("<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
 map_d("<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk")
 map_d("<leader>gv", "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk")
+
+-- ts-Node-action
+map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
 
 -- navbuddy
 map_d("<leader>o", "<cmd>Navbuddy<cr>", "Navbuddy")
