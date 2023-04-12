@@ -36,7 +36,7 @@ require("lazy").setup({
    "kevinhwang91/nvim-hlslens",
    "NvChad/nvim-colorizer.lua",
    "olimorris/persisted.nvim",
-   "CKolkey/ts-node-action",
+   { "CKolkey/ts-node-action", dependencies = "tpope/vim-repeat" },
    "danymat/neogen",
    {
       "Julian/vim-textobj-variable-segment",
@@ -49,7 +49,7 @@ require("lazy").setup({
    "williamboman/mason.nvim",
    "williamboman/mason-lspconfig.nvim",
    "Maan2003/lsp_lines.nvim",
-   "SmiteshP/nvim-navbuddy",
+   { "SmiteshP/nvim-navbuddy", dependencies = "MunifTanjim/nui.nvim" },
    "jose-elias-alvarez/null-ls.nvim",
    "lvimuser/lsp-inlayhints.nvim",
 
@@ -97,15 +97,17 @@ require("lazy").setup({
    "nvim-lualine/lualine.nvim",
    "utilyre/barbecue.nvim",
 
-   -- FUN GAMES --
+   -- FUN --
    { "alanfortlink/blackjack.nvim", lazy = false },
    { "alec-gibson/nvim-tetris", lazy = false },
+   {
+      "giusgad/pets.nvim",
+      dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },
+   },
 
    -- DEPENDENCIES --
    "nvim-lua/plenary.nvim",
-   "MunifTanjim/nui.nvim", -- navbuddy
    "SmiteshP/nvim-navic", -- barbecue, navbuddy
-   "tpope/vim-repeat", -- ts-node-action
 
    -- ICONS --
    "nvim-tree/nvim-web-devicons",
