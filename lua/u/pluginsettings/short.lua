@@ -34,6 +34,9 @@ require("pets").setup()
 -- docs
 require("mini.doc").setup()
 
+-- refactoring
+require("refactoring").setup()
+
 -- flight
 require("flight").setup()
 -- require("mini.jump").setup()

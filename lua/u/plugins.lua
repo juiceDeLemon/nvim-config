@@ -44,6 +44,10 @@ require("lazy").setup({
       lazy = false,
       dependencies = "kana/vim-textobj-user",
    },
+   {
+      "ThePrimeagen/refactoring.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
+   },
 
    -- LSP --
    "neovim/nvim-lspconfig",

@@ -1,7 +1,12 @@
 local opts = { noremap = true }
 
 local map = vim.keymap.set -- abbreviation
-local map_d = function(mapping, command, desc, mode) -- map with desc
+---neat function to simplify mappings with description
+---@param mapping string
+---@param command string
+---@param desc string
+---@param mode string | table | nil
+local map_d = function(mapping, command, desc, mode)
    opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
    if mode == nil then mode = { "n", "v" } end
    map(mode, mapping, command, opts)
@@ -41,9 +46,10 @@ map("n", "+p", '"+p')
 map("n", "+P", '"+P')
 
 -- put new line above/below
--- NOTE: already does that in insert mode
 map("n", "<m-o>", "<esc>o<esc>") -- above
 map("n", "<m-O>", "<esc>O<esc>") -- below
+map("i", "<m-o>", "<esc>o") -- above
+map("i", "<m-O>", "<esc>O") -- below
 map("v", "<m-o>", "<esc>o<esc>gv") -- above
 map("v", "<m-O>", "<esc>O<esc>gv") -- below
 
@@ -85,9 +91,24 @@ map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
 -- navbuddy
 map_d("<leader>o", "<cmd>Navbuddy<cr>", "Navbuddy")
 
+-- refactoring
+-- stylua: ignore start
+map_d("<leader>re", "<esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>", "Extract Function", "v")
+map_d("<leader>rf", "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<cr>", "Extract Function To File", "v")
+map_d("<leader>rv", "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<cr> ", "Extract Variable", "v")
+map_d("<leader>ri", "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<cr>", "Inline Variable", "v")
+map_d("<leader>ri", "<Cmd>lua require('refactoring').refactor('Inline Variable')<cr>", "Inline Variable", "n")
+map_d("<leader>rb", "<cmd>lua require('refactoring').refactor('Extract Block')<cr>", "Extract Block", "n")
+map_d("<leader>rbf", "<cmd>lua require('refactoring').refactor('Extract Block To File')<cr>", "Extract Block to File", "n")
+map_d("<leader>rp", "<cmd>lua require('refactoring').debug.printf({below = true})<cr>", "Add Empty Print Statement", "n")
+map_d("<leader>rv", "<cmd>lua require('refactoring').debug.print_var({ normal = true })<cr>", "Add Print Statement on Variable", "n")
+map_d("<leader>rpv", "<cmd>lua require('refactoring').debug.print_var({})<cr>", "Add Print Statement on Selection", "v")
+map_d("<leader>rc", "<cmd>lua require('refactoring').debug.cleanup{}<cr>", "Clean Up Generated Prints", "n")
+-- stylua: ignore end
+
 -- persisted
-map_d("<leader>rr", "<cmd>SessionSave<cr>", "Save Session")
-map_d("<leader>rt", "<cmd>Telescope persisted<cr>", "Telescope")
+map_d("<leader>ss", "<cmd>SessionSave<cr>", "Save Session")
+map_d("<leader>st", "<cmd>Telescope persisted<cr>", "Telescope")
 
 -- silicon
 --    c = {
