@@ -41,8 +41,11 @@ map("n", "+p", '"+p')
 map("n", "+P", '"+P')
 
 -- put new line above/below
-map("n", "<m-k>", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<cr>") -- above
-map("n", "<m-j>", "<cmd>call append(line('.'), repeat([''], v:count1))<cr>") -- below
+-- NOTE: already does that in insert mode
+map("n", "<m-o>", "<esc>o<esc>") -- above
+map("n", "<m-O>", "<esc>O<esc>") -- below
+map("v", "<m-o>", "<esc>o<esc>gv") -- above
+map("v", "<m-O>", "<esc>O<esc>gv") -- below
 
 -- <leader>
 -- neogen (a for annotation)
@@ -107,6 +110,17 @@ map_d("<leader>rt", "<cmd>Telescope persisted<cr>", "Telescope")
 map_d("<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", "Toggle Undo Tree")
 
 -- <leader><leader> (useless things)
-map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
-map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")
+
+-- print alphabet
 map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "alphabet")
+
+-- blackjack
+map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
+
+-- pets
+map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
+map_d("<leader><leader>pp", ":PetsNewCustom crab red ", "OMFG IT'S A CRAB!!!!")
+map_d("<leader><leader>pr", ":PetsNew ", "Random Pet")
+
+-- tetris
+map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")
