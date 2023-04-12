@@ -55,14 +55,18 @@ require("lazy").setup({
    "lvimuser/lsp-inlayhints.nvim",
 
    -- COMPLETION --
-   "hrsh7th/nvim-cmp",
-   "hrsh7th/cmp-nvim-lsp",
-   { "hrsh7th/cmp-buffer", lazy = false },
-   { "hrsh7th/cmp-path", lazy = false },
-   { "hrsh7th/cmp-cmdline", lazy = false },
-   { "hrsh7th/cmp-calc", lazy = false },
-   "lukas-reineke/cmp-under-comparator",
-   { "saadparwaiz1/cmp_luasnip", lazy = false },
+   {
+      "hrsh7th/nvim-cmp",
+      dependencies = {
+         "hrsh7th/cmp-nvim-lsp",
+         "hrsh7th/cmp-buffer",
+         "hrsh7th/cmp-path",
+         "hrsh7th/cmp-cmdline",
+         "hrsh7th/cmp-calc",
+         "lukas-reineke/cmp-under-comparator",
+         "saadparwaiz1/cmp_luasnip",
+      },
+   },
 
    -- SNIPPETS --
    "L3MON4D3/LuaSnip",
