@@ -16,13 +16,13 @@ require("lazy").setup({
    -- COLOURSCHEME --
    { "folke/tokyonight.nvim", priority = 1000 },
 
-   -- DEDICATED TO FOLKE --
+   -- FOLKE --
    "folke/which-key.nvim",
    "folke/trouble.nvim",
    "folke/todo-comments.nvim",
    "folke/neodev.nvim",
 
-   -- DEDICATED TO THE MINI SERIES --
+   -- MINI --
    "echasnovski/mini.cursorword",
    "echasnovski/mini.move",
 
@@ -38,7 +38,11 @@ require("lazy").setup({
    "olimorris/persisted.nvim",
    "CKolkey/ts-node-action",
    "danymat/neogen",
-   { "Julian/vim-textobj-variable-segment", lazy = false }, -- buggy, works half the time
+   {
+      "Julian/vim-textobj-variable-segment",
+      lazy = false,
+      dependencies = "kana/vim-textobj-user",
+   },
 
    -- LSP --
    "neovim/nvim-lspconfig",
@@ -69,7 +73,6 @@ require("lazy").setup({
 
    -- TELESCOPE --
    "nvim-telescope/telescope.nvim",
-   "nvim-telescope/telescope-frecency.nvim",
    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
    "tsakirist/telescope-lazy.nvim",
 
@@ -101,10 +104,8 @@ require("lazy").setup({
    -- DEPENDENCIES --
    "nvim-lua/plenary.nvim",
    "MunifTanjim/nui.nvim", -- navbuddy
-   { "kkharji/sqlite.lua", lazy = false }, -- telescope-frequency
    "SmiteshP/nvim-navic", -- barbecue, navbuddy
    "tpope/vim-repeat", -- ts-node-action
-   { "kana/vim-textobj-user", lazy = false }, -- vim-textobj-variable-segment
 
    -- ICONS --
    "nvim-tree/nvim-web-devicons",
