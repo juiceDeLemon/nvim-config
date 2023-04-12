@@ -46,7 +46,7 @@ map("n", "<m-j>", "<cmd>call append(line('.'), repeat([''], v:count1))<cr>") -- 
 
 -- <leader>
 -- neogen (a for annotation)
-map_d("<leader>a", "V<cmd>Neogen<cr>", "Neogen")
+map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
 
 -- nvim tree
 map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
