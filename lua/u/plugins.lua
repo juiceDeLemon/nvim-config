@@ -54,7 +54,7 @@ require("lazy").setup({
    "williamboman/mason.nvim",
    "williamboman/mason-lspconfig.nvim",
    "Maan2003/lsp_lines.nvim",
-   { "SmiteshP/nvim-navbuddy", dependencies = "MunifTanjim/nui.nvim" },
+   { "SmiteshP/nvim-navbuddy", dependencies = { "MunifTanjim/nui.nvim", "SmiteshP/nvim-navic" } },
    "jose-elias-alvarez/null-ls.nvim",
    "lvimuser/lsp-inlayhints.nvim",
 
@@ -104,7 +104,7 @@ require("lazy").setup({
 
    -- STATUS LINE --
    "nvim-lualine/lualine.nvim",
-   "utilyre/barbecue.nvim",
+   { "utilyre/barbecue.nvim", dependencies = "SmiteshP/nvim-navic" },
 
    -- FUN --
    { "alanfortlink/blackjack.nvim", lazy = false },
@@ -114,9 +114,8 @@ require("lazy").setup({
       dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },
    },
 
-   -- DEPENDENCIES --
+   -- plenary, idk which plugins use this --
    "nvim-lua/plenary.nvim",
-   "SmiteshP/nvim-navic", -- barbecue, navbuddy
 
    -- ICONS --
    "nvim-tree/nvim-web-devicons",

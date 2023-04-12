@@ -19,9 +19,6 @@ require("todo-comments").setup { highlight = { before = "fg", keyword = "bg" } }
 -- persisted
 require("persisted").setup { use_git_branch = true, autosave = false }
 
--- navbuddy
-require("nvim-navbuddy").setup()
-
 -- neogen
 require("neogen").setup { snippet_engine = "luasnip" }
 
