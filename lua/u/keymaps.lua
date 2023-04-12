@@ -122,5 +122,7 @@ map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
 map_d("<leader><leader>pp", ":PetsNewCustom crab red ", "OMFG IT'S A CRAB!!!!")
 map_d("<leader><leader>pr", ":PetsNew ", "Random Pet")
 
+map_d("<leader><leader>l", "<cmd>lua MiniDoc.generate()<cr>", "Generate Docs for Plugin")
+
 -- tetris
 map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")

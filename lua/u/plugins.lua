@@ -25,6 +25,7 @@ require("lazy").setup({
    -- MINI --
    "echasnovski/mini.cursorword",
    "echasnovski/mini.move",
+   "echasnovski/mini.doc",
 
    -- MY PLUGINS --
    { "juiceDeLemon/flight.nvim", dev = true },

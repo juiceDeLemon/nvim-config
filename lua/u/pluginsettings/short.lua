@@ -31,6 +31,9 @@ require("lsp-inlayhints").setup()
 -- pets
 require("pets").setup()
 
+-- docs
+require("mini.doc").setup()
+
 -- flight
 require("flight").setup()
 -- require("mini.jump").setup()
