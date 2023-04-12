@@ -28,6 +28,9 @@ require("neogen").setup { snippet_engine = "luasnip" }
 -- inlayhints
 require("lsp-inlayhints").setup()
 
+-- pets
+require("pets").setup()
+
 -- flight
 require("flight").setup()
 -- require("mini.jump").setup()
