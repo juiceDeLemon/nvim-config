@@ -9,22 +9,26 @@ require("nvim-treesitter.configs").setup {
       "markdown_inline",
       "python",
       "vim",
+      "vimdoc",
       "yaml",
    },
    sync_install = true,
    auto_install = true,
+
    -- modules
    highlight = { enable = true },
-   -- indent = { enable = true },
+
+   incremental_selection = {
+      enable = true,
+      keymaps = {
+         init_selection = "<cr>", -- set to `false` to disable one of the mappings
+         scope_incremental = "<cr>",
+         node_incremental = "<tab>",
+         node_decremental = "<s-tab>",
+      },
+   },
+
    -- extensions
-   -- context_commentstring = {
-   --   enable = true,
-   --   enable_autocmd = false,
-   -- },
-   -- autotag = {
-   --   enable = true,
-   --   disable = { "xml", "markdown" },
-   -- },
    -- textobjects = {
    --   select = {
    --     enable = true,
