@@ -7,6 +7,8 @@ require("tokyonight").setup {
    on_highlights = function(hi, c)
       -- colours refers to here:
       -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
+      -- options are here
+      -- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/theme.lua
       hi.TreesitterContextBottom = { bold = true, underline = true }
       hi.CursorLineNr = { fg = c.fg }
       hi.LineNr = { fg = c.dark5 }
