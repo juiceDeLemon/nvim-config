@@ -66,6 +66,7 @@ map_d("<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
 map_d("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help Menu")
 map_d("<leader>fp", "<cmd>Telescope lazy<cr>", "Plugin Links")
 map_d("<leader>fo", "<cmd>Telescope oldfiles<cr>", "Recent Files")
+map_d("<leader>fr", "<cmd>Telescope resume<cr>", "Resume Prompt")
 map_d("<leader>fs", "<cmd>Telescope live_grep<cr>", "Search String")
 map_d("<leader>ft", "<cmd>Telescope<cr>", "Telescope Menu")
 
@@ -131,7 +132,6 @@ map_d("<leader>st", "<cmd>Telescope persisted<cr>", "Telescope")
 map_d("<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", "Toggle Undo Tree")
 
 -- <leader><leader> (useless things)
-
 -- print alphabet
 map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "alphabet")
 
@@ -143,7 +143,11 @@ map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
 map_d("<leader><leader>pp", ":PetsNewCustom crab red ", "OMFG IT'S A CRAB!!!!")
 map_d("<leader><leader>pr", ":PetsNew ", "Random Pet")
 
+-- lua document (hence the lua)
 map_d("<leader><leader>l", "<cmd>lua MiniDoc.generate()<cr>", "Generate Docs for Plugin")
+
+-- inputs the SUS symbol
+map_d("<leader><leader>s", "iඞ<esc>", "SUS", "n")
 
 -- tetris
 map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")
