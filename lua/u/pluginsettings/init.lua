@@ -22,7 +22,6 @@ require("persisted").setup { use_git_branch = true, autosave = false }
 require("pets").setup()
 require("refactoring").setup()
 require "u.pluginsettings.scrollbar"
-require "u.pluginsettings.short"
 require "u.pluginsettings.statuslines"
 require "u.pluginsettings.telescope"
 require("todo-comments").setup { highlight = { before = "fg", keyword = "bg" } }
