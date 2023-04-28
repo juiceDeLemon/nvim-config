@@ -324,7 +324,12 @@ local fileformat = {
 }
 -- filetype
 local filetype = {
-   provider = " %Y ",
+   provider = function()
+      -- not " %y " because have [] and this is not the place for it
+      local filetype = vim.bo.filetype
+      filetype = filetype == "" and "noft" or filetype
+      return " " .. filetype .. " "
+   end,
    hl = function(self)
       local colour = self:mode_colour()
       return { fg = colour, bg = "gray" }
@@ -346,7 +351,8 @@ local bufnrcomp = {
 
 local bufaltflag = {
    condition = function(self)
-      if vim.fn.fnamemodify(self.filename, ":.") == vim.fn.expand "#" then return true end
+      local thing = vim.fn.fnamemodify(self.filename, ":.")
+      if (thing == vim.fn.expand "#") and (thing ~= "") then return true end
    end,
    provider = "#",
    hl = { fg = "orange" },
