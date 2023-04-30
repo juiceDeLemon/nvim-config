@@ -481,7 +481,7 @@ local tabs = utils.make_tablist(tabblock)
 
 -- winbar
 local cwd = {
-   provider = vim.fn.getcwd() .. ": ",
+   provider = "root: " .. vim.fn.getcwd() .. " || ",
    hl = function(self)
       local colour = self:mode_colour()
       return { fg = colour }
