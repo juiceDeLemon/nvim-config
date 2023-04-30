@@ -27,16 +27,17 @@ dashboard.section.header.val = {
 dashboard.section.header.opts.hl = "Function"
 
 dashboard.section.buttons.val = {
-   dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
-   dashboard.button("n", "  New file", "<cmd>ene <BAR> startinsert<cr>"),
-   dashboard.button("o", "  recently used files", "<cmd>Telescope oldfiles<cr>"),
-   dashboard.button("s", "  find String", "<cmd>Telescope live_grep<cr>"),
-   dashboard.button("e", "  open Explorer", "<cmd>e .<cr>"),
-   dashboard.button("r", "  Restore session", "<cmd>SessionLoadLast<cr>"),
-   dashboard.button("c", "  Configuration", "<cmd>e ~/.config/nvim/<cr>"),
-   dashboard.button("h", "  Help command", "<cmd>Telescope help_tags<cr>"),
-   dashboard.button("b", "  BlackJack", "<cmd>BlackJackNewGame<cr>"),
-   dashboard.button("q", "  too lazy to :q XD", "<cmd>qa<cr>"),
+   dashboard.button("b", "BlackJack", "<cmd>BlackJackNewGame<cr>"),
+   dashboard.button("c", "Configuration", "<cmd>e ~/.config/nvim/<cr>"),
+   dashboard.button("e", "open Explorer", "<cmd>e .<cr>"),
+   dashboard.button("f", "Find file", "<cmd>Telescope find_files<cr>"),
+   dashboard.button("h", "Help command", "<cmd>Telescope help_tags<cr>"),
+   dashboard.button("n", "New file", "<cmd>ene <BAR> startinsert<cr>"),
+   dashboard.button("o", "recently used files", "<cmd>Telescope oldfiles<cr>"),
+   dashboard.button("q", "too lazy to :q XD", "<cmd>qa<cr>"),
+   dashboard.button("r", "Restore session", "<cmd>SessionLoadLast<cr>"),
+   dashboard.button("s", "find String", "<cmd>Telescope live_grep<cr>"),
+   dashboard.button("u", "hapOOn", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"),
 }
 
 local function footer()
