@@ -2,9 +2,7 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup {
-   hijack_cursor = true,
    update_focused_file = { enable = true },
-   diagnostics = { enable = true },
    git = { timeout = 5000 },
    view = { preserve_window_proportions = true, number = true, relativenumber = true },
    renderer = {
