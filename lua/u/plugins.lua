@@ -39,6 +39,7 @@ require("lazy").setup({
    "olimorris/persisted.nvim",
    { "CKolkey/ts-node-action", dependencies = "tpope/vim-repeat" },
    "danymat/neogen",
+   { "ThePrimeagen/harpoon", lazy = false },
    {
       "Julian/vim-textobj-variable-segment",
       lazy = false,

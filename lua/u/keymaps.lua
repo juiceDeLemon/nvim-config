@@ -87,6 +87,9 @@ map_d("<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
 map_d("<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk")
 map_d("<leader>gv", "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk")
 
+map_d("<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File")
+map_d("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu")
+
 -- ts-Node-action
 map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
 
