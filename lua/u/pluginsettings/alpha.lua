@@ -29,7 +29,7 @@ dashboard.section.header.opts.hl = "Function"
 dashboard.section.buttons.val = {
    dashboard.button("b", "BlackJack", "<cmd>BlackJackNewGame<cr>"),
    dashboard.button("c", "Configuration", "<cmd>e ~/.config/nvim/<cr>"),
-   dashboard.button("e", "open Explorer", "<cmd>lua require('ranger-nvim').open(false)<cr>"),
+   dashboard.button("e", "open ranger", "<cmd>lua require('ranger-nvim').open(false)<cr>"),
    dashboard.button("f", "Find file", "<cmd>Telescope find_files<cr>"),
    dashboard.button("h", "Help command", "<cmd>Telescope help_tags<cr>"),
    dashboard.button("n", "New file", "<cmd>ene <BAR> startinsert<cr>"),
