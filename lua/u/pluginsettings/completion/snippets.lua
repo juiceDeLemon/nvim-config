@@ -24,7 +24,6 @@ local fmt = require("luasnip.extras.fmt").fmt
 local c = snip.choice_node
 
 snip.add_snippets("all", {
-   -- NOTE: todo comments filled
    s(
       "todo-comments",
       fmt("{}: ", { c(1, { t "FIX", t "BUG", t "TODO", t "INFO", t "WARN", t "OPTIMIZE", t "NOTE", t "TEST" }) })
