@@ -17,7 +17,6 @@ require("mini.doc").setup()
 require "u.pluginsettings.nullls"
 require "u.pluginsettings.nvimtree"
 require("nvim-surround").setup()
-require("nvim-lightbulb").setup { float = { enabled = true, text = "" } }
 require("persisted").setup { use_git_branch = true, autosave = false }
 require("pets").setup()
 require("refactoring").setup()
