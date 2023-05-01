@@ -663,6 +663,7 @@ require("heirline").setup {
             "undotree",
             "Navbuddy",
             "harpoon",
+            "",
          } do
             if type == v then return true end
          end

@@ -45,6 +45,11 @@ require("lspconfig").lua_ls.setup {
    on_attach = on_attach,
    capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
+require("lspconfig").rust_analyzer.setup {
+   on_attach = on_attach,
+   capabilities = require("cmp_nvim_lsp").default_capabilities(),
+   cmd = { "rustup", "run", "stable", "rust-analyzer" },
+}
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
    border = "rounded",

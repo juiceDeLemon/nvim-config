@@ -8,9 +8,12 @@ you need these binaries
 
 - trash
 - grep
+- [rustup](https://rustup.rs/)
 - [silicon](https://github.com/aloxaf/silicon)
 
 change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog). you might want to use venv all the time because it isn't working.
+
+run `rustup component add rust-analyzer` to get rust-analyzer
 
 install the needed formatters from mason
 listed in null-ls
