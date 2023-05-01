@@ -15,10 +15,10 @@ require("neogen").setup { snippet_engine = "luasnip" }
 require "u.pluginsettings.move"
 require("mini.doc").setup()
 require "u.pluginsettings.nullls"
-require "u.pluginsettings.nvimtree"
 require("nvim-surround").setup()
 require("persisted").setup { use_git_branch = true, autosave = false }
 require("pets").setup()
+require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
 require "u.pluginsettings.scrollbar"
 require "u.pluginsettings.statuslines"

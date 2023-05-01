@@ -57,8 +57,8 @@ map("v", "<m-O>", "<esc>O<esc>gv") -- below
 -- neogen (a for annotation)
 map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
 
--- nvim tree
-map_d("<leader>e", "<cmd>NvimTreeToggle<cr>", "Toggle Explorer")
+-- ranger
+map_d("<leader>e", "<cmd>lua require('ranger-nvim').open(true)<cr>", "Toggle Explorer")
 
 -- telescope
 map_d("<leader>fc", "<cmd>Telescope grep_string<cr>", "Search Cursor String")

@@ -8,6 +8,7 @@ you need these binaries
 
 - trash
 - grep
+- ranger
 - [rustup](https://rustup.rs/)
 - [silicon](https://github.com/aloxaf/silicon)
 

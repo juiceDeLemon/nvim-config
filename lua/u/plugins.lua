@@ -88,7 +88,7 @@ require("lazy").setup({
    "tsakirist/telescope-lazy.nvim",
 
    -- TREES --
-   { "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
+   "kelly-lin/ranger.nvim",
    { "mbbill/undotree", lazy = false },
 
    -- GIT --
