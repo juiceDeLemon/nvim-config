@@ -49,6 +49,7 @@ require("lazy").setup({
       "ThePrimeagen/refactoring.nvim",
       dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
    },
+   { "weilbith/nvim-code-action-menu", lazy = false },
 
    -- LSP --
    "neovim/nvim-lspconfig",
@@ -93,10 +94,6 @@ require("lazy").setup({
    -- GIT --
    "lewis6991/gitsigns.nvim",
    "akinsho/git-conflict.nvim",
-
-   -- CODE ACTIONS --
-   { "weilbith/nvim-code-action-menu", lazy = false },
-   "kosayoda/nvim-lightbulb",
 
    -- EYE-CANDY --
    "goolord/alpha-nvim",
