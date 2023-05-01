@@ -124,12 +124,8 @@ local git = {
       return { fg = colour, bg = "gray" }
    end,
    { -- git branch name
-      provider = function(self) return "  " .. self.status_dict.head end,
+      provider = function(self) return "  " .. self.status_dict.head .. " " end,
       hl = { bold = true },
-   },
-   {
-      condition = function(self) return self.has_changes end,
-      provider = " ",
    },
    {
       provider = function(self)
