@@ -561,6 +561,14 @@ local navic_block = {
    update = { "CursorMoved", "ModeChanged" },
 }
 
+local cur_bufnr = {
+   provider = function() return "bufnr: " .. vim.fn.bufnr() end,
+   hl = function(self)
+      local colour = self:mode_colour()
+      return { fg = colour }
+   end,
+}
+
 -- local DAPMessages = {
 --     condition = function()
 --         local session = require("dap").session()
@@ -617,6 +625,7 @@ require("heirline").setup {
       cwd,
       navic_block,
       space,
+      cur_bufnr,
       static = hl_static,
    },
    tabline = {
@@ -646,6 +655,7 @@ require("heirline").setup {
          local type = vim.bo.filetype
          for _, v in ipairs {
             "TelescopePrompt",
+            "TelescopeResults",
             "alpha",
             "WhichKey",
             "tetris",
