@@ -17,7 +17,7 @@ local on_attach = function(client, bufnr)
    map("n", "<leader>ll", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", { noremap = true, silent = true, desc = "Next" })
    map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { noremap = true, silent = true, desc = "Rename Symbol" })
    map("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
-   map({ "i", "s" }, "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
+   map({ "i", "s" }, "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
    map("n", "<leader>lt", "<cmd>lua require'lsp_lines'.toggle()<cr>", { noremap = true, silent = true, desc = "Toggle LspLines" })
    map("n", "<leader>lq", "<cmd>TroubleToggle document_diagnostics<cr>", { noremap = true, silent = true, desc = "Diagnostics" })
    -- stylua: ignore end
