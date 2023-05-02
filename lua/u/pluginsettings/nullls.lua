@@ -4,8 +4,6 @@ local nl = require "null-ls"
 local d = nl.builtins.diagnostics
 local f = nl.builtins.formatting
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 local lsp_formatting = function(bufnr)
    vim.lsp.buf.format {
       filter = function(client) return client.name == "null-ls" end,
