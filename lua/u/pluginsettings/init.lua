@@ -1,3 +1,4 @@
+require "u.pluginsettings.ai"
 require "u.pluginsettings.alpha"
 require "u.pluginsettings.colorizer"
 require "u.pluginsettings.colourscheme"
@@ -16,7 +17,6 @@ require "u.pluginsettings.treesitter"
 require "u.pluginsettings.ts-node-action"
 require "u.pluginsettings.whichkey"
 
-require("mini.ai").setup()
 require("Comment").setup { ignore = "^$" } -- ignore blankline
 require("git-conflict").setup {}
 require("hlslens").setup()
