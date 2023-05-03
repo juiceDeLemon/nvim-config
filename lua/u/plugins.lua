@@ -24,7 +24,6 @@ require("lazy").setup({
 
    -- MINI --
    "echasnovski/mini.cursorword",
-   "echasnovski/mini.move",
    "echasnovski/mini.doc",
    "echasnovski/mini.ai",
 
