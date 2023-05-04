@@ -185,7 +185,6 @@ local diagnostics = {
    end,
    update = { "DiagnosticChanged", "BufEnter", "ModeChanged" },
 }
-
 diagnostics = utils.insert(diagnostics, { provider = "[", hl = mhl }, {
    provider = function(self)
       -- 0 is just another output, we can decide to print it or not!
@@ -271,6 +270,64 @@ local help_filename = {
 
 --    hl = mhl,
 -- }
+
+-- harpoon
+local function updateHarpoonIndicator()
+   local harpoonJsonPath = vim.fn.stdpath "data" .. "/harpoon.json"
+   local fileExists = vim.fn.filereadable(harpoonJsonPath) ~= 0
+   if not fileExists then return end
+   local harpoonJson = readFile(harpoonJsonPath)
+   if not harpoonJson then return end
+
+   local harpoonData = vim.json.decode(harpoonJson)
+   local pwd = vim.loop.cwd()
+   if not pwd or not harpoonData then return end
+   local currentProject = harpoonData.projects[pwd]
+   if not currentProject then return end
+   local markedFiles = currentProject.mark.marks
+   local currentFile = vim.fn.expand "%"
+
+   for _, file in pairs(markedFiles) do
+      if file.filename == currentFile then vim.b.harpoonMark = "󰛢" end
+   end
+end
+
+local harpoon = {
+   static = {
+      read_file = function(path)
+         local file, err = io.open(path, "r")
+         if not file then
+            vim.notify_once("Could not read: " .. err, vim.log.levels.ERROR)
+            return
+         end
+         local content = file:read "*a"
+         file:close()
+         return content
+      end,
+   },
+   condition = function(self)
+      local harpoonJsonPath = vim.fn.stdpath "data" .. "/harpoon.json"
+      local fileExists = vim.fn.filereadable(harpoonJsonPath) ~= 0
+      if not fileExists then return end
+      local harpoonJson = self.read_file(harpoonJsonPath)
+      if not harpoonJson then return end
+
+      local harpoonData = vim.json.decode(harpoonJson)
+      local pwd = vim.loop.cwd()
+      if not pwd or not harpoonData then return end
+      local currentProject = harpoonData.projects[pwd]
+      if not currentProject then return end
+      local markedFiles = currentProject.mark.marks
+      local currentFile = vim.fn.expand "%"
+
+      for _, file in pairs(markedFiles) do
+         if file.filename == currentFile then return true end
+      end
+   end,
+   provider = "[harpoon]",
+   update = { "BufReadPost", "UiEnter" },
+   hl = mhl,
+}
 
 -- stolen from lualine
 local filesize = {
@@ -614,6 +671,7 @@ require("heirline").setup {
       help_filename,
       space,
       -- snippet_indicator,
+      harpoon,
       filesize,
       encoding,
       fileformat,
