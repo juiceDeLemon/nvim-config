@@ -272,26 +272,7 @@ local help_filename = {
 -- }
 
 -- harpoon
-local function updateHarpoonIndicator()
-   local harpoonJsonPath = vim.fn.stdpath "data" .. "/harpoon.json"
-   local fileExists = vim.fn.filereadable(harpoonJsonPath) ~= 0
-   if not fileExists then return end
-   local harpoonJson = readFile(harpoonJsonPath)
-   if not harpoonJson then return end
-
-   local harpoonData = vim.json.decode(harpoonJson)
-   local pwd = vim.loop.cwd()
-   if not pwd or not harpoonData then return end
-   local currentProject = harpoonData.projects[pwd]
-   if not currentProject then return end
-   local markedFiles = currentProject.mark.marks
-   local currentFile = vim.fn.expand "%"
-
-   for _, file in pairs(markedFiles) do
-      if file.filename == currentFile then vim.b.harpoonMark = "󰛢" end
-   end
-end
-
+-- stolen from https://github.com/chrisgrieser/.config/nvim/lua/plugins/lualine.lua
 local harpoon = {
    static = {
       read_file = function(path)
@@ -306,22 +287,22 @@ local harpoon = {
       end,
    },
    condition = function(self)
-      local harpoonJsonPath = vim.fn.stdpath "data" .. "/harpoon.json"
-      local fileExists = vim.fn.filereadable(harpoonJsonPath) ~= 0
-      if not fileExists then return end
-      local harpoonJson = self.read_file(harpoonJsonPath)
-      if not harpoonJson then return end
+      local harpoon_json_path = vim.fn.stdpath "data" .. "/harpoon.json"
+      local file_exists = vim.fn.filereadable(harpoon_json_path) ~= 0
+      if not file_exists then return end
+      local harpoon_json = self.read_file(harpoon_json_path)
+      if not harpoon_json then return end
 
-      local harpoonData = vim.json.decode(harpoonJson)
+      local harpoon_data = vim.json.decode(harpoon_json)
       local pwd = vim.loop.cwd()
-      if not pwd or not harpoonData then return end
-      local currentProject = harpoonData.projects[pwd]
-      if not currentProject then return end
-      local markedFiles = currentProject.mark.marks
-      local currentFile = vim.fn.expand "%"
+      if not pwd or not harpoon_data then return end
+      local current_project = harpoon_data.projects[pwd]
+      if not current_project then return end
+      local marked_file = current_project.mark.marks
+      local current_file = vim.fn.expand "%"
 
-      for _, file in pairs(markedFiles) do
-         if file.filename == currentFile then return true end
+      for _, file in pairs(marked_file) do
+         if file.filename == current_file then return true end
       end
    end,
    provider = "[harpoon]",
