@@ -24,6 +24,8 @@ local on_attach = function(client, bufnr)
    require("nvim-navic").attach(client, bufnr)
    require("nvim-navbuddy").attach(client, bufnr)
    require("lsp-inlayhints").on_attach(client, bufnr, false)
+   -- navbuddy
+   map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 end
 
 require("neodev").setup {}

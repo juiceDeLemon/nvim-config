@@ -93,9 +93,6 @@ map_d("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "M
 -- ts-Node-action
 map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
 
--- navbuddy
-map_d("<leader>o", "<cmd>Navbuddy<cr>", "Navbuddy")
-
 -- refactoring
 -- stylua: ignore start
 map_d("<leader>re", "<esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>", "Extract Function", "v")
