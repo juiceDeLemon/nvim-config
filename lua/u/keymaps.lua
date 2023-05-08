@@ -81,6 +81,7 @@ map_d("<leader>gcn", "<Plug>(git-conflict-none)", "Accept None")
 map_d("<leader>gch", "<Plug>(git-conflict-prev-conflict)", "Previous Conflict")
 map_d("<leader>gcl", "<Plug>(git-conflict-next-conflict)", "Next Conflict")
 -- signs
+map_d("<leader>gd", "<cmd>Gitsigns diffthis<cr>", "Diff Current File")
 map_d("<leader>gh", "<cmd>Gitsigns prev_hunk<cr>", "Previous Hunk")
 map_d("<leader>gl", "<cmd>Gitsigns next_hunk<cr>", "Next Hunk")
 map_d("<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
