@@ -152,6 +152,9 @@ map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "al
 -- blackjack
 map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
 
+-- keylab
+map("n", "<leader><leader>k", require("keylab").start, { desc = "Start a keylab session" })
+
 -- pets
 map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
 map_d("<leader><leader>pp", ":PetsNewCustom crab red ", "OMFG IT'S A CRAB!!!!")

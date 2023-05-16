@@ -27,9 +27,12 @@ require("lazy").setup({
    "echasnovski/mini.doc",
    "echasnovski/mini.ai",
 
-   -- MY PLUGINS --
+   -- MY PLUGINS (and testing) --
    { "juiceDeLemon/flight.nvim", dev = true },
    "echasnovski/mini.jump",
+   "phaazon/hop.nvim",
+
+   { "juiceDeLemon/nvim-tetris", dev = true, lazy = false },
 
    -- USEFUL (misc) PLUGINS --
    "numToStr/Comment.nvim",
@@ -106,7 +109,8 @@ require("lazy").setup({
 
    -- FUN --
    { "alanfortlink/blackjack.nvim", lazy = false },
-   { "alec-gibson/nvim-tetris", lazy = false },
+   -- { "alec-gibson/nvim-tetris", lazy = false },
+   "BooleanCube/keylab.nvim",
    {
       "giusgad/pets.nvim",
       dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },
