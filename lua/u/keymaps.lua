@@ -53,6 +53,11 @@ map("i", "<m-O>", "<esc>O") -- below
 map("v", "<m-o>", "<esc>o<esc>gv") -- above
 map("v", "<m-O>", "<esc>O<esc>gv") -- below
 
+-- cycle buffers
+map("n", "<tab>", "<cmd>bn<cr>")
+map("n", "<s-tab>", "<cmd>bp<cr>")
+map("n", "<c-tab>", "<cmd>bp<cr>")
+
 -- <leader>
 -- neogen (a for annotation)
 map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
@@ -61,6 +66,7 @@ map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
 map_d("<leader>e", "<cmd>lua require('ranger-nvim').open(true)<cr>", "Toggle Explorer")
 
 -- telescope
+map_d("<leader>fb", "<cmd>Telescope buffers<cr>", "Buffers")
 map_d("<leader>fc", "<cmd>Telescope grep_string<cr>", "Search Cursor String")
 map_d("<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
 map_d("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help Menu")
