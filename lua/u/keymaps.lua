@@ -26,6 +26,12 @@ map("", "<C-Down>", "<cmd>resize +2<cr>", opts)
 map("", "<C-Left>", "<cmd>vertical resize -2<cr>", opts)
 map("", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 
+-- navigate splits
+map("n", "<up>", "<c-w>k", opts)
+map("n", "<down>", "<c-w>j", opts)
+map("n", "<left>", "<c-w>h", opts)
+map("n", "<right>", "<c-w>l", opts)
+
 -- continue to select text went indenting
 map("x", "<", "<gv", opts)
 map("x", ">", ">gv", opts)
