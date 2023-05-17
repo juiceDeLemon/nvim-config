@@ -20,7 +20,7 @@ require("lazy").setup({
    "folke/which-key.nvim",
    "folke/trouble.nvim",
    "folke/todo-comments.nvim",
-   "folke/neodev.nvim",
+   { "folke/neodev.nvim", ft = "lua" },
 
    -- MINI --
    "echasnovski/mini.cursorword",
@@ -109,7 +109,6 @@ require("lazy").setup({
 
    -- FUN --
    { "alanfortlink/blackjack.nvim", lazy = false },
-   -- { "alec-gibson/nvim-tetris", lazy = false },
    "BooleanCube/keylab.nvim",
    {
       "giusgad/pets.nvim",
