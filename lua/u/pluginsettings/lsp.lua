@@ -65,12 +65,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-   local hl = "DiagnosticSign" .. type
-   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
 local ll = require "lsp_lines"
 ll.setup()
 ll.toggle()
