@@ -171,12 +171,6 @@ local active_lsp = {
 -- diagnostics
 local diagnostics = {
    condition = cond.has_diagnostics,
-   static = {
-      error = "E",
-      warn = "W",
-      info = "I",
-      hint = "H",
-   },
    init = function(self)
       self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
       self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
@@ -186,19 +180,16 @@ local diagnostics = {
    update = { "DiagnosticChanged", "BufEnter", "ModeChanged" },
 }
 diagnostics = utils.insert(diagnostics, { provider = "[", hl = mhl }, {
-   provider = function(self)
-      -- 0 is just another output, we can decide to print it or not!
-      return self.errors > 0 and (self.error .. self.errors)
-   end,
+   provider = function(self) return self.errors > 0 and (self.error .. "E") end,
    hl = { fg = "red", bg = "bg" },
 }, {
-   provider = function(self) return self.warnings > 0 and (self.warn .. self.warnings) end,
+   provider = function(self) return self.warnings > 0 and (self.warn .. "W") end,
    hl = { fg = "yellow", bg = "bg" },
 }, {
-   provider = function(self) return self.info > 0 and (self.info .. self.info) end,
+   provider = function(self) return self.info > 0 and (self.info .. "I") end,
    hl = { fg = "cyan", bg = "bg" },
 }, {
-   provider = function(self) return self.hints > 0 and (self.hint .. self.hints) end,
+   provider = function(self) return self.hints > 0 and (self.hint .. "H") end,
    hl = { fg = "green", bg = "bg" },
 }, { provider = "]", hl = mhl })
 
