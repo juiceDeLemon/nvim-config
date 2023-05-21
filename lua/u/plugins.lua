@@ -75,14 +75,15 @@ require("lazy").setup({
          "lukas-reineke/cmp-under-comparator",
          "saadparwaiz1/cmp_luasnip",
       },
+      event = { "InsertEnter" },
    },
 
    -- SNIPPETS --
-   "L3MON4D3/LuaSnip",
+   { "L3MON4D3/LuaSnip", event = { "InsertEnter" } },
    { "rafamadriz/friendly-snippets", lazy = false },
 
    -- TREESITTER --
-   { "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
+   { "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate", event = { "InsertEnter" } },
    { "nvim-treesitter/nvim-treesitter-context", lazy = false },
 
    -- TELESCOPE --
@@ -125,4 +126,16 @@ require("lazy").setup({
    defaults = { lazy = true },
    install = { colorscheme = { "tokyonight" } },
    dev = { path = "~/Repos/neovim_plugins/" },
+   performance = {
+      rtp = {
+         reset = true,
+         disabled_plugins = {
+            "gzip",
+            "netrwPlugin",
+            "tarPlugin",
+            "tohtml",
+            "zipPlugin",
+         },
+      },
+   },
 })
