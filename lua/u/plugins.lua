@@ -100,7 +100,7 @@ require("lazy").setup({
 
    -- EYE-CANDY --
    "goolord/alpha-nvim",
-   "lukas-reineke/indent-blankline.nvim",
+   "shellRaining/hlchunk.nvim",
    "petertriho/nvim-scrollbar",
 
    -- STATUS LINE --
