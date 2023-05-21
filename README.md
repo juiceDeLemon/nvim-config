@@ -11,6 +11,7 @@ you need these binaries
 - ranger
 - [rustup](https://rustup.rs/)
 - [silicon](https://github.com/aloxaf/silicon)
+- black (python formatter) (pip3 install black)
 
 change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog). you might want to use venv all the time because it isn't working.
 
