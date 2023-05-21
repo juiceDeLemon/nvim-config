@@ -180,16 +180,16 @@ local diagnostics = {
    update = { "DiagnosticChanged", "BufEnter", "ModeChanged" },
 }
 diagnostics = utils.insert(diagnostics, { provider = "[", hl = mhl }, {
-   provider = function(self) return self.errors > 0 and (self.error .. "E") end,
+   provider = function(self) return self.errors > 0 and ("E" .. self.errors) end,
    hl = { fg = "red", bg = "bg" },
 }, {
-   provider = function(self) return self.warnings > 0 and (self.warn .. "W") end,
+   provider = function(self) return self.warnings > 0 and ("W" .. self.warnings) end,
    hl = { fg = "yellow", bg = "bg" },
 }, {
-   provider = function(self) return self.info > 0 and (self.info .. "I") end,
+   provider = function(self) return self.info > 0 and ("I" .. self.info) end,
    hl = { fg = "cyan", bg = "bg" },
 }, {
-   provider = function(self) return self.hints > 0 and (self.hint .. "H") end,
+   provider = function(self) return self.hints > 0 and ("H" .. self.hints) end,
    hl = { fg = "green", bg = "bg" },
 }, { provider = "]", hl = mhl })
 
