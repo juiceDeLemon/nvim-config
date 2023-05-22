@@ -149,7 +149,9 @@ local git = {
       hl = { fg = "blue", bg = "gray" },
    },
    {
-      condition = function(self) return self.has_changes end,
+      condition = function(self)
+         return self.status_dict.added or self.status_dict.removed or self.status_dict.changed
+      end,
       provider = " ",
    },
 }
