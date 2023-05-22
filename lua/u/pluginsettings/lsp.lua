@@ -1,7 +1,7 @@
 require("mason").setup { ui = { border = "rounded" } }
 
 require("mason-lspconfig").setup {
-   ensure_installed = { "bashls", "jsonls", "lua_ls", "marksman", "pylsp" },
+   ensure_installed = { "bashls", "jsonls", "lua_ls", "marksman" },
 }
 
 local on_attach = function(client, bufnr)
@@ -38,6 +38,7 @@ require("mason-lspconfig").setup_handlers {
       }
    end,
 }
+-- lua
 require("lspconfig").lua_ls.setup {
    settings = {
       Lua = {
@@ -49,10 +50,33 @@ require("lspconfig").lua_ls.setup {
    on_attach = on_attach,
    capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
+-- rust
 require("lspconfig").rust_analyzer.setup {
    on_attach = on_attach,
    capabilities = require("cmp_nvim_lsp").default_capabilities(),
    cmd = { "rustup", "run", "stable", "rust-analyzer" },
+}
+-- python
+require("lspconfig").pylsp.setup {
+   settings = {
+      pylsp = {
+         plugins = {
+            jedi_completion = { enabled = false },
+            pyflakes = { enabled = false },
+            pycodestyle = {
+               ignore = {
+                  "E226", -- missing whitespace aronud arithmetic operator
+                  "E402", -- module level import not at top of file
+                  -- "C0103", -- invalid constant name
+                  -- "W0104", -- statement seems to have no effect
+                  -- "W0621", -- redefined-outer-name
+               },
+            },
+         },
+      },
+   },
+   on_attach = on_attach,
+   capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -63,49 +87,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
    border = "rounded",
 })
 
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-
 local ll = require "lsp_lines"
 ll.setup()
 ll.toggle()
-
--- local settings = {
---     pylsp = {
---         pylsp = {
---             builtin = {
---                 installExtraArgs = {
---                     "flake8",
---                     "pycodestyle",
---                     "pydocstyle",
---                     "pyflakes",
---                     "pylint",
---                     "yapf",
---                 },
---             },
---             plugins = {
---                 jedi_completion = { enabled = false },
---                 rope_completion = { enabled = false },
---                 flake8 = { enabled = false },
---                 pyflakes = { enabled = false },
---                 pycodestyle = {
---                     ignore = {
---                         "E226",
---                         "E266",
---                         "E302",
---                         "E303",
---                         "E304",
---                         "E305",
---                         "E402",
---                         "C0103",
---                         "W0104",
---                         "W0621",
---                         "W391",
---                         "W503",
---                         "W504",
---                     },
---                     maxLineLength = 99,
---                 },
---             },
---         },
---     },
--- }
