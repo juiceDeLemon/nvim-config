@@ -212,10 +212,10 @@ local file_icon = {
 local file_pathname = {
    provider = function(self)
       local filename = vim.fn.fnamemodify(self.filename, ":.")
-      if self.filename == "" then return "[No Name] " end
+      if self.filename == "" then return "[No Name]" end
       -- shorten if it is over 1/5 of the status bar
       if not cond.width_percent_below(#filename, 0.2) then filename = vim.fn.pathshorten(filename) end
-      return filename .. " "
+      return filename
    end,
    hl = mhl,
 }
@@ -223,15 +223,15 @@ local file_pathname = {
 local file_flags = {
    {
       condition = function() return vim.bo.modified end,
-      provider = "[+]",
+      provider = " [+]",
    },
    {
       condition = function() return not vim.bo.modifiable end,
-      provider = "[-]",
+      provider = " [-]",
    },
    {
       condition = function() return vim.bo.readonly end,
-      provider = "[RO]",
+      provider = " [RO]",
       hl = { fg = "orange", bg = "bg" },
    },
 }
@@ -245,6 +245,14 @@ local help_filename = {
       local filename = vim.api.nvim_buf_get_name(0)
       return " " .. vim.fn.fnamemodify(filename, ":t")
    end,
+   hl = mhl,
+}
+
+-- venv
+local venv = {
+   condition = function() return vim.fn.environ()["VIRTUAL_ENV"] ~= nil end,
+   provider = function() return vim.fn.environ()["VIRTUAL_ENV_PROMPT"] end,
+   update = { "BufEnter", "ModeChanged" },
    hl = mhl,
 }
 
@@ -641,6 +649,7 @@ require("heirline").setup {
       space,
       file_name,
       help_filename,
+      venv,
       space,
       -- snippet_indicator,
       harpoon,
