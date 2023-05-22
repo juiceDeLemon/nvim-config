@@ -23,7 +23,7 @@ lua:
 - stylua (lua formatter) (cargo install stylua)
 - lua-ls (lua lsp) (brew install lua-language-server or just download the binary from its github page
 
-change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog). you might want to use venv all the time because it isn't working.
+use venv all the time btw
 
 run `rustup component add rust-analyzer` to get rust-analyzer
 
