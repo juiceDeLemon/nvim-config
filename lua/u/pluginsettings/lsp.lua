@@ -1,7 +1,7 @@
 require("mason").setup { ui = { border = "rounded" } }
 
 require("mason-lspconfig").setup {
-   ensure_installed = { "bashls", "jsonls", "lua_ls", "marksman" },
+   ensure_installed = { "bashls", "jsonls", "marksman" },
 }
 
 local on_attach = function(client, bufnr)
