@@ -4,14 +4,21 @@ hi
 
 run :checkhealth and follow the intructions
 
-you need these binaries
+you need these things
 
 - trash
 - grep
 - ranger
 - [rustup](https://rustup.rs/)
 - [silicon](https://github.com/aloxaf/silicon)
-- black (python formatter) (pip3 install black)
+
+linters/lsp/formatters:
+python:
+- black (python formatter) (pip3 install black) (venv recommended)
+- pylint (python linter) (pip3 install pylint) (venv recommended)
+- pylsp (python lsp) (pip3 install python-lsp-server) (venv recommended)
+lua:
+- stylua (lua formatter) (cargo install stylua)
 
 change the python interpreter in lua/u/pluginsettings/lsp.lua (python3_host_prog). you might want to use venv all the time because it isn't working.
 
