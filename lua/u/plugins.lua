@@ -32,8 +32,6 @@ require("lazy").setup({
    "echasnovski/mini.jump",
    "phaazon/hop.nvim",
 
-   { "juiceDeLemon/nvim-tetris", dev = true, lazy = false },
-
    -- USEFUL (misc) PLUGINS --
    "numToStr/Comment.nvim",
    "kylechui/nvim-surround",
@@ -115,6 +113,7 @@ require("lazy").setup({
       "giusgad/pets.nvim",
       dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },
    },
+   "alec-gibson/nvim-tetris",
 
    -- plenary, idk which plugins use this --
    "nvim-lua/plenary.nvim",
