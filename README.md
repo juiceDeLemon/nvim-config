@@ -13,10 +13,12 @@ you need these things
 - [silicon](https://github.com/aloxaf/silicon)
 
 linters/lsp/formatters:
+
 python:
 - black (python formatter) (pip3 install black) (venv recommended)
 - pylint (python linter) (pip3 install pylint) (venv recommended)
 - pylsp (python lsp) (pip3 install python-lsp-server) (venv recommended)
+
 lua:
 - stylua (lua formatter) (cargo install stylua)
 - lua-ls (lua lsp) (brew install lua-language-server or just download the binary from its github page
