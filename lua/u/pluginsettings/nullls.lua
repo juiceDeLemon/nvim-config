@@ -1,6 +1,5 @@
 local nl = require "null-ls"
 
--- local c = nl.builtins.code_actions
 local d = nl.builtins.diagnostics
 local f = nl.builtins.formatting
 
@@ -15,10 +14,12 @@ nl.setup {
    border = "rounded",
    debug = false,
    sources = {
-      d.pylint.with { extra_args = {
-         "--ignored-modules=pygame",
-         "--good-names=x,y,z,i,j,n,f",
-      } },
+      d.pylint.with {
+         extra_args = {
+            "--ignored-modules=pygame",
+            "--good-names=x,y,z,i,j,n,f",
+         },
+      },
       d.shellcheck,
 
       f.black,
