@@ -16,6 +16,5 @@ require("telescope").setup {
 
 -- require("telescope").load_extension "frecency"
 require("telescope").load_extension "fzf"
-require("telescope").load_extension "persisted"
 require("telescope").load_extension "lazy"
 require("telescope").load_extension "refactoring"

@@ -38,7 +38,6 @@ dashboard.section.buttons.val = {
    dashboard.button("e", "ranger", "<cmd>lua require('ranger-nvim').open(false)<cr>"),
    dashboard.button("n", "New file", "<cmd>ene <BAR> startinsert<cr>"),
    dashboard.button("o", "recently used files", "<cmd>Telescope oldfiles<cr>"),
-   dashboard.button("r", "Restore session", "<cmd>SessionLoadLast<cr>"),
    dashboard.button("s", "find String", "<cmd>Telescope live_grep<cr>"),
    dashboard.button("h", "Help tags", "<cmd>Telescope help_tags<cr>"),
    dashboard.button("u", "hapOOn", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"),

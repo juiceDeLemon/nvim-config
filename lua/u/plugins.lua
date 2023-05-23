@@ -37,7 +37,6 @@ require("lazy").setup({
    "kylechui/nvim-surround",
    "kevinhwang91/nvim-hlslens",
    "NvChad/nvim-colorizer.lua",
-   "olimorris/persisted.nvim",
    { "CKolkey/ts-node-action", dependencies = "tpope/vim-repeat" },
    "danymat/neogen",
    { "ThePrimeagen/harpoon", lazy = false },

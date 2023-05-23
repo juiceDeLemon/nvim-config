@@ -121,10 +121,6 @@ map_d("<leader>rpv", "<cmd>lua require('refactoring').debug.print_var({})<cr>", 
 map_d("<leader>rc", "<cmd>lua require('refactoring').debug.cleanup{}<cr>", "Clean Up Generated Prints", "n")
 -- stylua: ignore end
 
--- persisted
-map_d("<leader>ss", "<cmd>SessionSave<cr>", "Save Session")
-map_d("<leader>st", "<cmd>Telescope persisted<cr>", "Telescope")
-
 -- silicon
 --    c = {
 --       name = "To Clipboard",

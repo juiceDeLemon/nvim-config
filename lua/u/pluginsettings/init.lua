@@ -23,7 +23,6 @@ require("lsp-inlayhints").setup()
 require("neogen").setup { snippet_engine = "luasnip" }
 require("mini.doc").setup()
 require("nvim-surround").setup()
-require("persisted").setup { use_git_branch = true, autosave = false }
 require("pets").setup()
 require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
