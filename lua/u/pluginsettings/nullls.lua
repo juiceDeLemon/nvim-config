@@ -20,11 +20,10 @@ nl.setup {
             "--good-names=x,y,z,i,j,n,f",
          },
       },
-      d.shellcheck,
 
       f.black,
       f.stylua,
-      f.prettier,
+      f.prettier, -- json
       f.shfmt,
    },
    on_attach = function(client, bufnr)
