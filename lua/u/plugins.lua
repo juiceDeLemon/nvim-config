@@ -123,7 +123,7 @@ require("lazy").setup({
 }, {
    defaults = { lazy = true },
    install = { colorscheme = { "tokyonight" } },
-   dev = { path = "~/Repos/neovim_plugins/" },
+   dev = { path = os.getenv "HOME" .. "/Repos/neovim_plugins/" },
    performance = {
       rtp = {
          reset = true,

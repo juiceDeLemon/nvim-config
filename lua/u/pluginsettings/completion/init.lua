@@ -6,7 +6,7 @@ require "u.pluginsettings.completion.snippets"
 
 -- friendly-snip
 -- copied from https://github.com/L3MON4D3/LuaSnip/issues/37
-vim.o.runtimepath = vim.o.runtimepath .. "~/.config/nvim/lua/friendly-snippets"
+vim.o.runtimepath = vim.o.runtimepath .. os.getenv "HOME" .. "/.config/nvim/lua/friendly-snippets"
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup {
