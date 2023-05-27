@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
    -- stylua: ignore end
    require("nvim-navic").attach(client, bufnr)
    require("nvim-navbuddy").attach(client, bufnr)
-   require("lsp-inlayhints").on_attach(client, bufnr, false)
+   require("lsp-inlayhints").on_attach(client, bufnr)
    -- navbuddy
    map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 end
@@ -46,6 +46,7 @@ require("lspconfig").lua_ls.setup {
          completion = { callSnippet = "Replace" },
          diagnostics = { globals = { "vim", "require", "pp" } },
          workspace = { checkThirdParty = false }, -- remove that annoying popup https://github.com/neovim/nvim-lspconfig/issues/1700
+         hint = { enabled = true },
       },
    },
    on_attach = on_attach,
