@@ -63,7 +63,6 @@ require("lspconfig").pylsp.setup {
    settings = {
       pylsp = {
          plugins = {
-            jedi_completion = { enabled = false },
             pyflakes = { enabled = false },
             pycodestyle = {
                ignore = {
