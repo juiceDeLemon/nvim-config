@@ -210,7 +210,15 @@ local file_icon = {
 local file_pathname = {
    provider = function(self)
       local filename = vim.fn.fnamemodify(self.filename, ":.")
-      if self.filename == "" then return "[Scratch]" end
+      if
+         vim.bo.buftype == "nofile"
+         and (vim.bo.bufhidden == "hide" or vim.bo.bufhidden == "wipe")
+         and vim.bo.swapfile == false
+      then
+         return "[Scratch]"
+      end
+      if vim.bo.buftype == "prompt" then return "[Prompt]" end
+      if self.filename == "" then return "[No Name]" end
       -- shorten if it is over 1/5 of the status bar
       if not cond.width_percent_below(#filename, 0.2) then filename = vim.fn.pathshorten(filename) end
       return filename
@@ -393,9 +401,16 @@ local bufaltflag = {
 
 local bufnamecomp = {
    provider = function(self)
-      local filename = self.filename
-      filename = filename == "" and "[Scratch]" or vim.fn.fnamemodify(filename, ":t")
-      return filename
+      if -- same thing in the statusline filename
+         vim.bo.buftype == "nofile"
+         and (vim.bo.bufhidden == "hide" or vim.bo.bufhidden == "wipe")
+         and vim.bo.swapfile == false
+      then
+         return "[Scratch]"
+      end
+      if vim.bo.buftype == "prompt" then return "[Prompt]" end
+      if self.filename == "" then return "[No Name]" end
+      return vim.fn.fnamemodify(self.filename, ":t")
    end,
 }
 
