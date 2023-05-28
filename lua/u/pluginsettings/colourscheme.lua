@@ -8,9 +8,9 @@ require("catppuccin").setup {
       percentage = 0.15,
    },
    styles = {
-      loops = {"italic"},
-      functions = {"bold"},
-      keywords = {"italic"},
+      loops = { "italic" },
+      functions = { "bold" },
+      keywords = { "italic" },
    },
    custom_highlights = function(c)
       return {
@@ -24,6 +24,8 @@ require("catppuccin").setup {
          TelescopeSelection = { bg = c.surface1, style = { "bold" } },
          TelescopeSelectionCaret = { bg = c.surface1, style = { "bold" } },
          TelescopeBorder = { fg = c.pink },
+         MiniCursorword = { bg = c.surface2, style = {} },
+         MiniCursorwordCurrent = { bg = c.surface2, style = {} },
          EndOfBuffer = { fg = c.overlay0 },
       }
    end,
