@@ -13,8 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-   -- COLOURSCHEME --
-   { "folke/tokyonight.nvim", priority = 1000 },
+   -- WARN: KING! --
+   { "catppuccin/nvim", lazy = false, priority = 1000 },
 
    -- FOLKE --
    "folke/which-key.nvim",
@@ -122,7 +122,7 @@ require("lazy").setup({
    "onsails/lspkind.nvim",
 }, {
    defaults = { lazy = true },
-   install = { colorscheme = { "tokyonight" } },
+   install = { colorscheme = { "catppuccin" } },
    dev = { path = os.getenv "HOME" .. "/Repos/neovim_plugins/" },
    performance = {
       rtp = {

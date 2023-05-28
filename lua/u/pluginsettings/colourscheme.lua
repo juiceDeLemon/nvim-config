@@ -1,26 +1,81 @@
-require("tokyonight").setup {
-   style = "night",
-   styles = { functions = { bold = true }, sidebars = "transparent", floats = "transparent" },
-   transparent = true,
-   dim_inactive = true,
-   lualine_bold = true,
-   on_highlights = function(hi, c)
-      -- colours refers to here:
-      -- https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
-      -- options are here
-      -- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/theme.lua
-      hi.TreesitterContextBottom = { bold = true, underline = true }
-      hi.CursorLineNr = { fg = c.fg }
-      hi.LineNr = { fg = c.dark5 }
-      hi.Pmenu = { fg = c.border_highlight }
-      hi.CmpItemAbbrMatch = { fg = c.blue1, bold = true }
-      hi.CmpItemMenu = { fg = c.comment, italic = true }
-      hi.Visual = { bold = true, reverse = true }
-      hi.TelescopePreviewLine = { bg = c.bg_visual }
-      hi.TelescopeSelection = { bg = c.bg_visual }
-      hi.TelescopeSelectionCaret = { bg = c.bg_visual }
-      hi.EndOfBuffer = { fg = c.comment }
+require("catppuccin").setup {
+   transparent_background = true,
+   show_end_of_buffer = true,
+   -- TEST:
+   dim_inactive = {
+      enabled = false,
+      shade = "dark",
+      percentage = 0.15,
+   },
+   styles = {
+      loops = {"italic"},
+      functions = {"bold"},
+      keywords = {"italic"},
+   },
+   custom_highlights = function(c)
+      return {
+         TreesitterContextBottom = { bold = true, underline = true },
+         LineNrAbove = { fg = c.overlay0 },
+         LineNrBelow = { fg = c.overlay0 },
+         Pmenu = { fg = c.pink },
+         CmpItemAbbrMatch = { fg = c.maroon, bold = true },
+         CmpItemMenu = { italic = true },
+         Visual = { bold = true, reverse = true },
+         TelescopeSelection = { bg = c.surface1, style = { "bold" } },
+         TelescopeSelectionCaret = { bg = c.surface1, style = { "bold" } },
+         TelescopeBorder = { fg = c.pink },
+         EndOfBuffer = { fg = c.overlay0 },
+      }
    end,
+   integrations = {
+      alpha = true,
+      aerial = false,
+      barbar = false,
+      beacon = false,
+      cmp = true,
+      coc_nvim = false,
+      dashboard = false,
+      fern = false,
+      fidget = false,
+      gitgutter = false,
+      gitsigns = true,
+      harpoon = true,
+      headlines = false,
+      hop = false,
+      illuminate = false,
+      leap = false,
+      lightspeed = false,
+      lsp_saga = false,
+      lsp_trouble = true,
+      markdown = true,
+      mason = true,
+      mini = true,
+      neogit = false,
+      neotest = false,
+      neotree = false,
+      noice = false,
+      notify = false,
+      nvimtree = false,
+      octo = false,
+      overseer = false,
+      pounce = false,
+      sandwich = false,
+      semantic_tokens = true,
+      symbols_outline = false,
+      telekasten = false,
+      telescope = true,
+      treesitter = true,
+      treesitter_context = true,
+      ts_rainbow = false,
+      ts_rainbow2 = false,
+      vim_sneak = false,
+      vimwiki = false,
+      which_key = false,
+      dap = { enabled = true, enable_ui = true },
+      indent_blankline = { enabled = false, colored_indent_levels = false },
+      native_lsp = { enabled = true },
+      navic = { enabled = false },
+   },
 }
 
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "catppuccin"

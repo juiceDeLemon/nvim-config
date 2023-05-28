@@ -45,10 +45,8 @@ navic.setup {
    depth_limit_indicator = "...",
 }
 
-local gethl = utils.get_highlight
-
 -- separators
-local space = { provider = "%=" }
+local space = { provider = "%=", hl = { bg = "bg" } }
 local l = ""
 local r = ""
 
@@ -149,9 +147,7 @@ local git = {
       hl = { fg = "blue", bg = "gray" },
    },
    {
-      condition = function(self)
-         return self.status_dict.added or self.status_dict.removed or self.status_dict.changed
-      end,
+      condition = function(self) return self.status_dict.added or self.status_dict.removed or self.status_dict.changed end,
       provider = " ",
    },
 }
@@ -214,7 +210,7 @@ local file_icon = {
 local file_pathname = {
    provider = function(self)
       local filename = vim.fn.fnamemodify(self.filename, ":.")
-      if self.filename == "" then return "[No Name]" end
+      if self.filename == "" then return "[Scratch]" end
       -- shorten if it is over 1/5 of the status bar
       if not cond.width_percent_below(#filename, 0.2) then filename = vim.fn.pathshorten(filename) end
       return filename
@@ -226,10 +222,12 @@ local file_flags = {
    {
       condition = function() return vim.bo.modified end,
       provider = " [+]",
+      hl = { bg = "bg" },
    },
    {
       condition = function() return not vim.bo.modifiable end,
       provider = " [-]",
+      hl = { bg = "bg" },
    },
    {
       condition = function() return vim.bo.readonly end,
@@ -396,7 +394,7 @@ local bufaltflag = {
 local bufnamecomp = {
    provider = function(self)
       local filename = self.filename
-      filename = filename == "" and "[No Name]" or vim.fn.fnamemodify(filename, ":t")
+      filename = filename == "" and "[Scratch]" or vim.fn.fnamemodify(filename, ":t")
       return filename
    end,
 }
@@ -642,6 +640,8 @@ local hl_static = {
    end,
 }
 
+local c = require("catppuccin.palettes").get_palette "mocha"
+
 require("heirline").setup {
    statusline = {
       mode_comp,
@@ -678,19 +678,15 @@ require("heirline").setup {
    },
    opts = {
       colors = {
-         bg = "#16161e",
-         red = gethl("Substitute").bg,
-         orange = gethl("Constant").fg,
-         yellow = gethl("WarningMsg").fg,
-         green = gethl("String").fg,
-         blue = gethl("Function").fg,
-         gray = gethl("NonText").fg,
-         purple = gethl("Statement").fg,
-         cyan = gethl("Special").fg,
-         diag_warn = gethl("DiagnosticWarn").fg,
-         diag_error = gethl("DiagnosticError").fg,
-         diag_hint = gethl("DiagnosticHint").fg,
-         diag_info = gethl("DiagnosticInfo").fg,
+         bg = c.mantle,
+         red = c.red,
+         orange = c.peach,
+         yellow = c.yellow,
+         green = c.green,
+         blue = c.blue,
+         gray = c.overlay0,
+         purple = c.mauve,
+         cyan = c.teal,
       },
       disable_winbar_cb = function()
          local type = vim.bo.filetype
