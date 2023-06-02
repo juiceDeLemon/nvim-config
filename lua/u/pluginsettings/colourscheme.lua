@@ -1,12 +1,7 @@
+local shutup = 0
 require("catppuccin").setup {
    transparent_background = true,
    show_end_of_buffer = true,
-   -- TEST:
-   dim_inactive = {
-      enabled = false,
-      shade = "dark",
-      percentage = 0.15,
-   },
    styles = {
       loops = { "italic" },
       functions = { "bold" },
@@ -26,6 +21,7 @@ require("catppuccin").setup {
          TelescopeBorder = { fg = c.pink },
          MiniCursorword = { bg = c.surface2, style = {} },
          MiniCursorwordCurrent = { bg = c.surface2, style = {} },
+         GitSignsChangedelete = { fg = c.blue },
          EndOfBuffer = { fg = c.overlay0 },
       }
    end,
