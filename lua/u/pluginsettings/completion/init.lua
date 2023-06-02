@@ -31,8 +31,8 @@ cmp.setup {
       },
    },
    mapping = cmp.mapping.preset.insert {
-      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-d>"] = cmp.mapping.scroll_docs(4),
       ["<C-y>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping(function()
          local isVisible = cmp.visible()
@@ -102,8 +102,8 @@ cmp.setup {
 
 cmp.setup.cmdline({ "/", "?" }, {
    mapping = cmp.mapping.preset.cmdline {
-      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-d>"] = cmp.mapping.scroll_docs(4),
       ["<C-y>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping(function()
          local isVisible = cmp.visible()
@@ -135,8 +135,8 @@ cmp.setup.cmdline({ "/", "?" }, {
 
 cmp.setup.cmdline(":", {
    mapping = cmp.mapping.preset.cmdline {
-      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-d>"] = cmp.mapping.scroll_docs(4),
       ["<C-y>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping(function()
          local isVisible = cmp.visible()
