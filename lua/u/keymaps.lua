@@ -148,6 +148,9 @@ map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "al
 -- blackjack
 map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
 
+-- catppuccin palette
+map_d("<leader><leader>h", "<cmd>lua pp(require'catppuccin.palettes'.get_palette'mocha')<cr>", "Get Palette")
+
 -- keylab
 map("n", "<leader><leader>k", require("keylab").start, { desc = "Start a keylab session" })
 
