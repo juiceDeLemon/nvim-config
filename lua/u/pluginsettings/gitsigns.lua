@@ -3,7 +3,7 @@ require("gitsigns").setup {
       add = { text = "+" },
       change = { text = "~" },
       delete = { text = "-" },
-      -- topdelete = { text = "" },
+      topdelete = { text = "-" },
       changedelete = { text = "=" },
    },
    signcolumn = true,
