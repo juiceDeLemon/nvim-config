@@ -9,6 +9,8 @@ require("telescope").setup {
          "%.ttf",
          ".idea/",
          ".vscode/",
+         "venv/*",
+         "~/.config/nvim/random_words.txt",
       },
    },
    extensions = { lazy = { show_icon = false } },
