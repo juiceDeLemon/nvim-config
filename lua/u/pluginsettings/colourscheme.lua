@@ -1,4 +1,3 @@
-local shutup = 0
 require("catppuccin").setup {
    transparent_background = true,
    show_end_of_buffer = true,
@@ -72,7 +71,7 @@ require("catppuccin").setup {
       dap = { enabled = true, enable_ui = true },
       indent_blankline = { enabled = false, colored_indent_levels = false },
       native_lsp = { enabled = true },
-      navic = { enabled = false },
+      navic = { enabled = true,  },
    },
 }
 
