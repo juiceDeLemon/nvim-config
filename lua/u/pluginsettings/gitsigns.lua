@@ -5,6 +5,7 @@ require("gitsigns").setup {
       delete = { text = "-" },
       topdelete = { text = "-" },
       changedelete = { text = "=" },
+      untracked = { text = "|" },
    },
    signcolumn = true,
    preview_config = {
