@@ -122,8 +122,8 @@ local git = {
       return { fg = colour, bg = "gray" }
    end,
    { -- git branch name
-      provider = function(self) return "  " .. self.status_dict.head .. " " end,
-      hl = { bold = true },
+      provider = function(self) return " " .. self.status_dict.head .. " " end,
+      hl = { fg = "orange", bold = true },
    },
    {
       provider = function(self)
@@ -159,7 +159,7 @@ local active_lsp = {
       for _, server in pairs(vim.lsp.get_active_clients { bufnr = 0 }) do
          table.insert(names, server.name)
       end
-      return " [ " .. table.concat(names, " ") .. "]"
+      return " [" .. table.concat(names, " ") .. "]"
    end,
    update = { "ModeChanged", "LspAttach", "LspDetach" },
    condition = cond.lsp_attached,
