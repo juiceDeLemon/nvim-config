@@ -102,8 +102,10 @@ require("lazy").setup({
    "petertriho/nvim-scrollbar",
 
    -- STATUS LINE --
+   -- STATUSLINES --
    "rebelot/heirline.nvim",
    "SmiteshP/nvim-navic",
+   "luukvbaal/statuscol.nvim",
 
    -- FUN --
    { "alanfortlink/blackjack.nvim", lazy = false },
