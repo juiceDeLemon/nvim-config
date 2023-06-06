@@ -68,6 +68,20 @@ map("n", "<c-tab>", "<cmd>bp<cr>")
 -- neogen (a for annotation)
 map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
 
+-- dap
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { noremap = true, desc = "Set Breakpoint" })
+map(
+   "n",
+   "<leader>dc",
+   "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+   { noremap = true, desc = "Set Condition Breakpoint" }
+)
+map("n", "<leader>d5", "<cmd>lua require'dap'.continue()<cr>", { noremap = true, desc = "Continue" })
+map("n", "<leader>d10", "<cmd>lua require'dap'.step_over()<cr>", { noremap = true, desc = "Step Over" })
+map("n", "<leader>d11", "<cmd>lua require'dap'.step_into()<cr>", { noremap = true, desc = "Step Into" })
+map("n", "<leader>d12", "<cmd>lua require'dap'.step_out()<cr>", { noremap = true, desc = "Step Out" })
+map("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", { noremap = true, desc = "Toggle UI" })
+
 -- ranger
 map_d("<leader>e", "<cmd>lua require('ranger-nvim').open(true)<cr>", "Toggle Explorer")
 

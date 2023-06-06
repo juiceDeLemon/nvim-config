@@ -1,10 +1,10 @@
 hi
 
-\*\*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
+\*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
 
 run :checkhealth and follow the intructions
 
-you need these things
+### you need these binaries/things
 
 - trash
 - grep
@@ -12,18 +12,28 @@ you need these things
 - [rustup](https://rustup.rs/)
 - [silicon](https://github.com/aloxaf/silicon)
 
-linters/lsp/formatters:
+#### linters/lsp/formatters/dap:
 
-python:
-- black (python formatter) (pip3 install black) (venv recommended)
-- pylint (python linter) (pip3 install pylint) (venv recommended)
-- pylsp (python lsp) (pip3 install python-lsp-server) (venv recommended)
+##### python (must install, otherwise will not work):
 
-lua:
-- stylua (lua formatter) (cargo install stylua)
-- lua-ls (lua lsp) (brew install lua-language-server or just download the binary from its github page
+- black (formatter) (install in project venv)
+- pylint (linter) (install in project venv)
+- pylsp (lsp) (install in project venv)
+- debugpy (dap) (install like below)
 
-use venv all the time btw
+```bash
+mkdir ~/.venv
+cd ~/.venv
+python3 -m venv nvim-python
+nvim-python/bin/python -m pip install debugpy
+```
+
+_use venv all the time btw_
+
+##### lua:
+
+- stylua (formatter) (cargo install stylua)
+- lua-ls (lsp) (brew install lua-language-server or just download the binary from its github page)
 
 run `rustup component add rust-analyzer` to get rust-analyzer
 

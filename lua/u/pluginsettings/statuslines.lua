@@ -152,6 +152,9 @@ local git = {
    },
 }
 
+-- one_space
+local one_space = { provider = " " }
+
 -- lsp clients
 local active_lsp = {
    provider = function()
@@ -159,7 +162,7 @@ local active_lsp = {
       for _, server in pairs(vim.lsp.get_active_clients { bufnr = 0 }) do
          table.insert(names, server.name)
       end
-      return " [" .. table.concat(names, " ") .. "]"
+      return "[" .. table.concat(names, " ") .. "]"
    end,
    update = { "ModeChanged", "LspAttach", "LspDetach" },
    condition = cond.lsp_attached,
@@ -621,17 +624,15 @@ local cur_bufnr = {
    end,
 }
 
--- local DAPMessages = {
---     condition = function()
---         local session = require("dap").session()
---         return session ~= nil
---     end,
---     provider = function()
---         return " " .. require("dap").status()
---     end,
---     hl = "Debug"
---     -- see Click-it! section for clickable actions
--- }
+local dap_status = {
+   condition = function()
+      local session = require("dap").session()
+      return session ~= nil
+   end,
+   provider = function() return "[" .. require("dap").status() .. "]" end,
+   hl = "Debug",
+   -- see Click-it! section for clickable actions
+}
 
 local hl_static = {
    mode_colours_map = {
@@ -657,24 +658,16 @@ local hl_static = {
 
 local c = require("catppuccin.palettes").get_palette "mocha"
 
+-- stylua: ignore start
 require("heirline").setup {
    statusline = {
-      mode_comp,
-      git,
-      active_lsp,
-      diagnostics,
+      mode_comp, git, one_space, active_lsp, diagnostics, dap_status,
       space,
-      file_name,
-      help_filename,
-      venv,
+      file_name, help_filename, venv,
       space,
       -- snippet_indicator,
-      harpoon,
-      filesize,
-      encoding,
-      fileformat,
-      filetype,
-      ruler,
+      harpoon, filesize, encoding, fileformat, filetype, ruler,
+-- stylua: ignore end
       static = hl_static,
    },
    winbar = {
@@ -722,6 +715,12 @@ require("heirline").setup {
             "Navbuddy",
             "harpoon",
             "help",
+            "dapui_scopes",
+            "dapui_breakpoints",
+            "dapui_stacks",
+            "dapui_watches",
+            "dapui_console",
+            "dap-repl",
             "",
          } do
             if type == v then return true end

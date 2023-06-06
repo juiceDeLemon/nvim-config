@@ -56,7 +56,6 @@ require("lazy").setup({
    "williamboman/mason.nvim",
    "williamboman/mason-lspconfig.nvim",
    "Maan2003/lsp_lines.nvim",
-   { "SmiteshP/nvim-navbuddy", dependencies = { "MunifTanjim/nui.nvim", "SmiteshP/nvim-navic" } },
    "jose-elias-alvarez/null-ls.nvim",
    "lvimuser/lsp-inlayhints.nvim",
 
@@ -91,6 +90,18 @@ require("lazy").setup({
    -- TREES --
    "kelly-lin/ranger.nvim",
    { "mbbill/undotree", lazy = false },
+   { "SmiteshP/nvim-navbuddy", dependencies = { "MunifTanjim/nui.nvim", "SmiteshP/nvim-navic" } },
+
+   -- DAP --
+   {
+      "mfussenegger/nvim-dap",
+      dependencies = {
+         "rcarriga/nvim-dap-ui",
+         "mfussenegger/nvim-dap-python",
+         "theHamsta/nvim-dap-virtual-text",
+         "LiadOz/nvim-dap-repl-highlights",
+      },
+   },
 
    -- GIT --
    "lewis6991/gitsigns.nvim",
@@ -101,7 +112,6 @@ require("lazy").setup({
    "shellRaining/hlchunk.nvim",
    "petertriho/nvim-scrollbar",
 
-   -- STATUS LINE --
    -- STATUSLINES --
    "rebelot/heirline.nvim",
    "SmiteshP/nvim-navic",
@@ -131,7 +141,7 @@ require("lazy").setup({
          reset = true,
          disabled_plugins = {
             "gzip",
-            "netrwPlugin",
+            -- "netrwPlugin",
             "tarPlugin",
             "tohtml",
             "zipPlugin",

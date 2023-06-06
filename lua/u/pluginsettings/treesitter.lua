@@ -2,6 +2,7 @@ require("nvim-treesitter.configs").setup {
    -- configs
    ensure_installed = {
       "bash",
+      "dap_repl",
       "fennel",
       "json",
       "lua",

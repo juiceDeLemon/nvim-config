@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
    map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 end
 
-require("neodev").setup {}
+require("neodev").setup { library = { plugins = { "nvim-dap-ui" }, types = true } }
 
 require("mason-lspconfig").setup_handlers {
    function(server_name)
