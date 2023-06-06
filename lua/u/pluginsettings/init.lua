@@ -14,6 +14,7 @@ require "u.pluginsettings.scrollbar"
 require "u.pluginsettings.statuscolumn"
 require "u.pluginsettings.statuslines"
 require "u.pluginsettings.telescope"
+require "u.pluginsettings.todo-comments"
 require "u.pluginsettings.treesitter"
 require "u.pluginsettings.ts-node-action"
 require "u.pluginsettings.whichkey"
@@ -28,7 +29,33 @@ require("nvim-surround").setup()
 require("pets").setup()
 require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
-require("todo-comments").setup { highlight = { before = "fg", keyword = "bg" } }
 
-require("flight").setup()
+-- require("flight").setup()
 -- require("mini.jump").setup()
+-- local hop = require "hop"
+-- hop.setup()
+-- local directions = require("hop.hint").HintDirection
+-- vim.keymap.set(
+--    "",
+--    "f",
+--    function() hop.hint_char1 { direction = directions.AFTER_CURSOR,  } end,
+--    { remap = true }
+-- )
+-- vim.keymap.set(
+--    "",
+--    "F",
+--    function() hop.hint_char1 { direction = directions.BEFORE_CURSOR,  } end,
+--    { remap = true }
+-- )
+-- vim.keymap.set(
+--    "",
+--    "t",
+--    function() hop.hint_char1 { direction = directions.AFTER_CURSOR,  hint_offset = -1 } end,
+--    { remap = true }
+-- )
+-- vim.keymap.set(
+--    "",
+--    "T",
+--    function() hop.hint_char1 { direction = directions.BEFORE_CURSOR,  hint_offset = 1 } end,
+--    { remap = true }
+-- )
