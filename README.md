@@ -10,7 +10,6 @@ run :checkhealth and follow the intructions
 - grep
 - ranger
 - [rustup](https://rustup.rs/)
-- [silicon](https://github.com/aloxaf/silicon)
 
 #### linters/lsp/formatters/dap:
 

@@ -135,24 +135,6 @@ map_d("<leader>rpv", "<cmd>lua require('refactoring').debug.print_var({})<cr>", 
 map_d("<leader>rc", "<cmd>lua require('refactoring').debug.cleanup{}<cr>", "Clean Up Generated Prints", "n")
 -- stylua: ignore end
 
--- silicon
---    c = {
---       name = "To Clipboard",
---       s = {
---          "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true }<cr>",
---          "Current Line",
---       },
---       v = {
---          "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = true, visible = true }<cr>",
---          "Visible Area",
---       },
---    },
---    v = {
---       "<cmd>lua require'silicon'.visualise_cmdline{ to_clip = ture, visible = true }<cr>",
---       "Visible Area",
---    },
--- },
-
 map_d("<leader>u", "<cmd>UndotreeToggle<cr><c-w>h", "Toggle Undo Tree")
 
 -- <leader><leader> (useless things)
