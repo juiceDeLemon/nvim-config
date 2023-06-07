@@ -1,4 +1,4 @@
-hi
+hi, config done, just rust readme not here, and statusline snippet indicator
 
 \*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
 
