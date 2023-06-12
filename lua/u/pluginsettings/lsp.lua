@@ -1,11 +1,11 @@
 require("mason").setup { ui = { border = "rounded" } }
 
 require("mason-lspconfig").setup {
-   ensure_installed = { "bashls", "jsonls", "marksman" },
+	ensure_installed = { "bashls", "jsonls", "marksman" },
 }
 
 local on_attach = function(client, bufnr)
-   local map = vim.keymap.set
+	local map = vim.keymap.set
    -- stylua: ignore start
    map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
    map("n", "gd", "<cmd>TroubleToggle lsp_definitions<cr>", { noremap = true, silent = true, desc = "Definitions" })
@@ -21,71 +21,71 @@ local on_attach = function(client, bufnr)
    map({ "i", "s" }, "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
    map("n", "<leader>lt", "<cmd>lua require'lsp_lines'.toggle()<cr>", { noremap = true, silent = true, desc = "Toggle LspLines" })
    map("n", "<leader>lq", "<cmd>TroubleToggle document_diagnostics<cr>", { noremap = true, silent = true, desc = "Diagnostics" })
-   -- stylua: ignore end
-   require("nvim-navic").attach(client, bufnr)
-   require("nvim-navbuddy").attach(client, bufnr)
-   require("lsp-inlayhints").on_attach(client, bufnr)
-   -- navbuddy
-   map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+	-- stylua: ignore end
+	require("nvim-navic").attach(client, bufnr)
+	require("nvim-navbuddy").attach(client, bufnr)
+	require("lsp-inlayhints").on_attach(client, bufnr)
+	-- navbuddy
+	map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 end
 
 require("neodev").setup { library = { plugins = { "nvim-dap-ui" }, types = true } }
 
 require("mason-lspconfig").setup_handlers {
-   function(server_name)
-      require("lspconfig")[server_name].setup {
-         on_attach = on_attach,
-         capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      }
-   end,
+	function(server_name)
+		require("lspconfig")[server_name].setup {
+			on_attach = on_attach,
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		}
+	end,
 }
 -- lua
 require("lspconfig").lua_ls.setup {
-   settings = {
-      Lua = {
-         completion = { callSnippet = "Replace" },
-         diagnostics = { globals = { "vim", "require", "pp" } },
-         workspace = { checkThirdParty = false }, -- remove that annoying popup https://github.com/neovim/nvim-lspconfig/issues/1700
-         hint = { enabled = true },
-      },
-   },
-   on_attach = on_attach,
-   capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	settings = {
+		Lua = {
+			completion = { callSnippet = "Replace" },
+			diagnostics = { globals = { "vim", "require", "pp" } },
+			workspace = { checkThirdParty = false }, -- remove that annoying popup https://github.com/neovim/nvim-lspconfig/issues/1700
+			hint = { enabled = true },
+		},
+	},
+	on_attach = on_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 -- rust
 require("lspconfig").rust_analyzer.setup {
-   on_attach = on_attach,
-   capabilities = require("cmp_nvim_lsp").default_capabilities(),
-   cmd = { "rustup", "run", "stable", "rust-analyzer" },
+	on_attach = on_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	cmd = { "rustup", "run", "stable", "rust-analyzer" },
 }
 -- python
 require("lspconfig").pylsp.setup {
-   settings = {
-      pylsp = {
-         plugins = {
-            pyflakes = { enabled = false },
-            pycodestyle = {
-               ignore = {
-                  "E226", -- missing whitespace aronud arithmetic operator
-                  "E402", -- module level import not at top of file
-                  -- "C0103", -- invalid constant name
-                  -- "W0104", -- statement seems to have no effect
-                  -- "W0621", -- redefined-outer-name
-               },
-            },
-         },
-      },
-   },
-   on_attach = on_attach,
-   capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	settings = {
+		pylsp = {
+			plugins = {
+				pyflakes = { enabled = false },
+				pycodestyle = {
+					ignore = {
+						"E226", -- missing whitespace aronud arithmetic operator
+						"E402", -- module level import not at top of file
+						-- "C0103", -- invalid constant name
+						-- "W0104", -- statement seems to have no effect
+						-- "W0621", -- redefined-outer-name
+					},
+				},
+			},
+		},
+	},
+	on_attach = on_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-   border = "rounded",
+	border = "rounded",
 })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-   border = "rounded",
+	border = "rounded",
 })
 
 local ll = require "lsp_lines"

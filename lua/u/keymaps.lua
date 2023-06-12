@@ -7,9 +7,11 @@ local map = vim.keymap.set -- abbreviation
 ---@param desc string
 ---@param mode string | table | nil
 local map_d = function(mapping, command, desc, mode)
-   opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
-   if mode == nil then mode = { "n", "v" } end
-   map(mode, mapping, command, opts)
+	opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
+	if mode == nil then
+		mode = { "n", "v" }
+	end
+	map(mode, mapping, command, opts)
 end
 
 -- n = normal
@@ -71,10 +73,10 @@ map_d("<leader>a", "V<cmd>Neogen<cr><esc>", "Neogen")
 -- dap
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { noremap = true, desc = "Set Breakpoint" })
 map(
-   "n",
-   "<leader>dc",
-   "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-   { noremap = true, desc = "Set Condition Breakpoint" }
+	"n",
+	"<leader>dc",
+	"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+	{ noremap = true, desc = "Set Condition Breakpoint" }
 )
 map("n", "<leader>d5", "<cmd>lua require'dap'.continue()<cr>", { noremap = true, desc = "Continue" })
 map("n", "<leader>d10", "<cmd>lua require'dap'.step_over()<cr>", { noremap = true, desc = "Step Over" })
