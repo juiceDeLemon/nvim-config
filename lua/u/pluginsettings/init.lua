@@ -6,7 +6,6 @@ require "u.pluginsettings.completion"
 require "u.pluginsettings.cursorword"
 require "u.pluginsettings.dap" -- must be before treesitter.lua
 require "u.pluginsettings.gitsigns"
-require "u.pluginsettings.hlchunk"
 require "u.pluginsettings.lsp"
 require "u.pluginsettings.navbuddy"
 require "u.pluginsettings.nullls"

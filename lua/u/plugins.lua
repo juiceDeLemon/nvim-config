@@ -109,7 +109,6 @@ require("lazy").setup({
 
 	-- EYE-CANDY --
 	"goolord/alpha-nvim",
-	"shellRaining/hlchunk.nvim",
 	"petertriho/nvim-scrollbar",
 
 	-- STATUSLINES --
