@@ -23,7 +23,6 @@ require("lazy").setup({
 	{ "folke/neodev.nvim", ft = "lua" },
 
 	-- MINI --
-	"echasnovski/mini.cursorword",
 	"echasnovski/mini.doc",
 	"echasnovski/mini.ai",
 

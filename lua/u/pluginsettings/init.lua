@@ -3,7 +3,6 @@ require "u.pluginsettings.alpha"
 require "u.pluginsettings.colorizer"
 require "u.pluginsettings.colourscheme"
 require "u.pluginsettings.completion"
-require "u.pluginsettings.cursorword"
 require "u.pluginsettings.dap" -- must be before treesitter.lua
 require "u.pluginsettings.gitsigns"
 require "u.pluginsettings.lsp"
