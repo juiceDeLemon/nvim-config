@@ -13,7 +13,6 @@ require "u.pluginsettings.scrollbar"
 require "u.pluginsettings.statuscolumn"
 require "u.pluginsettings.statuslines"
 require "u.pluginsettings.telescope"
-require "u.pluginsettings.todo-comments"
 require "u.pluginsettings.treesitter"
 require "u.pluginsettings.ts-node-action"
 require "u.pluginsettings.whichkey"
@@ -28,6 +27,7 @@ require("nvim-surround").setup()
 require("pets").setup()
 require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
+require("todo-comments").setup { signs = false, highlight = { before = "fg", keyword = "bg" } }
 
 -- require("flight").setup()
 -- require("mini.jump").setup()
