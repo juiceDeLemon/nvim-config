@@ -1,6 +1,5 @@
 local cmp = require "cmp"
 local snip = require "luasnip"
-local lspkind = require "lspkind"
 
 require "u.pluginsettings.completion.snippets"
 
@@ -91,10 +90,8 @@ cmp.setup {
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
-		format = lspkind.cmp_format {
-			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-			mode = "symbol_text",
-			menu = {
+		format = function(entry, vim_item)
+			vim_item.menu = ({
 				luasnip = "[Snips]",
 				nvim_lsp = "[Lsp]",
 				nvim_lua = "[Vim]",
@@ -102,8 +99,9 @@ cmp.setup {
 				path = "[Path]",
 				calc = "[Calc]",
 				issues = "[Issues]",
-			},
-		},
+			})[entry.source.name]
+			return vim_item
+		end,
 	},
 	experimental = { ghost_text = true },
 }

@@ -125,7 +125,6 @@ require("lazy").setup({
 
 	-- ICONS --
 	"nvim-tree/nvim-web-devicons",
-	"onsails/lspkind.nvim",
 }, {
 	defaults = { lazy = true },
 	install = { colorscheme = { "catppuccin" } },
