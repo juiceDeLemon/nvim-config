@@ -17,6 +17,7 @@ require "u.pluginsettings.ts-node-action"
 require "u.pluginsettings.whichkey"
 
 require("Comment").setup { ignore = "^$" } -- ignore blankline
+require("fidget").setup { text = { spinner = "bouncing_bar" } }
 require("git-conflict").setup {}
 require("hlslens").setup()
 require("lsp-inlayhints").setup()
