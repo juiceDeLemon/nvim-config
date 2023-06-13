@@ -27,11 +27,6 @@ require("lazy").setup({
 	"echasnovski/mini.doc",
 	"echasnovski/mini.ai",
 
-	-- MY PLUGINS (and testing) --
-	{ "juiceDeLemon/flight.nvim", dev = true },
-	"echasnovski/mini.jump",
-	"phaazon/hop.nvim",
-
 	-- USEFUL (misc) PLUGINS --
 	"numToStr/Comment.nvim",
 	"kylechui/nvim-surround",

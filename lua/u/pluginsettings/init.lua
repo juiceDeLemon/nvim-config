@@ -28,33 +28,3 @@ require("pets").setup()
 require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
 require("todo-comments").setup { signs = false, highlight = { before = "fg", keyword = "bg" } }
-
--- require("flight").setup()
--- require("mini.jump").setup()
--- local hop = require "hop"
--- hop.setup()
--- local directions = require("hop.hint").HintDirection
--- vim.keymap.set(
---    "",
---    "f",
---    function() hop.hint_char1 { direction = directions.AFTER_CURSOR,  } end,
---    { remap = true }
--- )
--- vim.keymap.set(
---    "",
---    "F",
---    function() hop.hint_char1 { direction = directions.BEFORE_CURSOR,  } end,
---    { remap = true }
--- )
--- vim.keymap.set(
---    "",
---    "t",
---    function() hop.hint_char1 { direction = directions.AFTER_CURSOR,  hint_offset = -1 } end,
---    { remap = true }
--- )
--- vim.keymap.set(
---    "",
---    "T",
---    function() hop.hint_char1 { direction = directions.BEFORE_CURSOR,  hint_offset = 1 } end,
---    { remap = true }
--- )
