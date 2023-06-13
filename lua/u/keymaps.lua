@@ -7,11 +7,11 @@ local map = vim.keymap.set -- abbreviation
 ---@param desc string
 ---@param mode string | table | nil
 local map_d = function(mapping, command, desc, mode)
-	opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
+	local inner_opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
 	if mode == nil then
 		mode = { "n", "v" }
 	end
-	map(mode, mapping, command, opts)
+	map(mode, mapping, command, inner_opts)
 end
 
 -- n = normal
@@ -151,6 +151,14 @@ map_d("<leader><leader>h", "<cmd>lua pp(require'catppuccin.palettes'.get_palette
 
 -- keylab
 map("n", "<leader><leader>k", require("keylab").start, { desc = "Start a keylab session" })
+
+-- toggle mouse
+map(
+	"n",
+	"<leader><leader>m",
+	':exec &mouse!=""? "set mouse=" : "set mouse=a"<cr>:set mouse?<cr>',
+	{ desc = "Toggle Mouse", noremap = true }
+)
 
 -- pets
 map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
