@@ -22,6 +22,7 @@ require("catppuccin").setup {
 			MiniCursorwordCurrent = { bg = c.surface2, style = {} },
 			GitSignsChangedelete = { fg = c.blue },
 			EndOfBuffer = { fg = c.overlay0 },
+			Whitespace = { fg = c.overlay0 },
 		}
 	end,
 	integrations = {
