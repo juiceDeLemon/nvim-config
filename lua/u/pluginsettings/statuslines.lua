@@ -13,7 +13,6 @@ local utils = require "heirline.utils"
 local navic = require "nvim-navic"
 local snip = require "luasnip"
 -- NOTE: REMOVE THIS AFTER DONE TESTING
-local map = vim.keymap.set
 
 navic.setup {
 	icons = {
@@ -738,24 +737,14 @@ local c = require("catppuccin.palettes").get_palette "mocha"
 require("heirline").setup {
 	statusline = {
 		-- stylua: ignore start
-		mode_comp,
-		git,
-		one_space,
-		active_lsp,
-		diagnostics,
-		dap_status,
+		-- hmmm... still doesn't work, refering to StyLua #705
+		-- seems like multiple inline statements/variables doesn't work
+		-- don't format until you can
+		mode_comp, git, one_space, active_lsp, diagnostics, dap_status,
 		space,
-		file_name,
-		help_filename,
-		venv,
+		file_name, help_filename, venv,
 		space,
-		snippet_indicator,
-		harpoon,
-		filesize,
-		encoding,
-		fileformat,
-		filetype,
-		ruler,
+		snippet_indicator, harpoon, filesize, encoding, fileformat, filetype, ruler,
 		-- stylua: ignore end
 		static = hl_static,
 	},
