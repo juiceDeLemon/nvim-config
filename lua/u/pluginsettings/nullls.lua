@@ -7,12 +7,7 @@ nl.setup {
 	border = "rounded",
 	debug = false,
 	sources = {
-		d.pylint.with {
-			extra_args = {
-				"--ignored-modules=pygame",
-				"--good-names=x,y,z,i,j,n,f",
-			},
-		},
+		d.ruff,
 
 		f.black,
 		f.stylua,

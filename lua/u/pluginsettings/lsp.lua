@@ -59,21 +59,12 @@ require("lspconfig").rust_analyzer.setup {
 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
 }
 -- python
-require("lspconfig").pylsp.setup {
+require("lspconfig").pyright.setup {
 	settings = {
-		pylsp = {
-			plugins = {
-				jedi_completion = { enabled = true },
-				pyflakes = { enabled = false },
-				pycodestyle = {
-					ignore = {
-						"E226", -- missing whitespace aronud arithmetic operator
-						"E402", -- module level import not at top of file
-						-- "C0103", -- invalid constant name
-						-- "W0104", -- statement seems to have no effect
-						-- "W0621", -- redefined-outer-name
-					},
-				},
+		python = {
+			analysis = {
+				autoImportCompletions = true,
+				typeCheckingMode = "strict",
 			},
 		},
 	},
