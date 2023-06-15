@@ -116,8 +116,19 @@ map_d("<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk")
 map_d("<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", "Restore Hunk")
 map_d("<leader>gv", "<cmd>lua require'gitsigns'.select_hunk()<cr>", "Select Hunk")
 
-map_d("<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File")
-map_d("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu")
+-- harpoon
+map_d("<leader>hq", "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File")
+map_d("<leader>hm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu")
+map_d("<leader>ha", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Harpoon 1")
+map_d("<leader>ho", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Harpoon 2")
+map_d("<leader>he", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Harpoon 3")
+map_d("<leader>hu", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Harpoon 4")
+map_d("<leader>hi", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Harpoon 5")
+map_d("<leader>hd", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Harpoon 6")
+map_d("<leader>hh", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", "Harpoon 7")
+map_d("<leader>ht", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", "Harpoon 8")
+map_d("<leader>hn", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", "Harpoon 9")
+map_d("<leader>hs", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", "Harpoon 10")
 
 -- ts-Node-action
 map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
