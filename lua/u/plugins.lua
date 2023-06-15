@@ -112,7 +112,6 @@ require("lazy").setup({
 
 	-- FUN --
 	{ "alanfortlink/blackjack.nvim", lazy = false },
-	"BooleanCube/keylab.nvim",
 	{
 		"giusgad/pets.nvim",
 		dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },

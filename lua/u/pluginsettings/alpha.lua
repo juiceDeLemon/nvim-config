@@ -26,11 +26,7 @@ dashboard.section.header.val = {
 }
 dashboard.section.header.opts.hl = "Function"
 
-local random_games_list = {
-	"<cmd>BlackJackNewGame<cr>",
-	"<cmd>Tetris<cr>",
-	":e " .. os.getenv "HOME" .. "/.config/nvim/random_words.txt<cr>:lua require'keylab'.start()<cr>i",
-}
+local random_games_list = { "<cmd>BlackJackNewGame<cr>", "<cmd>Tetris<cr>" }
 math.randomseed(os.time())
 local the_chosen_game = random_games_list[math.random(#random_games_list)]
 dashboard.section.buttons.val = {
