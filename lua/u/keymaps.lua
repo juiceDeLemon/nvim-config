@@ -88,15 +88,16 @@ map("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", { noremap = true,
 map_d("<leader>e", "<cmd>lua require('ranger-nvim').open(true)<cr>", "Toggle Explorer")
 
 -- telescope
-map_d("<leader>fb", "<cmd>Telescope buffers<cr>", "Buffers")
-map_d("<leader>fc", "<cmd>Telescope grep_string<cr>", "Search Cursor String")
-map_d("<leader>ff", "<cmd>Telescope find_files<cr>", "Find Files")
-map_d("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help Menu")
-map_d("<leader>fp", "<cmd>Telescope lazy<cr>", "Plugin Links")
-map_d("<leader>fo", "<cmd>Telescope oldfiles<cr>", "Recent Files")
+map_d("<leader>fb", require("telescope.builtin").buffers, "Buffers")
+map_d("<leader>fc", require("telescope").extensions.menufacture.grep_string, "Search Cursor String")
+map_d("<leader>ff", require("telescope").extensions.menufacture.find_files, "Find Files")
+map_d("<leader>fg", require("telescope").extensions.menufacture.git_files, "Find in Git Files")
+map_d("<leader>fh", require("telescope.builtin").help_tags, "Help Menu")
+map_d("<leader>fp", require("telescope").extensions.lazy.lazy, "Plugin Links")
+map_d("<leader>fo", require("telescope.builtin").oldfiles, "Recent Files")
 map_d("<leader>fq", "<cmd>TodoTelescope<cr>", "Todo-Comments")
-map_d("<leader>fr", "<cmd>Telescope resume<cr>", "Resume Prompt")
-map_d("<leader>fs", "<cmd>Telescope live_grep<cr>", "Search String")
+map_d("<leader>fr", require("telescope.builtin").resume, "Resume Prompt")
+map_d("<leader>fs", require("telescope").extensions.menufacture.live_grep, "Search String")
 map_d("<leader>ft", "<cmd>Telescope<cr>", "Telescope Menu")
 
 -- git

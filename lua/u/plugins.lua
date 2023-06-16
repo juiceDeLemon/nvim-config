@@ -77,9 +77,14 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter-context", lazy = false },
 
 	-- TELESCOPE --
-	"nvim-telescope/telescope.nvim",
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	"tsakirist/telescope-lazy.nvim",
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			"tsakirist/telescope-lazy.nvim",
+			"molecule-man/telescope-menufacture",
+		},
+	},
 
 	-- TREES --
 	"kelly-lin/ranger.nvim",
