@@ -125,6 +125,7 @@ require("lazy").setup({
 		end,
 		lazy = false,
 	},
+	{ "ajorgensen/vim-markdown-toc", lazy = false },
 
 	-- plenary, idk which plugins use this --
 	"nvim-lua/plenary.nvim",

@@ -1,3 +1,10 @@
+## Index
+1. [you need these binaries/things](#you-need-these-binariesthings)
+    1. [linters/lsp/formatters/debugger:](#linterslspformattersdebugger)
+        1. [python (must install, otherwise will not work):](#python-must-install-otherwise-will-not-work)
+        2. [lua:](#lua)
+        3. [rust:](#rust)
+
 hi, config done, just rust readme not here
 
 \*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
