@@ -145,6 +145,9 @@ map_d("<leader>hs", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", "Harpoon 
 -- ts-Node-action
 map_d("<leader>n", "<cmd>NodeAction<cr>", "Trigger Node Action", "n")
 
+-- <leader>p is mapped (markdown preview) in markdown
+-- if mapping is needed, ensure it is useless for markdown
+
 -- refactoring
 -- stylua: ignore start
 map_d("<leader>re", "<esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>", "Extract Function", "v")

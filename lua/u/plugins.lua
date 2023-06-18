@@ -117,6 +117,15 @@ require("lazy").setup({
 	{ "alanfortlink/blackjack.nvim", lazy = false },
 	{ "alec-gibson/nvim-tetris", lazy = false },
 
+	-- LANGUAGE --
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		lazy = false,
+	},
+
 	-- plenary, idk which plugins use this --
 	"nvim-lua/plenary.nvim",
 }, {
