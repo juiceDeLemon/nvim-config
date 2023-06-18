@@ -79,7 +79,6 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"tsakirist/telescope-lazy.nvim",
 			"molecule-man/telescope-menufacture",
 		},
