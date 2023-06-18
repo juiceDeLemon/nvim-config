@@ -12,6 +12,7 @@ require "u.pluginsettings.statuscolumn"
 require "u.pluginsettings.statuslines"
 require "u.pluginsettings.telescope"
 require "u.pluginsettings.treesitter"
+require "u.pluginsettings.trouble"
 require "u.pluginsettings.ts-node-action"
 require "u.pluginsettings.whichkey"
 
