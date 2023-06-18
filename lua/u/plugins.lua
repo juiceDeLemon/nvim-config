@@ -119,9 +119,6 @@ require("lazy").setup({
 
 	-- plenary, idk which plugins use this --
 	"nvim-lua/plenary.nvim",
-
-	-- ICONS --
-	"nvim-tree/nvim-web-devicons",
 }, {
 	defaults = { lazy = true },
 	install = { colorscheme = { "catppuccin" } },
