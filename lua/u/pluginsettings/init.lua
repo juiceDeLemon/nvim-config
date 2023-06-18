@@ -23,7 +23,6 @@ require("lsp-inlayhints").setup()
 require("neogen").setup { snippet_engine = "luasnip" }
 require("mini.doc").setup()
 require("nvim-surround").setup()
-require("pets").setup()
 require("ranger-nvim").setup { replace_netrw = true }
 require("refactoring").setup()
 require("todo-comments").setup { signs = false, highlight = { before = "fg", keyword = "bg" } }

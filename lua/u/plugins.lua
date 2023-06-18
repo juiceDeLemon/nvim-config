@@ -117,10 +117,6 @@ require("lazy").setup({
 
 	-- FUN --
 	{ "alanfortlink/blackjack.nvim", lazy = false },
-	{
-		"giusgad/pets.nvim",
-		dependencies = { "edluffy/hologram.nvim", "MunifTanjim/nui.nvim" },
-	},
 	{ "alec-gibson/nvim-tetris", lazy = false },
 
 	-- plenary, idk which plugins use this --

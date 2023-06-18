@@ -180,11 +180,6 @@ map(
 	{ desc = "Toggle Mouse", noremap = true }
 )
 
--- pets
-map_d("<leader><leader>pd", "<cmd>PetsKillAll<cr>", "please don't kill me :(")
-map_d("<leader><leader>pp", ":PetsNewCustom crab red ", "OMFG IT'S A CRAB!!!!")
-map_d("<leader><leader>pr", ":PetsNew ", "Random Pet")
-
 -- lua document (hence the lua)
 map_d("<leader><leader>l", "<cmd>lua MiniDoc.generate()<cr>", "Generate Docs for Plugin")
 
