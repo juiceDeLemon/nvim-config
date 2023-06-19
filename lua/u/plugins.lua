@@ -105,7 +105,6 @@ require("lazy").setup({
 	"akinsho/git-conflict.nvim",
 
 	-- EYE-CANDY --
-	"goolord/alpha-nvim",
 	"j-hui/fidget.nvim",
 
 	-- STATUSLINES --

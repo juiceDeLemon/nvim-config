@@ -1,5 +1,4 @@
 require "u.pluginsettings.ai"
-require "u.pluginsettings.alpha"
 require "u.pluginsettings.colorizer"
 require "u.pluginsettings.colourscheme"
 require "u.pluginsettings.completion"
