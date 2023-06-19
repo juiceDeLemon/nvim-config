@@ -115,6 +115,7 @@ require("lazy").setup({
 	-- FUN --
 	{ "alanfortlink/blackjack.nvim", lazy = false },
 	{ "alec-gibson/nvim-tetris", lazy = false },
+	{ "eandrju/cellular-automaton.nvim", lazy = false },
 
 	-- LANGUAGE --
 	{

@@ -3,9 +3,9 @@ local opts = { noremap = true }
 local map = vim.keymap.set -- abbreviation
 ---neat function to simplify mappings with description
 ---@param mapping string
----@param command string
+---@param command string | function
 ---@param desc string
----@param mode string | table | nil
+---@param mode? string | table
 local map_d = function(mapping, command, desc, mode)
 	local inner_opts = vim.tbl_deep_extend("force", {}, opts, { desc = desc } or {})
 	if mode == nil then
@@ -171,6 +171,10 @@ map_d("<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", "al
 
 -- blackjack
 map_d("<leader><leader>b", "<cmd>BlackJackNewGame<cr>", "BlackJack Addiction")
+
+-- cellular automaton
+map_d("<leader><leader>cc", "<cmd>CellularAutomaton game_of_life<cr>", "Conway Game of Life") -- c for conway.
+map_d("<leader><leader>cr", "<cmd>CellularAutomaton make_it_rain<cr>", "Your code is raining")
 
 -- catppuccin palette
 map_d("<leader><leader>h", "<cmd>lua pp(require'catppuccin.palettes'.get_palette'mocha')<cr>", "Get Palette")
