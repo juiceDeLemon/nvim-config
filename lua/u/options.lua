@@ -35,3 +35,4 @@ vim.opt.listchars = "eol:¶,tab:> ,lead:!,leadmultispace: ,trail:*,nbsp:N"
 vim.opt.mouse = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.guicursor = ""
