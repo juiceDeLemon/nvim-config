@@ -5,16 +5,6 @@ local augroup = vim.api.nvim_create_augroup
 local aug_common = augroup("common", {})
 
 -- Autocommands
-autocmd("BufEnter", {
-	group = aug_common,
-	desc = "idk",
-	callback = function()
-		vim.cmd [[
-            if winnr('$') <= 1 && bufname() == 'NvimTree_' . tabpagenr() | endif
-        ]]
-	end,
-})
-
 autocmd("TextYankPost", {
 	group = aug_common,
 	desc = "Flash yanked content",
