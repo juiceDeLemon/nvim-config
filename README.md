@@ -5,7 +5,7 @@
         2. [lua:](#lua)
         3. [rust:](#rust)
 
-hi, config done, just rust readme not here
+hi, config done, just rust readme not here, if the startup screen (:intro) is flashing, https://github.com/neovim/neovim/issues/3416 is not solved
 
 \*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
 
