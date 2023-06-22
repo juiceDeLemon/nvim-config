@@ -1,9 +1,14 @@
 ## Index
-1. [you need these binaries/things](#you-need-these-binariesthings)
-    1. [linters/lsp/formatters/debugger:](#linterslspformattersdebugger)
-        1. [python (must install, otherwise will not work):](#python-must-install-otherwise-will-not-work)
-        2. [lua:](#lua)
-        3. [rust:](#rust)
+
+1. [Index](#index)
+   1. [you need these binaries/things](#you-need-these-binariesthings)
+      1. [linters/lsp/formatters/debugger:](#linterslspformattersdebugger)
+         1. [json](#json)
+         2. [bash](#bash)
+         3. [markdown](#markdown)
+         4. [python (must install, otherwise will not work):](#python-must-install-otherwise-will-not-work)
+         5. [lua:](#lua)
+         6. [rust:](#rust)
 
 hi, config done, just rust readme not here, if the startup screen (:intro) is flashing, https://github.com/neovim/neovim/issues/3416 is not solved
 
@@ -20,18 +25,49 @@ run :checkhealth and follow the intructions
 
 #### linters/lsp/formatters/debugger:
 
+##### json
+
+- json-ls (pip3)
+- prettier (npm)
+
+```bash
+npm i --location=global vscode-langservers-extracted
+```
+
+```bash
+npm install --save-dev --save-exact prettier
+```
+
+##### bash
+
+- bash-language-server (npm)
+
+```bash
+npm i --location=global bash-language-server
+```
+
+##### markdown
+
+- marksman (npm)
+
+```bash
+brew install marksman
+```
+
 ##### python (must install, otherwise will not work):
 
-- black (formatter) (mason, see below)
+- black (formatter) (pip)
 - ruff (linter) (install in project venv) (to be able to detect dependencies in venvs)
 - pyright (lsp, static type checker) (install in project venv) (to be able to detect dependencies in venvs)
 - debugpy (dap) (install like below)
 
-```vimscript
-MasonInstall black
+```bash
+# global
+pip3 install black
 ```
 
 ```bash
+# in venv
 pip3 install ruff pyright # or pip depending on your os
 ```
 
@@ -50,6 +86,7 @@ _use venv all the time btw_
 - lua-ls (lsp) (brew install lua-language-server or just download the binary from its github page)
 
 ##### rust:
+
 run `rustup component add rust-analyzer` to get rust-analyzer
 
 change the dev = { path = "" } } directory to where you store your own plugins.
