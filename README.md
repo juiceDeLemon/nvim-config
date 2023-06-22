@@ -18,9 +18,7 @@ run :checkhealth and follow the intructions
 
 ### you need these binaries/things
 
-- trash
 - grep
-- ranger
 - [rustup](https://rustup.rs/)
 
 #### linters/lsp/formatters/debugger:

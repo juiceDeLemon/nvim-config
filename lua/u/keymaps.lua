@@ -84,8 +84,8 @@ map("n", "<leader>d11", "<cmd>lua require'dap'.step_into()<cr>", { noremap = tru
 map("n", "<leader>d12", "<cmd>lua require'dap'.step_out()<cr>", { noremap = true, desc = "Step Out" })
 map("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", { noremap = true, desc = "Toggle UI" })
 
--- ranger
-map_d("<leader>e", "<cmd>lua require('ranger-nvim').open(true)<cr>", "Toggle Explorer")
+-- explorer
+map_d("<leader>e", vim.cmd.Lex, "Toggle Explorer")
 
 -- telescope
 map_d("<leader>fb", require("telescope.builtin").buffers, "Buffers")
@@ -195,3 +195,6 @@ map_d("<leader><leader>s", "iඞ<esc>", "SUS", "n")
 
 -- tetris
 map_d("<leader><leader>t", "<cmd>Tetris<cr>", "Tetris Addiction")
+
+-- :Sexplorer the SPLIT explorer
+map("n", "<leader><leader>69", vim.cmd.Sex, { noremap = true, desc = "Hmmm sex" })

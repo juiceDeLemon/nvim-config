@@ -35,6 +35,5 @@ return {
 		},
 		event = "VeryLazy",
 	},
-	{ "kelly-lin/ranger.nvim", config = true, event = "VeryLazy" },
 	{ "mbbill/undotree", event = "VeryLazy" },
 }
