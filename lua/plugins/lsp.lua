@@ -63,6 +63,23 @@ return {
 				on_attach = on_attach,
 				capabilities = cmp_cap,
 			}
+			-- bash
+			lsp.bashls.setup {
+				on_attach = on_attach,
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			}
+			-- markdown
+			lsp.marksman.setup {
+				on_attach = on_attach,
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			}
+			-- json
+			local json_capabilities = vim.lsp.protocol.make_client_capabilities()
+			json_capabilities.textDocument.completion.completionItem.snippetSupport = true
+			lsp.jsonls.setup {
+				on_attach = on_attach,
+				capabilities = json_capabilities,
+			}
 
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
@@ -71,29 +88,6 @@ return {
 			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 				border = "rounded",
 			})
-		end,
-		event = "VeryLazy",
-	},
-	{
-		"williamboman/mason.nvim",
-		opts = { ui = { border = "rounded" } },
-		event = "VeryLazy",
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		opts = { ensure_installed = { "bashls", "jsonls", "marksman" } },
-		config = function(_, opts)
-			-- IT IS JUST LOOPING SERVERS UNTIL DEATH.
-			-- YOU CAN TAKE THIS OUT AND PUT IT IN NVIM-LSPCONFIG
-			require("mason-lspconfig").setup(opts)
-			require("mason-lspconfig").setup_handlers {
-				function(server_name)
-					require("lspconfig")[server_name].setup {
-						on_attach = on_attach,
-						capabilities = require("cmp_nvim_lsp").default_capabilities(),
-					}
-				end,
-			}
 		end,
 		event = "VeryLazy",
 	},
@@ -123,7 +117,6 @@ return {
 					f.black,
 					f.stylua,
 					f.prettier, -- json
-					f.shfmt,
 				},
 			}
 		end,
