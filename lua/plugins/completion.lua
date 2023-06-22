@@ -101,74 +101,24 @@ return {
 
 			cmp.setup.cmdline({ "/", "?" }, {
 				mapping = cmp.mapping.preset.cmdline {
-					["<C-u>"] = cmp.mapping.scroll_docs(-4),
-					["<C-d>"] = cmp.mapping.scroll_docs(4),
-					["<C-y>"] = cmp.mapping.confirm { select = true },
-					["<C-Space>"] = cmp.mapping(function()
-						local isVisible = cmp.visible()
-						if isVisible then
-							cmp.abort()
-						else
-							cmp.complete()
-						end
-					end, { "i", "s" }),
 					["<C-p>"] = cmp.mapping(function()
 						cmp.select_prev_item()
 					end),
 					["<C-n>"] = cmp.mapping(function()
 						cmp.select_next_item()
 					end),
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if snip.expand_or_jumpable() then
-							snip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if snip.jumpable(-1) then
-							snip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
 				},
 				sources = { { name = "buffer" } },
 			})
 
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline {
-					["<C-u>"] = cmp.mapping.scroll_docs(-4),
-					["<C-d>"] = cmp.mapping.scroll_docs(4),
-					["<C-y>"] = cmp.mapping.confirm { select = true },
-					["<C-Space>"] = cmp.mapping(function()
-						local isVisible = cmp.visible()
-						if isVisible then
-							cmp.abort()
-						else
-							cmp.complete()
-						end
-					end, { "i", "s" }),
 					["<C-p>"] = cmp.mapping(function()
 						cmp.select_prev_item()
 					end),
 					["<C-n>"] = cmp.mapping(function()
 						cmp.select_next_item()
 					end),
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if snip.expand_or_jumpable() then
-							snip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if snip.jumpable(-1) then
-							snip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
 				},
 				sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "path" } }, { { name = "cmdline" } }),
 			})
