@@ -85,7 +85,7 @@ map("n", "<leader>d12", "<cmd>lua require'dap'.step_out()<cr>", { noremap = true
 map("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", { noremap = true, desc = "Toggle UI" })
 
 -- explorer
-map_d("<leader>e", vim.cmd.Lex, "Toggle Explorer")
+map_d("<leader>e", "<cmd>lua MiniFiles.open()<cr>", "Toggle Explorer")
 
 -- telescope
 map_d("<leader>fb", require("telescope.builtin").buffers, "Buffers")

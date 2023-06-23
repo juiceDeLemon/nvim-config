@@ -768,6 +768,8 @@ local function heirline()
 					"dapui_watches",
 					"dapui_console",
 					"dap-repl",
+					"netrw",
+					"minifiles",
 					"",
 				} do
 					if type == v then

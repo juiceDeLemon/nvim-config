@@ -35,5 +35,19 @@ return {
 		},
 		event = "VeryLazy",
 	},
+	{
+		"echasnovski/mini.files",
+		opts = {
+			mappings = {
+				go_in = "",
+				go_in_plus = "L",
+				go_out = "",
+				go_out_plus = "H",
+				synchronize = "<cr>",
+			},
+			windows = { preview = true },
+		},
+		event = "VeryLazy",
+	},
 	{ "mbbill/undotree", event = "VeryLazy" },
 }
