@@ -703,20 +703,18 @@ local function heirline()
 
 	local c = require("catppuccin.palettes").get_palette "mocha"
 
+	-- stylua: ignore start
+	local statusline = {
+		mode_comp, git, one_space, active_lsp, diagnostics, dap_status,
+		space,
+		file_name, help_filename, venv,
+		space,
+		snippet_indicator, harpoon, filesize, encoding, fileformat, filetype, ruler,
+		static = hl_static,
+	}
+	-- stylua: ignore end
 	require("heirline").setup {
-		statusline = {
-				-- stylua: ignore start
-				-- hmmm... still doesn't work, refering to StyLua #705
-				-- seems like multiple inline statements/variables doesn't work
-				-- don't format until you can
-				mode_comp, git, one_space, active_lsp, diagnostics, dap_status,
-				space,
-				file_name, help_filename, venv,
-				space,
-				snippet_indicator, harpoon, filesize, encoding, fileformat, filetype, ruler,
-			-- stylua: ignore end
-			static = hl_static,
-		},
+		statusline = statusline,
 		winbar = {
 			cwd,
 			navic_block,
