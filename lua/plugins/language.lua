@@ -7,7 +7,7 @@ return {
 		end,
 		ft = "markdown",
 		keys = {
-			{ "<leader>p", "<plug>MarkdownPreviewToggle", desc = "Preview Markdown" },
+			{ "<leader><leader>p", "<plug>MarkdownPreviewToggle", desc = "Preview Markdown" },
 		},
 	},
 	{

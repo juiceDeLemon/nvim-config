@@ -53,9 +53,6 @@ map("v", "<m-O>", "<esc>O<esc>gv") -- below
 map("n", "<tab>", "<cmd>bn<cr>")
 map("n", "<s-tab>", "<cmd>bp<cr>")
 
--- <leader><leader>p is mapped (markdown preview) in markdown
--- if mapping is needed, ensure it is useless for markdown
-
 -- useless things
 -- print alphabet
 map("n", "<leader><leader>a", function()
@@ -69,6 +66,10 @@ map(
 	':exec &mouse!=""? "set mouse=" : "set mouse=a"<cr>:set mouse?<cr>',
 	{ desc = "Toggle Mouse", noremap = true }
 )
+
+-- <leader><leader>p is mapped (markdown preview) in markdown
+-- if mapping is needed, ensure it is useless for markdown
+
 
 -- inputs the SUS symbol
 map("n", "<leader><leader>s", "iඞ<esc>", { desc = "SUS" })
