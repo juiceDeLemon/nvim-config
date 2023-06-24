@@ -3,6 +3,7 @@ local augroup = vim.api.nvim_create_augroup
 
 -- Augroups
 local aug_common = augroup("common", {})
+local aug_minifiles = augroup("minifiles", {})
 
 -- Autocommands
 autocmd("TextYankPost", {
@@ -50,6 +51,15 @@ autocmd("BufEnter", {
 		vim.opt.formatoptions:remove { "c", "r", "o" }
 	end,
 	desc = "Disable New Line Comment",
+})
+
+autocmd("User", {
+	group = aug_minifiles,
+	pattern = "MiniFilesWindowOpen",
+	callback = function(args)
+		local win_id = args.data.win_id
+		vim.api.nvim_win_set_config(win_id, { border = "rounded" })
+	end,
 })
 
 -- autocmd({ "UserGettingBored" }, {

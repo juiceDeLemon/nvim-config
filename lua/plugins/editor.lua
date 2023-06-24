@@ -16,7 +16,7 @@ return {
 			highlight = { before = "fg", keyword = "bg" },
 		},
 		dependencies = "nvim-lua/plenary.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 	},
 	{
 		"echasnovski/mini.ai",

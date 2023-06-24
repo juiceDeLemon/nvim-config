@@ -40,5 +40,18 @@ return {
 		map("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", { noremap = true, desc = "Debug Selection" })
 		-- stylua: ignore end
 	end,
-	event = "VeryLazy", -- keys won't matter unless i no longer use the heirline
+	-- event = "VeryLazy", -- keys won't matter unless i no longer use the heirline
+	keys = {
+		{ "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Set Breakpoint" },
+		{
+			"<leader>dc",
+			"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
+			desc = "Set Condition Breakpoint",
+		},
+		{ "<leader>d5", "<cmd>lua require'dap'.continue()<cr>", desc = "Continue" },
+		{ "<leader>d10", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step Over" },
+		{ "<leader>d11", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step Into" },
+		{ "<leader>d12", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step Out" },
+		{ "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", desc = "Toggle UI" },
+	},
 }
