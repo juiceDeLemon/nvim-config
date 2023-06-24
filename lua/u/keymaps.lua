@@ -58,7 +58,9 @@ map("n", "<s-tab>", "<cmd>bp<cr>")
 
 -- useless things
 -- print alphabet
-map("n", "<leader><leader>a", "<cmd>lua print'abcdefghijklmnopqrstuvwxyz'<cr>", { desc = "alphabet" })
+map("n", "<leader><leader>a", function()
+	print "abcdefghijklmnopqrstuvwxyz"
+end, { desc = "alphabet" })
 
 -- toggle mouse
 map(

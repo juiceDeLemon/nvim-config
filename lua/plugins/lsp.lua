@@ -1,26 +1,26 @@
 local on_attach = function(client, bufnr)
 	local map = vim.keymap.set
 	-- stylua: ignore start
-	map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { noremap = true, silent = true })
-	map("n", "gd", "<cmd>TroubleToggle lsp_definitions<cr>", { noremap = true, silent = true, desc = "Definitions" })
-	map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { noremap = true, silent = true, desc = "Declarations" })
-	map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", { noremap = true, silent = true, desc = "Implementations" })
-	map("n", "gr", "<cmd>TroubleToggle lsp_references<cr>", { noremap = true, silent = true, desc = "References" })
-	map("n", "<leader>la", "<cmd>lua require('code_action_menu').open_code_action_menu()<cr>", { noremap = true, silent = true, desc = "Code Action" })
-	map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format {filter = function(client) return client.name == 'null-ls' end }<cr>", { noremap = true, silent = true, desc = "Format Code" })
-	map({ "n", "v", "o" }, "<leader>lh", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", { noremap = true, silent = true, desc = "Previous" })
-	map({ "n", "v", "o" }, "<leader>ll", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", { noremap = true, silent = true, desc = "Next" })
-	map("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { noremap = true, silent = true, desc = "Rename Symbol" })
-	map("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
-	map({ "i", "s" }, "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true, desc = "Signature Help" })
-	map("n", "<leader>lt", "<cmd>lua require'lsp_lines'.toggle()<cr>", { noremap = true, silent = true, desc = "Toggle LspLines" })
-	map("n", "<leader>lq", "<cmd>TroubleToggle document_diagnostics<cr>", { noremap = true, silent = true, desc = "Diagnostics" })
+	map("n", "K", function() vim.lsp.buf.hover() end, { noremap = true, silent = true })
+	map("n", "gd", function() vim.cmd.TroubleToggle("lsp_definitions")end, { noremap = true, silent = true, desc = "Definitions" })
+	map("n", "gD", function() vim.lsp.buf.declaration() end, { noremap = true, silent = true, desc = "Declarations" })
+	map("n", "gI", function() vim.lsp.buf.implementation() end, { noremap = true, silent = true, desc = "Implementations" })
+	map("n", "gr", function() vim.cmd.TroubleToggle("lsp_references") end, { noremap = true, silent = true, desc = "References" })
+	map("n", "<leader>la", function() require('code_action_menu').open_code_action_menu() end, { noremap = true, silent = true, desc = "Code Action" })
+	map("n", "<leader>lf", function() vim.lsp.buf.format {filter = function(the_client) return the_client.name == "null-ls" end } end, { noremap = true, silent = true, desc = "Format Code" })
+	map({ "n", "v", "o" }, "<leader>lh", function() vim.diagnostic.goto_prev({buffer=0}) end, { noremap = true, silent = true, desc = "Previous" })
+	map({ "n", "v", "o" }, "<leader>ll", function() vim.diagnostic.goto_next({buffer=0}) end, { noremap = true, silent = true, desc = "Next" })
+	map("n", "<leader>lr", function() vim.lsp.buf.rename() end, { noremap = true, silent = true, desc = "Rename Symbol" })
+	map("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, { noremap = true, silent = true, desc = "Signature Help" })
+	map({ "i", "s" }, "<c-s>", function() vim.lsp.buf.signature_help() end, { noremap = true, silent = true, desc = "Signature Help" })
+	map("n", "<leader>lt", function() require"lsp_lines".toggle() end, { noremap = true, silent = true, desc = "Toggle LspLines" })
+	map("n", "<leader>lq", function() vim.cmd.TroubleToggle("document_diagnostics") end, { noremap = true, silent = true, desc = "Diagnostics" })
 	-- stylua: ignore end
 	require("nvim-navic").attach(client, bufnr)
 	require("nvim-navbuddy").attach(client, bufnr)
 	require("lsp-inlayhints").on_attach(client, bufnr)
 	-- navbuddy
-	map("n", "<leader>o", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+	map("n", "<leader>o", vim.cmd.Navbuddy, { desc = "Navbuddy" })
 end
 
 -- no dependencies relationship because they work together

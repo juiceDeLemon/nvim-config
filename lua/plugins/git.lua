@@ -19,13 +19,15 @@ return {
 		},
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>gb", "<cmd>lua require'gitsigns'.blame_line()<cr>", desc = "View Blame" },
-			{ "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff Current File" },
-			{ "<leader>gh", "<cmd>Gitsigns prev_hunk<cr>", mode = { "n", "v" }, desc = "Previous Hunk" },
-			{ "<leader>gl", "<cmd>Gitsigns next_hunk<cr>", mode = { "n", "v" }, desc = "Next Hunk" },
-			{ "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
-			{ "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Restore Hunk" },
-			{ "<leader>gv", "<cmd>lua require'gitsigns'.select_hunk()<cr>", desc = "Select Hunk" },
+			-- stylua: ignore start
+			{ "<leader>gb", function() vim.cmd.Gitsigns "blame_line" end, desc = "View Blame" },
+			{ "<leader>gd", function() vim.cmd.Gitsigns "diffthis" end, desc = "Diff Current File" },
+			{ "<leader>gh", function() vim.cmd.Gitsigns "prev_hunk" end, mode = { "n", "v" }, desc = "Previous Hunk" },
+			{ "<leader>gl", function() vim.cmd.Gitsigns "next_hunk" end, mode = { "n", "v" }, desc = "Next Hunk" },
+			{ "<leader>gp", function() vim.cmd.Gitsigns "preview_hunk" end, desc = "Preview Hunk"  },
+			{ "<leader>gr", function() vim.cmd.Gitsigns "reset_hunk" end, desc = "Restore Hunk" },
+			{ "<leader>gv", function() vim.cmd.Gitsigns "select_hunk" end, desc = "Select Hunk" },
+			-- stylua: ignore end
 		},
 	},
 	{

@@ -83,12 +83,9 @@ return {
 			vim.cmd.colorscheme "catppuccin"
 
 			-- print palette
-			vim.keymap.set(
-				"n",
-				"<leader><leader>h",
-				"<cmd>lua pp(require'catppuccin.palettes'.get_palette'mocha')<cr>",
-				{ desc = "Get Palette" }
-			)
+			vim.keymap.set("n", "<leader><leader>h", function()
+				pp(require("catppuccin.palettes").get_palette "mocha")
+			end, { desc = "Get Palette" })
 		end,
 		lazy = false,
 		priority = 1000,

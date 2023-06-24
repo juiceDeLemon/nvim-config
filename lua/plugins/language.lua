@@ -22,7 +22,7 @@ return {
 		config = true,
 		ft = "lua",
 		keys = {
-			{ "<leader><leader>l", "<cmd>lua MiniDoc.generate()<cr>", desc = "Generate Docs for Plugin" },
+			{ "<leader><leader>l", function() MiniDoc.generate() end, desc = "Generate Docs for Plugin" },
 		},
 	},
 }

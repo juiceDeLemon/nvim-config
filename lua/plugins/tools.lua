@@ -2,18 +2,20 @@ return {
 	{
 		"ThePrimeagen/harpoon",
 		keys = {
-			{ "<leader>hq", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add File" }, -- q for queue file?
-			{ "<leader>hm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Menu" }, -- m for menu
-			{ "<leader>ha", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Harpoon 1" }, -- home row in dvorak
-			{ "<leader>ho", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Harpoon 2" },
-			{ "<leader>he", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Harpoon 3" },
-			{ "<leader>hu", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "Harpoon 4" },
-			{ "<leader>hi", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", desc = "Harpoon 5" },
-			{ "<leader>hd", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", desc = "Harpoon 6" },
-			{ "<leader>hh", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", desc = "Harpoon 7" },
-			{ "<leader>ht", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", desc = "Harpoon 8" },
-			{ "<leader>hn", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", desc = "Harpoon 9" },
-			{ "<leader>hs", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", desc = "Harpoon 10" },
+			-- stylua: ignore start
+			{ "<leader>hq", function() require("harpoon.mark").add_file() end, desc = "Add File" }, -- q for queue file?
+			{ "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Menu" }, -- m for menu
+			{ "<leader>ha", function() require("harpoon.ui").nav_file(1) end, desc = "Harpoon 1" }, -- home row in dvorak
+			{ "<leader>ho", function() require("harpoon.ui").nav_file(2) end, desc = "Harpoon 2" },
+			{ "<leader>he", function() require("harpoon.ui").nav_file(3) end, desc = "Harpoon 3" },
+			{ "<leader>hu", function() require("harpoon.ui").nav_file(4) end, desc = "Harpoon 4" },
+			{ "<leader>hi", function() require("harpoon.ui").nav_file(5) end, desc = "Harpoon 5" },
+			{ "<leader>hd", function() require("harpoon.ui").nav_file(6) end, desc = "Harpoon 6" },
+			{ "<leader>hh", function() require("harpoon.ui").nav_file(7) end, desc = "Harpoon 7" },
+			{ "<leader>ht", function() require("harpoon.ui").nav_file(8) end, desc = "Harpoon 8" },
+			{ "<leader>hn", function() require("harpoon.ui").nav_file(9) end, desc = "Harpoon 9" },
+			{ "<leader>hs", function() require("harpoon.ui").nav_file(10) end, desc = "Harpoon 10" },
+			-- stylua: ignore end
 			-- qwerty version
 			-- { "<leader>ha", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Harpoon 1" },
 			-- { "<leader>hs", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Harpoon 2" },
@@ -140,7 +142,13 @@ return {
 			windows = { preview = true },
 		},
 		keys = {
-			{ "<leader>e", "<cmd>lua MiniFiles.open()<cr>", desc = "Toggle Explorer" },
+			{
+				"<leader>e",
+				function()
+					MiniFiles.open()
+				end,
+				desc = "Toggle Explorer",
+			},
 		},
 	},
 	{
