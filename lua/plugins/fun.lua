@@ -22,4 +22,9 @@ return {
 			-- stylua: ignore end
 		},
 	},
+	{
+		"m4xshen/hardtime.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
 }
