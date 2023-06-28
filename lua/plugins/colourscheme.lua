@@ -26,6 +26,8 @@ return {
 					GitSignsChangedelete = { fg = c.blue },
 					EndOfBuffer = { fg = c.overlay0 },
 					Whitespace = { fg = c.overlay0 },
+					TabLine = { fg = c.text, bg = "None" },
+					TabLineSel = { fg = c.text, bg = "None", reverse = true },
 				}
 			end,
 			integrations = {
@@ -75,7 +77,7 @@ return {
 				dap = { enabled = true, enable_ui = true },
 				indent_blankline = { enabled = false, colored_indent_levels = false },
 				native_lsp = { enabled = true },
-				navic = { enabled = true },
+				navic = { enabled = false },
 			},
 		},
 		config = function(_, opts)
