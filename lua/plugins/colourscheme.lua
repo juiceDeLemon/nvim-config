@@ -21,11 +21,10 @@ return {
 					TelescopeSelection = { bg = c.surface1, style = { "bold" } },
 					TelescopeSelectionCaret = { bg = c.surface1, style = { "bold" } },
 					TelescopeBorder = { fg = c.pink },
-					MiniCursorword = { bg = c.surface2, style = {} },
-					MiniCursorwordCurrent = { bg = c.surface2, style = {} },
 					GitSignsChangedelete = { fg = c.blue },
 					EndOfBuffer = { fg = c.overlay0 },
 					Whitespace = { fg = c.overlay0 },
+					VertSplit = { fg = c.overlay0 },
 					TabLine = { fg = c.text, bg = "None" },
 					TabLineSel = { fg = c.text, bg = "None", reverse = true },
 				}
@@ -39,7 +38,7 @@ return {
 				coc_nvim = false,
 				dashboard = false,
 				fern = false,
-				fidget = false,
+				fidget = true,
 				gitgutter = false,
 				gitsigns = true,
 				harpoon = true,
@@ -85,9 +84,12 @@ return {
 			vim.cmd.colorscheme "catppuccin"
 
 			-- print palette
-			vim.keymap.set("n", "<leader><leader>h", function()
-				pp(require("catppuccin.palettes").get_palette "mocha")
-			end, { desc = "Get Palette" })
+			vim.keymap.set(
+				"n",
+				"<leader><leader>h",
+				"<cmd>lua pp(require('catppuccin.palettes').get_palette 'mocha')<cr>",
+				{ desc = "Get Palette" }
+			)
 		end,
 		lazy = false,
 		priority = 1000,
