@@ -6,16 +6,10 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 		ft = "markdown",
-		keys = {
-			{ "<leader><leader>p", "<plug>MarkdownPreviewToggle", desc = "Preview Markdown" },
-		},
 	},
 	{
 		"ajorgensen/vim-markdown-toc",
 		ft = "markdown",
-		keys = {
-			{ "<leader>a", vim.cmd.GenerateMarkdownTOC, desc = "Generate Index" },
-		},
 	},
 	{
 		"echasnovski/mini.doc",
