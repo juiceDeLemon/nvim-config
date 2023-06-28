@@ -173,6 +173,7 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
+		tag = "legacy",
 		opts = {
 			text = { spinner = "bouncing_bar" },
 			window = { blend = 0 },
