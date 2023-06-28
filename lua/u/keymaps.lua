@@ -29,18 +29,6 @@ map("x", ">", ">gv", opts)
 -- replace paste without occupying paste register
 map("x", "p", '"_dP')
 
--- system clipboard yanking
-map("n", "Y", "<nop>")
-map({ "n", "x" }, "+y", '"+y')
-map("n", "+Y", '"+yy')
-map("v", "Y", '"+y')
-map("n", "D", "<nop>")
-map({ "n", "x" }, "+d", '"+d')
-map("n", "+D", '"+dd')
-map("v", "D", '"+d')
-map("n", "+p", '"+p')
-map("n", "+P", '"+P')
-
 -- put new line above/below
 map("n", "<m-o>", "<esc>o<esc>") -- above
 map("n", "<m-O>", "<esc>O<esc>") -- below
