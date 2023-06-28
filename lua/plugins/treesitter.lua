@@ -35,7 +35,7 @@ return {
 			},
 		},
 		main = "nvim-treesitter.configs",
-		build = "<cmd>TSUpdate<cr>",
+		build = ":TSUpdate",
 		event = "VeryLazy",
 	},
 	{
