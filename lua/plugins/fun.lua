@@ -25,6 +25,6 @@ return {
 	{
 		"m4xshen/hardtime.nvim",
 		event = "VeryLazy",
-		config = true,
+		opts = { disabled_filetypes = { "qf", "netrw", "lazy", "minifiles", "Navbuddy" } },
 	},
 }
