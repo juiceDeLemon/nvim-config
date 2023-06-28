@@ -21,8 +21,12 @@ return {
 	{
 		"echasnovski/mini.ai",
 		opts = {
-			signs = false,
-			highlight = { before = "fg", keyword = "bg" },
+			mappings = {
+				around_next = "al",
+				inside_next = "il",
+				around_last = "ah",
+				inside_last = "ih",
+			},
 		},
 		event = "VeryLazy",
 	},
