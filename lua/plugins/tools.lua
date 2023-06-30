@@ -140,6 +140,7 @@ return {
 				synchronize = "<cr>",
 			},
 			windows = { preview = true },
+			content = { prefix = function() end }, -- disable icon
 		},
 		keys = {
 			{
