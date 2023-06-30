@@ -27,7 +27,16 @@ return {
 		event = "VeryLazy",
 		opts = {
 			disabled_keys = {},
-			disabled_filetypes = { "qf", "netrw", "lazy", "minifiles", "Navbuddy", "help" }
+			disabled_filetypes = {
+				"qf",
+				"netrw",
+				"lazy",
+				"minifiles",
+				"Navbuddy",
+				"help",
+				"undotree",
+				"diff",
+			},
 		},
 	},
 }
