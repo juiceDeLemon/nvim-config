@@ -31,7 +31,6 @@ return {
 		event = "VeryLazy",
 	},
 	{ "kylechui/nvim-surround", config = true, event = "VeryLazy" },
-	{ "kevinhwang91/nvim-hlslens", config = true, event = "VeryLazy" },
 	{
 		"NvChad/nvim-colorizer.lua",
 		opts = {
