@@ -32,6 +32,7 @@ return {
 			local cmp_cap = require("cmp_nvim_lsp").default_capabilities()
 
 			-- lua
+			require("neodev").setup()
 			lsp.lua_ls.setup {
 				settings = {
 					Lua = {
@@ -89,6 +90,7 @@ return {
 				border = "rounded",
 			})
 		end,
+		dependencies = { "folke/neodev.nvim" },
 		event = "VeryLazy",
 	},
 	{
@@ -126,13 +128,6 @@ return {
 		"lvimuser/lsp-inlayhints.nvim",
 		config = true,
 		event = "LspAttach",
-	},
-	{
-		"folke/neodev.nvim",
-		opts = {
-			library = { plugins = { "nvim-dap-ui" }, types = true },
-		},
-		ft = "lua",
 	},
 	{
 		"SmiteshP/nvim-navbuddy",
