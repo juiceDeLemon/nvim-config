@@ -4,6 +4,7 @@ local augroup = vim.api.nvim_create_augroup
 -- Augroups
 local aug_common = augroup("common", {})
 local aug_minifiles = augroup("minifiles", {})
+local aug_luasnip = augroup("luasnip", {})
 
 -- Autocommands
 autocmd("TextYankPost", {
@@ -60,6 +61,19 @@ autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function()
 		vim.opt.backupext = "-" .. vim.fn.strftime "%Y%m%d%H%M"
+	end,
+})
+
+-- also stolen from https://github.com/thedenisnikulin/nvim
+autocmd("ModeChanged", {
+	group = aug_luasnip,
+	pattern = { "s:n", "i:*" },
+	desc = "Forget the current snippet when leaving the insert mode",
+	callback = function(evt)
+		local luasnip = require "luasnip"
+		if luasnip.session and luasnip.session.current_nodes[evt.buf] and not luasnip.session.jump_active then
+			luasnip.unlink_current()
+		end
 	end,
 })
 
