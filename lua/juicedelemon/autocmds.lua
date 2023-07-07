@@ -53,6 +53,16 @@ autocmd("BufEnter", {
 	desc = "Disable New Line Comment",
 })
 
+-- stolen from https://github.com/thedenisnikulin/nvim
+autocmd("BufWritePre", {
+	group = vim.api.nvim_create_augroup("timestamp_backupext", { clear = true }),
+	desc = "Add timestamp to backup extension",
+	pattern = "*",
+	callback = function()
+		vim.opt.backupext = "-" .. vim.fn.strftime "%Y%m%d%H%M"
+	end,
+})
+
 autocmd("User", {
 	group = aug_minifiles,
 	pattern = "MiniFilesWindowOpen",

@@ -1,36 +1,48 @@
-vim.opt.backup = false
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
-vim.opt.conceallevel = 0
-vim.opt.hlsearch = true
+-- searching
 vim.opt.ignorecase = true
-vim.opt.pumheight = 10
-vim.opt.showmode = false -- don't output -- MODE
 vim.opt.smartcase = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.swapfile = false
-vim.opt.termguicolors = true
-vim.opt.timeoutlen = 500
+
+-- backup/swap
+vim.opt.swapfile = false -- causes some issues. use backup
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv "HOME" .. "/.nvim/undodir"
-vim.opt.updatetime = 50
-vim.opt.writebackup = false
+vim.opt.backup = true
+vim.opt.backupdir = os.getenv "HOME" .. "/.nvim/backupdir"
+
+-- tabs
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.opt.smartindent = true
+
+-- lines
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.colorcolumn = "80,120"
+
+-- signcolumn
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.numberwidth = 4
-vim.opt.signcolumn = "yes"
+
+-- displaying lines
 vim.opt.scrolloff = 20
 vim.opt.sidescrolloff = 40
 vim.opt.wrap = false
+
+-- displaying texts
 vim.opt.list = true
 vim.opt.listchars = "eol:¶,tab:> ,lead:!,leadmultispace: ,trail:*,nbsp:N"
+
+-- cursor
 vim.opt.mouse = ""
+vim.opt.guicursor = ""
+
+-- window behaviour
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.guicursor = ""
+
+-- others
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.pumheight = 10
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 500 -- which key don't mess with this
