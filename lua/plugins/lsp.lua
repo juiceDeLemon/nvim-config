@@ -51,6 +51,15 @@ return {
 				capabilities = cmp_cap,
 				cmd = { "rustup", "run", "stable", "rust-analyzer" },
 			}
+			-- haskell
+			lsp.hls.setup {
+				settings = {
+					haskell = { formattingProvider = "stylish-haskell" },
+				},
+				on_attach = on_attach,
+				capabilities = cmp_cap,
+				filetypes = { "haskell", "lhaskell", "cabal" },
+			}
 			-- python
 			lsp.pyright.setup {
 				settings = {
@@ -67,12 +76,12 @@ return {
 			-- bash
 			lsp.bashls.setup {
 				on_attach = on_attach,
-				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				capabilities = cmp_cap,
 			}
 			-- markdown
 			lsp.marksman.setup {
 				on_attach = on_attach,
-				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				capabilities = cmp_cap,
 			}
 			-- json
 			local json_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -116,9 +125,10 @@ return {
 				sources = {
 					d.ruff,
 
-					f.black,
-					f.stylua,
+					f.black, -- python
+					f.stylua, -- lua
 					f.prettier, -- json
+					f.stylish_haskell, -- haskell
 				},
 			}
 		end,

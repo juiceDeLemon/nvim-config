@@ -7,7 +7,7 @@ return {
 				"bash",
 				"comment",
 				"dap_repl",
-				"fennel",
+				"haskell",
 				"json",
 				"lua",
 				"markdown",
