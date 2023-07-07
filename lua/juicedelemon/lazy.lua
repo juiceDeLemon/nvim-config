@@ -27,6 +27,7 @@ require("lazy").setup("plugins", {
 				"zipPlugin",
 				"tutor",
 				"matchit",
+				"spellfile",
 			},
 		},
 	},
