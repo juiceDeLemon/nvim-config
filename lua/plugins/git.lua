@@ -30,16 +30,4 @@ return {
 			-- stylua: ignore end
 		},
 	},
-	{
-		"akinsho/git-conflict.nvim",
-		keys = {
-			{ "<leader>gcc", "<Plug>(git-conflict-ours)", desc = "Accept Current" },
-			{ "<leader>gci", "<Plug>(git-conflict-theirs)", desc = "Accept Incoming Change" },
-			{ "<leader>gcb", "<Plug>(git-conflict-both)", desc = "Accept Both" },
-			{ "<leader>gcn", "<Plug>(git-conflict-none)", desc = "Accept None" },
-			{ "<leader>gch", "<Plug>(git-conflict-prev-conflict)", desc = "Previous Conflict" },
-			{ "<leader>gcl", "<Plug>(git-conflict-next-conflict)", desc = "Next Conflict" },
-		},
-		config = true,
-	},
 }
