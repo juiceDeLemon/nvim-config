@@ -11,3 +11,8 @@ for _, path in pairs(vim.api.nvim_list_runtime_paths()) do
 	vim.opt_local.path:append(path .. "/lua")
 end
 vim.opt_local.suffixesadd:prepend ".lua"
+
+vim.b.lsp_format_activate = false
+vim.keymap.set("n", "<leader>lf", function()
+	vim.cmd "!stylua %"
+end, { noremap = true, desc = "Format File" })

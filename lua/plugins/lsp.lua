@@ -7,7 +7,9 @@ local on_attach = function(client, bufnr)
 	map("n", "gI", function() vim.lsp.buf.implementation() end, { noremap = true, silent = true, desc = "Implementations" })
 	map("n", "gr", function() vim.cmd.TroubleToggle("lsp_references") end, { noremap = true, silent = true, desc = "References" })
 	map("n", "<leader>la", function() require('code_action_menu').open_code_action_menu() end, { noremap = true, silent = true, desc = "Code Action" })
-	map("n", "<leader>lf", function() vim.lsp.buf.format {filter = function(the_client) return the_client.name == "null-ls" end } end, { noremap = true, silent = true, desc = "Format Code" })
+	if vim.b.lsp_format_activate == nil then
+		map("n", "<leader>lf", function() vim.lsp.buf.format() end, { silent = true, desc = "Format File" })
+	end
 	map({ "n", "v", "o" }, "<leader>lh", function() vim.diagnostic.goto_prev({buffer=0}) end, { noremap = true, silent = true, desc = "Previous" })
 	map({ "n", "v", "o" }, "<leader>ll", function() vim.diagnostic.goto_next({buffer=0}) end, { noremap = true, silent = true, desc = "Next" })
 	map("n", "<leader>lr", function() vim.lsp.buf.rename() end, { noremap = true, silent = true, desc = "Rename Symbol" })
@@ -38,6 +40,7 @@ return {
 					Lua = {
 						completion = { callSnippet = "Replace" },
 						diagnostics = { globals = { "vim", "require", "pp" } },
+						format = { enable = false },
 						workspace = { checkThirdParty = false }, -- remove that annoying popup https://github.com/neovim/nvim-lspconfig/issues/1700
 						hint = { enabled = true },
 					},
@@ -112,29 +115,6 @@ return {
 		event = "LspAttach",
 	},
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			local nl = require "null-ls"
-
-			local d = nl.builtins.diagnostics
-			local f = nl.builtins.formatting
-
-			nl.setup {
-				border = "rounded",
-				debug = false,
-				sources = {
-					d.ruff,
-
-					f.black, -- python
-					f.stylua, -- lua
-					f.prettier, -- json
-					f.stylish_haskell, -- haskell
-				},
-			}
-		end,
-		event = "LspAttach",
-	},
-	{
 		"lvimuser/lsp-inlayhints.nvim",
 		config = true,
 		event = "LspAttach",
@@ -174,6 +154,23 @@ return {
 			},
 		},
 		dependencies = { "MunifTanjim/nui.nvim", "SmiteshP/nvim-navic" },
+		event = "LspAttach",
+	},
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			local lint = require "lint"
+
+			lint.linters_by_ft = {
+				python = { "ruff" },
+			}
+
+			vim.api.nvim_create_autocmd({ "LspAttach", "BufWritePost" }, {
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
 		event = "LspAttach",
 	},
 	{

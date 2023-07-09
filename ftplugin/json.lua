@@ -8,3 +8,8 @@ vim.keymap.set("n", "o", function()
 		return "o"
 	end
 end, { buffer = true, expr = true })
+
+vim.b.lsp_format_activate = false
+vim.keymap.set("n", "<leader>lf", function()
+	vim.cmd "!prettier %"
+end, { noremap = true, desc = "Format File" })

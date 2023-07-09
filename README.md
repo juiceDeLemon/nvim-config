@@ -107,5 +107,6 @@ and
 lua/u/pluginsettings/nullls.lua and add all sources:
 code actions, formatting, diagnostics, hover (c.cspell etc)
 and treesitter
+formatter: either you can use lsp system/if you use external formatter -> disable the lsp formatting system (if any) -> new file in ftplugin/ set keymap for "!formatting-command %"-> set vim.b.lsp_format_active to false
 and check if your lsp needs to be configured here: https://github.com/lvimuser/lsp-inlayhints.nvim
 you might need to search for something like rust-tools or rust-analyzer 3rd-party plugins
