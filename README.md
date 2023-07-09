@@ -1,25 +1,21 @@
 ## Index
 
 1. [Index](#index)
-   1. [you need these binaries/things](#you-need-these-binariesthings)
-      1. [linters/lsp/formatters/debugger:](#linterslspformattersdebugger)
-         1. [json](#json)
-         2. [bash](#bash)
-         3. [markdown](#markdown)
-         4. [python (must install, otherwise will not work):](#python-must-install-otherwise-will-not-work)
-         5. [lua:](#lua)
-         6. [rust:](#rust)
-
-hi, config done, just rust readme not here, if the startup screen (:intro) is flashing, https://github.com/neovim/neovim/issues/3416 is not solved
-
-\*\*\*EVERYTIME YOU INSTALL PLUGINS THAT DO NOT NEED REQ() YOU NEED TO SET IT TO { "repo", lazy = false } OR IT WILL NOT WORK
+	1. [you need these binaries/things (comment out unneeded languages)](#you-need-these-binariesthings-comment-out-unneeded-languages)
+		1. [linters/lsp/formatters/debugger:](#linterslspformattersdebugger)
+			1. [json](#json)
+			2. [bash](#bash)
+			3. [markdown](#markdown)
+			4. [python (must install, otherwise will not work):](#python-must-install-otherwise-will-not-work)
+			5. [lua:](#lua)
+			6. [rust:](#rust)
+			7. [haskell:](#haskell)
 
 run :checkhealth and follow the intructions
 
-### you need these binaries/things
+### you need these binaries/things (comment out unneeded languages)
 
 - grep
-- [rustup](https://rustup.rs/)
 
 #### linters/lsp/formatters/debugger:
 
@@ -85,7 +81,22 @@ _use venv all the time btw_
 
 ##### rust:
 
-run `rustup component add rust-analyzer` to get rust-analyzer
+- [rustup](https://rustup.rs/)
+- rust-analyzer`rustup component add rust-analyzer`
+- rustfmt `rustup component add rustfmt`
+- cargo-watch `cargo install cargo-watch`
+- clippy `rustup component add clippy`
+
+##### haskell:
+
+- [ghcup](https://www.haskell.org/ghcup/) (installs all things)
+- stylish-haskell (stack or cabal)
+
+```bash
+cabal install stylish-haskell
+# or
+stack install stylish-haskell
+```
 
 change the dev = { path = "" } } directory to where you store your own plugins.
 you can put your own plugins there.
