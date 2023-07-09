@@ -9,6 +9,37 @@ return {
 				functions = { "bold" },
 				keywords = { "italic" },
 			},
+			color_overrides = {
+				mocha = {
+					-- css colours
+					base = "#242424", -- black + 12 + 12
+					blue = "#4169e1", -- royalblue
+					crust = "#000000", -- black
+					flamingo = "#ffffe0", -- lightyellow
+					green = "#00ff00", -- greenyellow
+					lavender = "#fff0f5", -- lavenderblush
+					mantle = "#121212", -- black + 12
+					maroon = "#ff4500", -- orangered
+					mauve = "#ee2fee", -- violet
+					overlay0 = "#a9a9a9", -- darkgray
+					overlay1 = "#808080", -- gray
+					overlay2 = "#696969", -- dimgray
+					peach = "#ffa500", -- orange
+					pink = "#ffc0cb", -- pink
+					red = "#ff0000", -- red
+					rosewater = "#ffffff", -- white
+					sapphire = "#00bfff", -- deepskyblue
+					sky = "#87ceeb", -- skyblue
+					subtext0 = "#a6adc8",
+					subtext1 = "#bac2de",
+					surface0 = "#313244",
+					surface1 = "#45475a",
+					surface2 = "#585b70",
+					teal = "#00ffff", -- cyan
+					text = "#ffffff", -- white
+					yellow = "#ffff00", -- yellow
+				},
+			},
 			custom_highlights = function(c)
 				return {
 					TreesitterContextBottom = { bold = true, underline = true },
@@ -30,7 +61,7 @@ return {
 				}
 			end,
 			integrations = {
-				alpha = true,
+				alpha = false,
 				aerial = false,
 				barbar = false,
 				beacon = false,
@@ -50,7 +81,7 @@ return {
 				lsp_saga = false,
 				lsp_trouble = true,
 				markdown = true,
-				mason = true,
+				mason = false,
 				mini = true,
 				neogit = false,
 				neotest = false,
@@ -76,7 +107,7 @@ return {
 				dap = { enabled = true, enable_ui = true },
 				indent_blankline = { enabled = false, colored_indent_levels = false },
 				native_lsp = { enabled = true },
-				navic = { enabled = false },
+				navic = { enabled = true },
 			},
 		},
 		config = function(_, opts)
