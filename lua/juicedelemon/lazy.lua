@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
 	defaults = { lazy = true },
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "gruvbox" } },
 	dev = { path = os.getenv "HOME" .. "/Repos/neovim_plugins/" },
 	change_detection = { notify = false },
 	performance = {
