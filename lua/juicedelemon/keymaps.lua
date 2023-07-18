@@ -41,6 +41,9 @@ map("v", "<m-O>", "<esc>O<esc>gv") -- below
 map("n", "<tab>", "<cmd>bn<cr>")
 map("n", "<s-tab>", "<cmd>bp<cr>")
 
+-- centre when G
+map("n", "G", "Gzz")
+
 -- useless things
 -- print alphabet
 map("n", "<leader><leader>a", function()
