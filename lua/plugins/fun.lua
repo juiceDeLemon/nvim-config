@@ -7,13 +7,6 @@ return {
 		},
 	},
 	{
-		"alec-gibson/nvim-tetris",
-		cmd = "Tetris",
-		keys = {
-			{ "<leader><leader>t", vim.cmd.Tetris, desc = "Tetris Addiction" },
-		},
-	},
-	{
 		"eandrju/cellular-automaton.nvim",
 		keys = {
 			-- stylua: ignore start
@@ -26,6 +19,7 @@ return {
 		"m4xshen/hardtime.nvim",
 		event = "VeryLazy",
 		opts = {
+			max_count = 100, -- don't. I want to spam
 			disabled_keys = {},
 			disabled_filetypes = {
 				"qf",
