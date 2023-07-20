@@ -19,8 +19,7 @@ return {
 		"m4xshen/hardtime.nvim",
 		event = "VeryLazy",
 		opts = {
-			max_count = 100, -- don't. I want to spam
-			disabled_keys = {},
+			max_count = 7, -- don't. I want to spam
 			disabled_filetypes = {
 				"qf",
 				"netrw",
