@@ -23,6 +23,7 @@ vim.opt.colorcolumn = "80,120"
 -- signcolumn
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "auto:1-4"
 
 -- displaying lines
 vim.opt.scrolloff = 20
