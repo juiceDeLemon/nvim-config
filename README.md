@@ -81,6 +81,7 @@ _use venv all the time btw_
 
 ##### rust:
 
+run rustup update first
 - [rustup](https://rustup.rs/)
 - rust-analyzer`rustup component add rust-analyzer`
 - rustfmt `rustup component add rustfmt`
@@ -102,11 +103,19 @@ change the dev = { path = "" } } directory to where you store your own plugins.
 you can put your own plugins there.
 
 to add a new language support you need to add the language in
-lua/u/pluginsettings/lsp.lua ensure_install
-and
-lua/u/pluginsettings/nullls.lua and add all sources:
-code actions, formatting, diagnostics, hover (c.cspell etc)
+
+lua/plugins/lsp.lua ensure_install
+
+and formatters
+
+if lsp doesn't support then add keymap in ftplugin
+
+you can take a look at haskell
+
 and treesitter
-formatter: either you can use lsp system/if you use external formatter -> disable the lsp formatting system (if any) -> new file in ftplugin/ set keymap for "!formatting-command %"-> set vim.b.lsp_format_active to false
+
+and linters lua/plugins/lsp.lua
+
 and check if your lsp needs to be configured here: https://github.com/lvimuser/lsp-inlayhints.nvim
-you might need to search for something like rust-tools or rust-analyzer 3rd-party plugins
+
+you might need to search for something like rust-tools or rust-analyzer 3rd-party plugins and see what do they do
