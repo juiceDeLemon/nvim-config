@@ -11,12 +11,4 @@ return {
 		"ajorgensen/vim-markdown-toc",
 		ft = "markdown",
 	},
-	{
-		"echasnovski/mini.doc",
-		config = true,
-		ft = "lua",
-		keys = {
-			{ "<leader><leader>l", function() MiniDoc.generate() end, desc = "Generate Docs for Plugin" },
-		},
-	},
 }
