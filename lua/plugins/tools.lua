@@ -46,19 +46,12 @@ return {
 					"~/.config/nvim/random_words.txt",
 				},
 			},
-			extensions = {
-				lazy = { show_icon = false },
-			},
 		},
 		config = function(_, opts)
 			require("telescope").setup(opts)
-			require("telescope").load_extension "lazy"
 			require("telescope").load_extension "menufacture"
 		end,
-		dependencies = {
-			"tsakirist/telescope-lazy.nvim",
-			"molecule-man/telescope-menufacture",
-		},
+		dependencies = { "molecule-man/telescope-menufacture" },
 		event = "VeryLazy",
 		keys = {
 			{
@@ -96,13 +89,6 @@ return {
 					vim.cmd.Telescope "help_tags"
 				end,
 				desc = "Help Menu",
-			},
-			{
-				"<leader>fp",
-				function()
-					require("telescope").extensions.lazy.lazy()
-				end,
-				desc = "Plugin Links",
 			},
 			{
 				"<leader>fo",
