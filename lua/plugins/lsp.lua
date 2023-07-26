@@ -20,7 +20,6 @@ local on_attach = function(client, bufnr)
 	-- stylua: ignore end
 	require("nvim-navic").attach(client, bufnr)
 	require("nvim-navbuddy").attach(client, bufnr)
-	require("lsp-inlayhints").on_attach(client, bufnr)
 	-- navbuddy
 	map("n", "<leader>o", vim.cmd.Navbuddy, { desc = "Navbuddy" })
 end
@@ -123,16 +122,11 @@ return {
 		event = "LspAttach",
 	},
 	{
-		"lvimuser/lsp-inlayhints.nvim",
-		config = true,
-		event = "LspAttach",
-	},
-	{
 		"SmiteshP/nvim-navbuddy",
 		opts = {
 			icons = {
 				Array = "",
-				Boolean = "蘒",
+				Boolean = "",
 				Key = "",
 				Namespace = "",
 				Null = "",
