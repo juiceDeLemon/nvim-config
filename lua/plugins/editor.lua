@@ -46,7 +46,6 @@ return {
 			-- all the sub-options of filetypes apply to buftypes
 			buftypes = {},
 		},
-		-- main = "colorizer",
 		event = "VeryLazy",
 	},
 	{
@@ -54,5 +53,4 @@ return {
 		dependencies = "kana/vim-textobj-user",
 		event = "VeryLazy",
 	},
-	{ "weilbith/nvim-code-action-menu", event = "VeryLazy" },
 }
