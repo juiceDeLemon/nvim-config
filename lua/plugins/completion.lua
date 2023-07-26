@@ -67,7 +67,6 @@ return {
 				sources = cmp.config.sources {
 					{ name = "luasnip", group_index = 1 },
 					{ name = "nvim_lsp", group_index = 2 },
-					{ name = "path", group_index = 3, keyword_length = 3 },
 					{ name = "buffer", group_index = 4, keyword_length = 5 },
 				},
 				sorting = {
@@ -103,7 +102,6 @@ return {
 							nvim_lsp = "[Lsp]",
 							nvim_lua = "[Vim]",
 							buffer = "[Buf]",
-							path = "[Path]",
 						})[entry.source.name]
 						return vim_item
 					end,
@@ -132,13 +130,12 @@ return {
 						cmp.select_next_item()
 					end),
 				},
-				sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "path" } }, { { name = "cmdline" } }),
+				sources = cmp.config.sources({ { name = "nvim_lsp" } }, { { name = "cmdline" } }),
 			})
 		end,
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"saadparwaiz1/cmp_luasnip",
 			"L3MON4D3/LuaSnip",
