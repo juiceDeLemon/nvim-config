@@ -58,7 +58,7 @@ return {
 		keys = {
 			{ "<leader>n", vim.cmd.NodeAction, desc = "Trigger Node Action" },
 		},
-		dependencies = { "nvim-treesitter/nvim-treesitter", "tpope/vim-repeat" },
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
