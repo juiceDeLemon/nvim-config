@@ -13,6 +13,8 @@
 
 run :checkhealth and follow the intructions
 
+This is a no-mason, no-icon (except maybe lazy but i use wezterm anyways), self-built statusline, "minimal" config.
+
 ### you need these binaries/things (comment out unneeded languages)
 
 - grep
