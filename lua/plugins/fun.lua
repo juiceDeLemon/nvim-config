@@ -18,6 +18,14 @@ return {
 	{
 		"m4xshen/hardtime.nvim",
 		event = "VeryLazy",
+		hints = {
+			["hx"] = {
+				message = function(keys)
+					return "Use X instead of " .. keys
+				end,
+				length = 2,
+			},
+		},
 		opts = {
 			max_count = 7, -- don't. I want to spam
 			disabled_filetypes = {
