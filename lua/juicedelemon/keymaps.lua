@@ -38,6 +38,9 @@ map("n", "<s-tab>", "<cmd>bp<cr>")
 -- centre when G
 map("n", "G", "Gzz")
 
+-- fuck you evil devil
+map("n", "q:", "<nop>")
+
 -- useless things
 -- print alphabet
 map("n", "<leader><leader>a", function()
