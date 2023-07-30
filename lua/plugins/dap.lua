@@ -12,7 +12,7 @@ return {
 
 		dapui.setup()
 		require("nvim-dap-repl-highlights").setup()
-		require("nvim-dap-virtual-text").setup()
+		require("nvim-dap-virtual-text").setup {}
 
 		-- catppuccin, sign stuff
 		local sign = vim.fn.sign_define
@@ -39,6 +39,30 @@ return {
 		map("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", { noremap = true, desc = "Test Class" })
 		map("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", { noremap = true, desc = "Debug Selection" })
 		-- stylua: ignore end
+
+		-- rust/c/c++
+		dap.adapters.codelldb = {
+			type = "server",
+			port = "${port}",
+			executable = {
+				command = os.getenv "HOME" .. "/.config/nvim/bin/codelldb/adapter/codelldb",
+				args = { "--port", "${port}" },
+				-- uncomment below if windows
+				-- detached = false,
+			},
+		}
+		dap.configurations.rust = {
+			{
+				name = "Launch file",
+				type = "codelldb",
+				request = "launch",
+				program = function()
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+				end,
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+			},
+		}
 	end,
 	keys = {
 		{

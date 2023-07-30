@@ -87,6 +87,7 @@ run rustup update first
 - rustfmt `rustup component add rustfmt`
 - cargo-watch `cargo install cargo-watch`
 - clippy `rustup component add clippy`
+- [codelldb](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)#Installation)(rename extension to codelldb and put it in ~/.config/nvim/bin/)
 
 ##### haskell:
 
