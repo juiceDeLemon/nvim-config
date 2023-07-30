@@ -74,12 +74,12 @@ nvim-python/bin/python -m pip install debugpy
 
 _use venv all the time btw_
 
-##### lua:
+##### lua
 
 - stylua (formatter) (cargo install stylua)
 - lua-ls (lsp) (brew install lua-language-server or just download the binary from its github page)
 
-##### rust:
+##### rust
 
 run rustup update first
 - [rustup](https://rustup.rs/)
@@ -89,7 +89,7 @@ run rustup update first
 - clippy `rustup component add clippy`
 - [codelldb](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)#Installation)(rename extension to codelldb and put it in ~/.config/nvim/bin/)
 
-##### haskell:
+##### haskell
 
 - [ghcup](https://www.haskell.org/ghcup/) (installs all things)
 - stylish-haskell (stack or cabal)
