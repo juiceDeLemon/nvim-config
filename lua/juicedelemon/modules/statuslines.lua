@@ -1,7 +1,7 @@
 local stl = {}
 
 function stl.git_status()
-	require("gitsigns")
+	require "gitsigns"
 
 	if not (vim.b.gitsigns_head or vim.b.gitsigns_status_dict) then
 		return ""
@@ -38,8 +38,8 @@ function stl.diagnostics()
 		.. "]"
 end
 
---- removed highlight and icon, changed to the sum of all todos
---- stolen from the function in https://github.com/folke/todo-comments.nvim/issues/172#issuecomment-1382691260
+-- removed highlight and icon, changed to the sum of all todos
+-- stolen from the function in https://github.com/folke/todo-comments.nvim/issues/172#issuecomment-1382691260
 local stats = {}
 function stl.todo()
 	if not require("todo-comments.config").loaded then
@@ -63,7 +63,7 @@ function stl.todo()
 end
 
 function stl.dap_status()
-	local dap = require("dap")
+	local dap = require "dap"
 
 	if not (dap.session() ~= nil) then
 		return ""
@@ -122,7 +122,7 @@ function stl.harpoon()
 	return "" -- edge case
 end
 
---- stolen from lualine
+-- stolen from lualine
 function stl.file_size()
 	local file = vim.fn.expand "%:p"
 	if file == nil or #file == 0 then
@@ -176,3 +176,10 @@ vim.opt.statusline = "[ඞ %{mode(1)}]" -- mode
 	.. "%{v:lua.stl.encoding()}" -- encoding (inactive if utf-8)
 	.. "%y" -- filetype
 	.. "[%7(%l/%3L%):%2c %P]" -- ruler
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+	group = vim.api.nvim_create_augroup("statusline", {}),
+	callback = function()
+		vim.cmd.redrawstatus()
+	end,
+})
