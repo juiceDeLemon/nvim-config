@@ -1,12 +1,39 @@
 return {
 	{
-		"folke/which-key.nvim",
-		opts = {
-			plugins = { spelling = { enabled = true, suggestions = 25 } },
-			icons = { breadcrumb = "", separator = ":", group = "*" },
-			popup_mappings = { scroll_down = "<c-j>", scroll_up = "<c-k>" },
-			window = { border = "rounded" },
-		},
+		"echasnovski/mini.clue",
+		config = function()
+			local miniclue = require "mini.clue"
+			miniclue.setup {
+				triggers = {
+					-- leader
+					{ mode = "n", keys = "<leader>" },
+					{ mode = "x", keys = "<leader>" },
+
+					-- g
+					{ mode = "n", keys = "g" },
+					{ mode = "x", keys = "g" },
+
+					-- registers
+					{ mode = "n", keys = '"' },
+					{ mode = "x", keys = '"' },
+					{ mode = "i", keys = "<C-r>" },
+					{ mode = "c", keys = "<C-r>" },
+
+					-- <c-w> (windows)
+					{ mode = "n", keys = "<C-w>" },
+
+					-- z aka useless
+					{ mode = "n", keys = "z" },
+					{ mode = "x", keys = "z" },
+				},
+				clues = {
+					miniclue.gen_clues.g(),
+					miniclue.gen_clues.registers(),
+					miniclue.gen_clues.windows(),
+					miniclue.gen_clues.z(),
+				},
+			}
+		end,
 		event = "VeryLazy",
 	},
 	{
