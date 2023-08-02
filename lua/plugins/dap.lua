@@ -65,6 +65,7 @@ return {
 		}
 	end,
 	keys = {
+		{ "<leader>d", "", desc = "DAP" },
 		{
 			"<leader>db",
 			function()

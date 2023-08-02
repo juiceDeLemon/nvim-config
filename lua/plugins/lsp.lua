@@ -1,6 +1,7 @@
 local on_attach = function(client, bufnr)
 	local map = vim.keymap.set
 	-- stylua: ignore start
+	map("n", "<leader>l", "", {desc = "LSP"})
 	map("n", "K", function() vim.lsp.buf.hover() end, { noremap = true, silent = true })
 	map("n", "gd", function() vim.cmd.TroubleToggle("lsp_definitions")end, { noremap = true, silent = true, desc = "Definitions" })
 	map("n", "gD", function() vim.lsp.buf.declaration() end, { noremap = true, silent = true, desc = "Declarations" })

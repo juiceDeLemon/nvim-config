@@ -10,6 +10,7 @@ return {
 		"eandrju/cellular-automaton.nvim",
 		keys = {
 			-- stylua: ignore start
+			{ "<leader><leader>c", "", desc = "Make your code spin" },
 			{ "<leader><leader>cc", function() vim.cmd.CellularAutomaton("game_of_life") end, desc = "Conway Game of Life" }, -- c for conway.
 			{ "<leader><leader>cr", function() vim.cmd.CellularAutomaton("make_it_rain") end, desc = "Your code is raining" },
 			-- stylua: ignore end

@@ -12,6 +12,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
 		config = true,
 		keys = {
+			{ "<leader>r", "", desc = "Refactoring" },
 			{
 				"<leader>re",
 				"<esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>",

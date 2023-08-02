@@ -3,6 +3,7 @@ return {
 		"ThePrimeagen/harpoon",
 		keys = {
 			-- stylua: ignore start
+			{ "<leader>h", "",desc="Harpoon" },
 			{ "<leader>hq", function() require("harpoon.mark").add_file() end, desc = "Add File" }, -- q for queue file?
 			{ "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Menu" }, -- m for menu
 			{ "<leader>ha", function() require("harpoon.ui").nav_file(1) end, desc = "Harpoon 1" }, -- home row in dvorak
@@ -15,8 +16,8 @@ return {
 			{ "<leader>ht", function() require("harpoon.ui").nav_file(8) end, desc = "Harpoon 8" },
 			{ "<leader>hn", function() require("harpoon.ui").nav_file(9) end, desc = "Harpoon 9" },
 			{ "<leader>hs", function() require("harpoon.ui").nav_file(10) end, desc = "Harpoon 10" },
-			-- stylua: ignore end
 			-- qwerty version
+			-- { "<leader>h", "", desc = "Harpoon" },
 			-- { "<leader>ha", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Harpoon 1" },
 			-- { "<leader>hs", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Harpoon 2" },
 			-- { "<leader>hd", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Harpoon 3" },
@@ -27,6 +28,7 @@ return {
 			-- { "<leader>hk", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", desc = "Harpoon 8" },
 			-- { "<leader>hl", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", desc = "Harpoon 9" },
 			-- { "<leader>h;", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", desc = "Harpoon 10" },
+			-- stylua: ignore end
 		},
 	},
 	{
@@ -54,6 +56,7 @@ return {
 		dependencies = { "molecule-man/telescope-menufacture" },
 		event = "VeryLazy",
 		keys = {
+			{ "<leader>f", "", desc = "Telescope" },
 			{
 				"<leader>fb",
 				function()
