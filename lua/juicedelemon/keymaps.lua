@@ -41,7 +41,7 @@ map("n", "G", "Gzz")
 -- fuck you evil devil
 map("n", "q:", "<nop>")
 
--- useless things
+-- semi-useless things
 -- print alphabet
 map("n", "<leader><leader>a", function()
 	print "abcdefghijklmnopqrstuvwxyz"
@@ -55,9 +55,10 @@ map(
 	{ desc = "Toggle Mouse", noremap = true }
 )
 
+map("n", "<leader><leader>n", vim.cmd.nohlsearch, { noremap = true, desc = "NOH" })
+
 -- <leader><leader>p is mapped (markdown preview) in markdown
 -- if mapping is needed, ensure it is useless for markdown
-
 
 -- inputs the SUS symbol
 map("n", "<leader><leader>s", "iඞ<esc>", { desc = "SUS" })
