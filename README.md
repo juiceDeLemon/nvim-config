@@ -11,7 +11,8 @@
 			6. [rust:](#rust)
 			7. [haskell:](#haskell)
 
-run :checkhealth and follow the intructions
+run :checkhealth and follow the instructions
+run :Codeium Auth and follow the instructions
 
 This is a no-mason, no-icon (except maybe lazy but i use wezterm anyways), self-built statusline, "minimal" config.
 

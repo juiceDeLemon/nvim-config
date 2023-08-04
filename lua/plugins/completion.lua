@@ -192,4 +192,19 @@ return {
 		event = { "InsertEnter" },
 		dependencies = { "rafamadriz/friendly-snippets" }, -- if there is no snippets then we must put lazy=false down there
 	},
+	{
+		"Exafunction/codeium.vim",
+		config = function()
+			vim.g.codeium_no_map_tab = 1
+
+			local map = vim.keymap.set
+			map("i", "<M-n>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true, nowait = true })
+			map("i", "<M-s>", function()
+				vim.g.codeium_enabled = not vim.g.codeium_enabled
+			end, { desc = "Toggle Codeium" })
+		end,
+		event = "VeryLazy",
+	},
 }

@@ -71,6 +71,12 @@ function stl.dap_status()
 	return "[" .. dap.status() .. "]"
 end
 
+function stl.codeium()
+	local orig = vim.api.nvim_eval_statusline("%{codeium#GetStatusString()}", {})
+	local orig_no_space = orig.str:gsub("%s+", "")
+	return orig_no_space == "" and "" or "[C:" .. orig_no_space .. "]"
+end
+
 function stl.file_name()
 	if vim.bo.filetype == "help" then
 		local filename = vim.api.nvim_buf_get_name(0)
@@ -115,7 +121,7 @@ function stl.harpoon()
 
 	for _, file in pairs(marked_file) do
 		if file.filename == current_file then
-			return "[harpoon]"
+			return "[harp]"
 		end
 	end
 
@@ -167,6 +173,7 @@ vim.opt.statusline = "[ඞ %{mode(1)}]" -- mode
 	.. "%{v:lua.stl.todo()}" -- todo comments
 	.. "%{v:lua.stl.harpoon()}" -- harpoon
 	.. "%{v:lua.stl.dap_status()}" -- dap status
+	.. "%{v:lua.stl.codeium()}" -- codeium
 	.. "%="
 	.. stl.file_name() -- filename
 	.. "%m%r%h%w%q" -- flags: m:modified,r:RO,h:help,w:preview,q:quickfix list/loc list
