@@ -6,6 +6,8 @@ return {
 			{ "<leader>h", "",desc="Harpoon" },
 			{ "<leader>hq", function() require("harpoon.mark").add_file() end, desc = "Add File" }, -- q for queue file?
 			{ "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Menu" }, -- m for menu
+
+			-- dvorak version
 			{ "<leader>ha", function() require("harpoon.ui").nav_file(1) end, desc = "Harpoon 1" }, -- home row in dvorak
 			{ "<leader>ho", function() require("harpoon.ui").nav_file(2) end, desc = "Harpoon 2" },
 			{ "<leader>he", function() require("harpoon.ui").nav_file(3) end, desc = "Harpoon 3" },
