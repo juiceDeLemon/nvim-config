@@ -18,7 +18,8 @@ This is a no-mason, no-icon (except maybe lazy but i use wezterm anyways), self-
 
 ### you need these binaries/things (comment out unneeded languages)
 
-- grep
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (telescope)
+- [fd](https://github.com/sharkdp/fd) (telescope)
 
 #### linters/lsp/formatters/debugger:
 

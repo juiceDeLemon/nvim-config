@@ -53,7 +53,10 @@ return {
 			require("telescope").setup(opts)
 			require("telescope").load_extension "menufacture"
 		end,
-		dependencies = { "molecule-man/telescope-menufacture" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"molecule-man/telescope-menufacture",
+		},
 		event = "VeryLazy",
 		keys = {
 			{ "<leader>f", "", mode = { "n", "v" }, desc = "Telescope" },
