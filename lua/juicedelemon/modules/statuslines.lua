@@ -74,7 +74,12 @@ end
 function stl.codeium()
 	local orig = vim.api.nvim_eval_statusline("%{codeium#GetStatusString()}", {})
 	local orig_no_space = orig.str:gsub("%s+", "")
-	return orig_no_space == "" and "" or "[C:" .. orig_no_space .. "]"
+
+	if orig_no_space == "" or orig_no_space == "OFF" then
+		return ""
+	else
+		return "[C:" .. orig_no_space .. "]"
+	end
 end
 
 function stl.file_name()
