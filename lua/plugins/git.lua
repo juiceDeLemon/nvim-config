@@ -19,7 +19,8 @@ return {
 		},
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>g", "", desc = "Git" },
+			-- stylua: ignore start
+			{ "<leader>g", "", mode = { "n", "v" }, desc = "Git" },
 			{ "<leader>gb", function() vim.cmd.Gitsigns "blame_line" end, desc = "View Blame" },
 			{ "<leader>gd", function() vim.cmd.Gitsigns "diffthis" end, desc = "Diff Current File" },
 			{ "<leader>gh", function() vim.cmd.Gitsigns "prev_hunk" end, mode = { "n", "v" }, desc = "Previous Hunk" },
@@ -27,6 +28,7 @@ return {
 			{ "<leader>gp", function() vim.cmd.Gitsigns "preview_hunk" end, desc = "Preview Hunk"  },
 			{ "<leader>gr", function() vim.cmd.Gitsigns "reset_hunk" end, desc = "Restore Hunk" },
 			{ "<leader>gv", function() vim.cmd.Gitsigns "select_hunk" end, desc = "Select Hunk" },
+			-- stylua: ignore end
 		},
 	},
 }

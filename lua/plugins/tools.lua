@@ -56,7 +56,7 @@ return {
 		dependencies = { "molecule-man/telescope-menufacture" },
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>f", "", desc = "Telescope" },
+			{ "<leader>f", "", mode = { "n", "v" }, desc = "Telescope" },
 			{
 				"<leader>fb",
 				function()
