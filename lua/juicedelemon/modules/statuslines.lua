@@ -182,8 +182,8 @@ vim.opt.statusline = "[ඞ %{mode(1)}]" -- mode
 	.. "%="
 	.. stl.file_name() -- filename
 	.. "%m%r%h%w%q" -- flags: m:modified,r:RO,h:help,w:preview,q:quickfix list/loc list
-	.. "%="
 	.. "%{v:lua.stl.venv()}" -- venv
+	.. "%="
 	.. "%{v:lua.stl.file_size()}" -- file_size
 	.. "%{v:lua.stl.encoding()}" -- encoding (inactive if utf-8)
 	.. "%y" -- filetype
