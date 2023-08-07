@@ -7,7 +7,7 @@ local on_attach = function(client, bufnr)
 	map("n", "gD", function() vim.lsp.buf.declaration() end, { noremap = true, silent = true, desc = "Declarations" })
 	map("n", "gI", function() vim.lsp.buf.implementation() end, { noremap = true, silent = true, desc = "Implementations" })
 	map("n", "gr", function() vim.cmd.TroubleToggle("lsp_references") end, { noremap = true, silent = true, desc = "References" })
-	map("n", "<leader>la", function() require('code_action_menu').open_code_action_menu() end, { noremap = true, silent = true, desc = "Code Action" })
+	map("n", "<leader>la", function() vim.lsp.buf.code_action() end, { noremap = true, silent = true, desc = "Code Action" })
 	if vim.b.lsp_format_activate == nil then
 		map("n", "<leader>lf", function() vim.lsp.buf.format() end, { silent = true, desc = "Format File" })
 	end
