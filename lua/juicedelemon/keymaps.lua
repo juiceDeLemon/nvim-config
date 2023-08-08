@@ -63,5 +63,8 @@ map("n", "<leader><leader>n", vim.cmd.nohlsearch, { noremap = true, desc = "NOH"
 -- inputs the SUS symbol
 map("n", "<leader><leader>s", "iඞ<esc>", { desc = "SUS" })
 
+-- auto fix spelling
+map("n", "<leader><leader>z", "z=1<cr>", { desc = "Auto fix Spelling" })
+
 -- :Sexplorer the SPLIT explorer
 map("n", "<leader><leader>69", vim.cmd.Sex, { noremap = true, desc = "Hmmm sex" })
