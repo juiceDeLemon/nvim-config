@@ -77,7 +77,6 @@ return {
 					python = {
 						analysis = {
 							autoImportCompletions = true,
-							typeCheckingMode = "strict",
 						},
 					},
 				},
