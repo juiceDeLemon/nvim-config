@@ -62,6 +62,12 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup {
+				mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
+				-- separator = "-",
+			}
+		end,
 		event = "VeryLazy",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},

@@ -4,6 +4,11 @@ return {
 		opts = {
 			invert_selection = true,
 			transparent_mode = true,
+			overrides = {
+				TreesitterContext = { bold = true },
+				TreesitterContextLineNumber = { fg = "#ebdbb2" },
+				TreesitterContextBottom = { underline = true },
+			},
 		},
 		config = function(_, opts)
 			require("gruvbox").setup(opts)
