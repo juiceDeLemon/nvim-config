@@ -38,7 +38,6 @@ return {
 			lsp.lua_ls.setup {
 				settings = {
 					Lua = {
-						completion = { callSnippet = "Replace" },
 						diagnostics = { globals = { "vim", "require", "pp" } },
 						format = { enable = false },
 						workspace = { checkThirdParty = false }, -- remove that annoying popup https://github.com/neovim/nvim-lspconfig/issues/1700
