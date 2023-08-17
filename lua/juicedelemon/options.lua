@@ -20,7 +20,7 @@ vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.colorcolumn = "80,120"
 
--- signcolumn
+-- sign column
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "auto:1-4"
@@ -32,7 +32,7 @@ vim.opt.wrap = false
 
 -- displaying texts
 vim.opt.list = true
-vim.opt.listchars = "eol:¶,tab:> ,lead:!,leadmultispace: ,trail:*,nbsp:N"
+vim.opt.listchars = { eol = "¶", tab = "> ", lead = "!", leadmultispace = " ", trail = "*", nbsp = "N" }
 
 -- cursor
 vim.opt.mouse = ""
@@ -42,8 +42,11 @@ vim.opt.guicursor = ""
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- others
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+-- completions
+vim.opt.completeopt = { "menu", "menuone", "preview", "noinsert" }
 vim.opt.pumheight = 10
+
+-- others
+vim.opt.spell = true
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500 -- which key don't mess with this
