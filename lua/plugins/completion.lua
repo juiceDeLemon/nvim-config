@@ -6,7 +6,7 @@ return {
 			local snip = require "luasnip"
 
 			cmp.setup {
-				enabled = function()
+				enabled = function() -- prevent telescope
 					if vim.bo.buftype == "prompt" then
 						return false
 					end
@@ -18,52 +18,31 @@ return {
 						snip.lsp_expand(args.body)
 					end,
 				},
-				window = {
-					completion = {
-						border = "rounded",
-						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-						col_offset = -2,
-						side_padding = 0,
-					},
-					documentation = {
-						border = "rounded",
-						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-					},
-				},
 				mapping = cmp.mapping.preset.insert {
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
-					["<C-y>"] = cmp.mapping.confirm { select = true },
-					["<C-Space>"] = cmp.mapping(function()
-						local isVisible = cmp.visible()
-						if isVisible then
-							cmp.abort()
-						else
-							cmp.complete()
-						end
-					end, { "i", "s" }),
-					["<C-p>"] = cmp.mapping(function()
-						cmp.select_prev_item()
-					end),
-					["<C-n>"] = cmp.mapping(function()
-						cmp.select_next_item()
-					end),
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if snip.expand_or_jumpable() then
-							snip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
+					["<C-y>"] = cmp.mapping.confirm {
+						select = true,
+						behavior = cmp.ConfirmBehavior.Replace,
+					},
+					["<C-e>"] = cmp.mapping.abort(),
+					["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+					["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+					["<M-space>"] = cmp.mapping(function(fallback)
 						if snip.jumpable(-1) then
 							snip.jump(-1)
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
+					["<C-space>"] = cmp.mapping(function(fallback)
+						if snip.expand_or_jumpable() then
+							snip.expand_or_jump()
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				},
-
 				sources = cmp.config.sources {
 					{ name = "luasnip", group_index = 1 },
 					{ name = "nvim_lsp", group_index = 2 },
@@ -111,26 +90,31 @@ return {
 
 			cmp.setup.cmdline({ "/", "?" }, {
 				mapping = cmp.mapping.preset.cmdline {
-					["<C-p>"] = cmp.mapping(function()
-						cmp.select_prev_item()
-					end),
-					["<C-n>"] = cmp.mapping(function()
-						cmp.select_next_item()
-					end),
+					["<C-p>"] = cmp.mapping.select_prev_item {
+						behavior = cmp.SelectBehavior.Select,
+					},
+					["<C-n>"] = cmp.mapping.select_next_item {
+						behavior = cmp.SelectBehavior.Select,
+					},
 				},
-				sources = { { name = "buffer" } },
+				sources = {
+					{ name = "buffer" },
+				},
 			})
 
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline {
-					["<C-p>"] = cmp.mapping(function()
-						cmp.select_prev_item()
-					end),
-					["<C-n>"] = cmp.mapping(function()
-						cmp.select_next_item()
-					end),
+					["<C-p>"] = cmp.mapping.select_prev_item {
+						behavior = cmp.SelectBehavior.Select,
+					},
+					["<C-n>"] = cmp.mapping.select_next_item {
+						behavior = cmp.SelectBehavior.Select,
+					},
 				},
-				sources = cmp.config.sources({ { name = "nvim_lsp" } }, { { name = "cmdline" } }),
+				sources = {
+					{ name = "nvim_lsp" },
+					{ name = "cmdline" },
+				},
 			})
 		end,
 		dependencies = {
@@ -194,16 +178,15 @@ return {
 	},
 	{
 		"Exafunction/codeium.vim",
-		config = function()
-			vim.g.codeium_no_map_tab = 1
-
+		config = function() -- won't work if use keys = { ... }
 			local map = vim.keymap.set
-			map("i", "<M-n>", function()
-				return vim.fn["codeium#Accept"]()
+			map("i", "<Tab>", function() -- fix tab only inserts a tab
+				return vim.fn["codeium#Accept"]() -- must keep the return <insert idk face>
 			end, { expr = true, silent = true, nowait = true })
 			map("i", "<M-s>", function()
 				vim.g.codeium_enabled = not vim.g.codeium_enabled
 			end, { desc = "Toggle Codeium" })
+			-- weird plugin
 		end,
 		event = "VeryLazy",
 	},
