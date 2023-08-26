@@ -28,14 +28,14 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
 					["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-					["<M-space>"] = cmp.mapping(function(fallback)
+					["<C-b>"] = cmp.mapping(function(fallback)
 						if snip.jumpable(-1) then
 							snip.jump(-1)
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
-					["<C-space>"] = cmp.mapping(function(fallback)
+					["<C-f>"] = cmp.mapping(function(fallback)
 						if snip.expand_or_jumpable() then
 							snip.expand_or_jump()
 						else
