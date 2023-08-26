@@ -11,4 +11,16 @@ return {
 		"ajorgensen/vim-markdown-toc",
 		ft = "markdown",
 	},
+	{
+		"martineausimon/nvim-lilypond-suite",
+		opts = {
+			lilypond = {
+				options = {
+					diagnostics = true,
+				},
+			},
+		},
+		ft = { "lilypond" },
+		dependencies = { "MunifTanjim/nui.nvim" },
+	},
 }
