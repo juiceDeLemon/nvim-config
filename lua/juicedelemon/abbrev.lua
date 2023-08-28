@@ -1,6 +1,6 @@
+vim.cmd.cabbrev "Bw bw"
 vim.cmd.cabbrev "Q q"
 vim.cmd.cabbrev "Qw wq"
-vim.cmd.cabbrev "Wq wq"
 vim.cmd.cabbrev "W w"
-vim.cmd.cabbrev "Bw bw"
+vim.cmd.cabbrev "Wq wq"
 vim.cmd.cabbrev "qw wq"
