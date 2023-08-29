@@ -80,4 +80,11 @@ return {
 		dependencies = "kana/vim-textobj-user",
 		event = "VeryLazy",
 	},
+	{
+		"kevinhwang91/nvim-fundo",
+		dependencies = { "kevinhwang91/promise-async" },
+		build = ":lua require 'fundo'.install()",
+		config = true,
+		event = "VeryLazy",
+	},
 }
