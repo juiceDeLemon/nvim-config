@@ -62,14 +62,14 @@ function stl.todo()
 	return sum == 0 and "" or "[T" .. sum .. "]"
 end
 
-function stl.dap_status()
-	local dap = require "dap"
+-- function stl.dap_status()
+-- 	local dap = require "dap"
 
-	if not (dap.session() ~= nil) then
-		return ""
-	end
-	return "[" .. dap.status() .. "]"
-end
+-- 	if not (dap.session() ~= nil) then
+-- 		return ""
+-- 	end
+-- 	return "[" .. dap.status() .. "]"
+-- end
 
 function stl.codeium()
 	local orig = vim.api.nvim_eval_statusline("%{codeium#GetStatusString()}", {})
@@ -177,7 +177,7 @@ vim.opt.statusline = "[ඞ %{mode(1)}]" -- mode
 	.. "%{v:lua.stl.diagnostics()}" -- diagnostics
 	.. "%{v:lua.stl.todo()}" -- todo comments
 	.. "%{v:lua.stl.harpoon()}" -- harpoon
-	.. "%{v:lua.stl.dap_status()}" -- dap status
+	-- .. "%{v:lua.stl.dap_status()}" -- dap status
 	.. "%{v:lua.stl.codeium()}" -- codeium
 	.. "%="
 	.. stl.file_name() -- filename
