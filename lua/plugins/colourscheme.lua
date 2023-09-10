@@ -3,7 +3,7 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		opts = {
 			invert_selection = true,
-			transparent_mode = true,
+			dim_inactive = true,
 			overrides = {
 				TreesitterContext = { bold = true },
 				TreesitterContextLineNumber = { fg = "#ebdbb2" },
