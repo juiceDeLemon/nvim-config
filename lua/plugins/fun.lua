@@ -28,7 +28,7 @@ return {
 			},
 		},
 		opts = {
-			max_count = 7, -- don't. I want to spam
+			max_count = 9999, -- don't. I want to spam
 			disabled_filetypes = {
 				"qf",
 				"netrw",
