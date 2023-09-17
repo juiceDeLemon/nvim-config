@@ -50,3 +50,4 @@ vim.opt.pumheight = 10
 vim.opt.spell = true
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500 -- which key don't mess with this
+vim.opt.formatoptions:remove { "c", "r", "o" }
